@@ -6,7 +6,7 @@
 
 ## Textures
 
-- The `tree.png` spritesheet have been created by *Luz Maria Barros Rivas* and distributed under the terms of the *Creative Commons Attribution-ShareAlike 4.0 International License*
+- The spritesheets have been created by *Luz Maria Barros Rivas* and distributed under the terms of the *Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License*
 
 ## Icons
 

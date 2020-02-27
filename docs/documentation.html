@@ -447,9 +447,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_menus">Menus</a>
 <ul class="sectlevel2">
 <li><a href="#_file_menu">File menu</a></li>
-<li><a href="#_menu">? menu</a></li>
+<li><a href="#_help_menu">Help menu</a></li>
 </ul>
 </li>
+<li><a href="#_configuration_window">Configuration Window</a></li>
 <li><a href="#_main_window">Main Window</a>
 <ul class="sectlevel2">
 <li><a href="#_canvas_section">Canvas section</a></li>
@@ -483,7 +484,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>When you are satisfied with the results you can export the animation as single frames or as one big spritesheet.</p>
 </div>
 <div class="paragraph">
-<p>Please keep in mind that SpookyGhost is still at an early stage of development. Currently, there is no loading and saving for project files and you have to start from scratch every time you open the program. :(</p>
+<p>SpookyGhost is still at an early stage of development. If you find any issue or bug please report it on: <a href="https://encelo.itch.io/spookyghost/community" class="bare">https://encelo.itch.io/spookyghost/community</a>.</p>
 </div>
 <hr>
 </div>
@@ -506,20 +507,84 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>Selecting <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">New</b></span> or pressing <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>N</kbd></span> will remove all animations, sprites, and textures.</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="open_dialog.png" alt="Open Dialog">
+</div>
+</div>
+<div class="paragraph">
+<p>Selecting <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Open</b></span> or pressing <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>O</kbd></span> will open a dialog window to specify the project file to load.</p>
+</div>
+<div class="paragraph">
+<p>Selecting <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Open Bundled</b></span> will open a list of projects to load.
+They are distributed alongside the program as examples.</p>
+</div>
+<div class="paragraph">
+<p>Selecting <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Save</b></span> or pressing <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>S</kbd></span> will save the currently opened project.
+The menu item is available only if you have opened a project previously or if you have already saved it with a name.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="saveas_dialog.png" alt="Save as Dialog">
+</div>
+</div>
+<div class="paragraph">
+<p>Selecting <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Save as&#8230;&#8203;</b></span> will open a dialog window to specify the filename to use for saving.
+If the <code>Allow Overwrite</code> checkbox is not enabled the program will not save if a file with the same name already exists.</p>
+</div>
+<div class="paragraph">
+<p>Selecting <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Configuration</b></span> will open the configuration window.</p>
+</div>
 <div class="paragraph">
 <p>Selecting <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Quit</b></span> or pressing <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Q</kbd></span> will quit the program.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_menu">? menu</h3>
+<h3 id="_help_menu">Help menu</h3>
 <div class="imageblock">
 <div class="content">
-<img src="about_menu.png" alt="About Menu">
+<img src="help_menu.png" alt="Help Menu">
 </div>
 </div>
 <div class="paragraph">
-<p>Selecting menu:?[About] will open the about window with information about the program version.</p>
+<p>Selecting <span class="menuseq"><b class="menu">Help</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Documentation</b></span> or pressing <kbd>F1</kbd> will open this documentation file.</p>
 </div>
+<div class="paragraph">
+<p>Selecting <span class="menuseq"><b class="menu">Help</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">About</b></span> will open the about window with information about the program version.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuration_window">Configuration Window</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="configuration_window.png" alt="Configuration window">
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>Configuration</code> window contains some customizable properties that can be saved and will be used every time the program starts.</p>
+</div>
+<div class="paragraph">
+<p>The top section allows to change the window size or to choose a fullscreen mode.
+You can make the window <code>Resizable</code> or not as well as <code>Apply</code> your changes immediately or go back to <code>Current</code> window settings.</p>
+</div>
+<div class="paragraph">
+<p>Next you can enable or disable <code>Vertical Sync</code>. If you disasble it you can specify a <code>Frame Limit</code> to control the number of frames rendered per second or select <code>0</code> to switch it off.
+To apply the changes in this section you need to save the configuration and restart the program.</p>
+</div>
+<div class="paragraph">
+<p>You can choose the initial canvas size that will be used when the program starts for the first time as well as the maximum size of the Lua project file.</p>
+</div>
+<div class="paragraph">
+<p>After that you can choose the name of a project file that will be loaded the first time you start the program and optionally play it right away.</p>
+</div>
+<div class="paragraph">
+<p>The last two text input widgets will let you choose a path for textures and sprites that will be concatenated if you specify a relative path when loading.</p>
+</div>
+<div class="paragraph">
+<p>At the very bottom of the window two buttons will <code>Load</code> or <code>Save</code> the configuration to the <code>config.lua</code> file in the same directory as the program executable.</p>
 </div>
 </div>
 </div>
@@ -885,6 +950,18 @@ Functions can be combined by adding multiple grid animations that affect the sam
 </div>
 <div class="paragraph">
 <p>You can change the zoom level in the <a href="#_canvas_section">Canvas section</a> or by pressing <kbd>Ctrl</kbd> and using the mouse wheel.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Pressing the arrow keys will move the sprite in one pixel increments to allow for precise presitioning.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>You can also change the sprite anchor point by pressing <kbd>Shift</kbd> and the left mouse button and dragging the red point around the red rectangle.</p>

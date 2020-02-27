@@ -12,7 +12,7 @@ You can animate many different properties like the size, rotation, position, and
 
 When you are satisfied with the results you can export the animation as single frames or as one big spritesheet.
 
-Please keep in mind that SpookyGhost is still at an early stage of development. Currently, there is no loading and saving for project files and you have to start from scratch every time you open the program. :(
+SpookyGhost is still at an early stage of development. If you find any issue or bug please report it on: https://encelo.itch.io/spookyghost/community.
 
 '''
 
@@ -25,12 +25,49 @@ image::file_menu.png[File Menu]
 
 Selecting menu:File[New] or pressing kbd:[Ctrl+N] will remove all animations, sprites, and textures.
 
+image::open_dialog.png[Open Dialog]
+Selecting menu:File[Open] or pressing kbd:[Ctrl+O] will open a dialog window to specify the project file to load.
+
+Selecting menu:File[Open Bundled] will open a list of projects to load.
+They are distributed alongside the program as examples.
+
+Selecting menu:File[Save] or pressing kbd:[Ctrl+S] will save the currently opened project.
+The menu item is available only if you have opened a project previously or if you have already saved it with a name.
+
+image::saveas_dialog.png[Save as Dialog]
+Selecting menu:File[Save as...] will open a dialog window to specify the filename to use for saving.
+If the `Allow Overwrite` checkbox is not enabled the program will not save if a file with the same name already exists.
+
+Selecting menu:File[Configuration] will open the configuration window.
+
 Selecting menu:File[Quit] or pressing kbd:[Ctrl+Q] will quit the program.
 
-=== ? menu
-image::about_menu.png[About Menu]
+=== Help menu
+image::help_menu.png[Help Menu]
 
-Selecting menu:?[About] will open the about window with information about the program version.
+Selecting menu:Help[Documentation] or pressing kbd:[F1] will open this documentation file.
+
+Selecting menu:Help[About] will open the about window with information about the program version.
+
+== Configuration Window
+
+image::configuration_window.png[Configuration window]
+
+The `Configuration` window contains some customizable properties that can be saved and will be used every time the program starts.
+
+The top section allows to change the window size or to choose a fullscreen mode.
+You can make the window `Resizable` or not as well as `Apply` your changes immediately or go back to `Current` window settings.
+
+Next you can enable or disable `Vertical Sync`. If you disasble it you can specify a `Frame Limit` to control the number of frames rendered per second or select `0` to switch it off.
+To apply the changes in this section you need to save the configuration and restart the program.
+
+You can choose the initial canvas size that will be used when the program starts for the first time as well as the maximum size of the Lua project file.
+
+After that you can choose the name of a project file that will be loaded the first time you start the program and optionally play it right away.
+
+The last two text input widgets will let you choose a path for textures and sprites that will be concatenated if you specify a relative path when loading.
+
+At the very bottom of the window two buttons will `Load` or `Save` the configuration to the `config.lua` file in the same directory as the program executable.
 
 == Main Window
 The `Main` window is placed on the left by default. From it, you can access most of the program functionalities.
@@ -197,6 +234,8 @@ image::canvas_window.png[Canvas window]
 The `Canvas` window is where all animations will be played.
 
 You can change the zoom level in the <<Canvas section>> or by pressing kbd:[Ctrl] and using the mouse wheel.
+
+TIP: Pressing the arrow keys will move the sprite in one pixel increments to allow for precise presitioning.
 
 You can also change the sprite anchor point by pressing kbd:[Shift] and the left mouse button and dragging the red point around the red rectangle.
 
