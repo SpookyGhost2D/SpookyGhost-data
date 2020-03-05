@@ -444,29 +444,27 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
+<li><a href="#_imgui_interface">ImGui interface</a></li>
 <li><a href="#_menus">Menus</a>
 <ul class="sectlevel2">
 <li><a href="#_file_menu">File menu</a></li>
 <li><a href="#_help_menu">Help menu</a></li>
 </ul>
 </li>
-<li><a href="#_configuration_window">Configuration Window</a></li>
-<li><a href="#_main_window">Main Window</a>
+<li><a href="#_configuration_window">Configuration window</a></li>
+<li><a href="#_textures_window">Textures window</a></li>
+<li><a href="#_sprites_window">Sprites window</a></li>
+<li><a href="#_animations_window">Animations window</a></li>
+<li><a href="#_sprite_window">Sprite window</a></li>
+<li><a href="#_animation_window">Animation window</a>
 <ul class="sectlevel2">
-<li><a href="#_canvas_section">Canvas section</a></li>
-<li><a href="#_sprites_section">Sprites section</a></li>
-<li><a href="#_animations_section">Animations section</a>
-<ul class="sectlevel3">
-<li><a href="#_animation_group">Animation group</a></li>
-<li><a href="#_property_animation">Property animation</a></li>
-<li><a href="#_grid_animation">Grid animation</a></li>
+<li><a href="#_property_animation_window">Property animation window</a></li>
+<li><a href="#_grid_animation_window">Grid animation window</a></li>
 </ul>
 </li>
-<li><a href="#_render_section">Render section</a></li>
-</ul>
-</li>
-<li><a href="#_texrect_window">TexRect window</a></li>
+<li><a href="#_render_window">Render window</a></li>
 <li><a href="#_canvas_window">Canvas window</a></li>
+<li><a href="#_texrect_window">TexRect window</a></li>
 <li><a href="#_status_bar">Status bar</a></li>
 </ul>
 </div>
@@ -490,13 +488,29 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
+<h2 id="_imgui_interface">ImGui interface</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>SpookyGhost interface is made with <a href="https://github.com/ocornut/imgui">ImGui</a>. You can use most of ImGui user interaction capabilities while using the program.</p>
+</div>
+<div class="paragraph">
+<p>You can drag windows around and anchor them into any corner, change the split space between them or tab them one next to another.</p>
+</div>
+<div class="paragraph">
+<p>If you press <kbd>Ctrl</kbd> while clicking on a slider or drag box you can input value as text.
+Another interesting functionality is the ability to modify the speed of change of drag boxes by pressing <kbd>Shift</kbd> or <kbd>Alt</kbd>. With the first key, the change will be faster while with the second one it will be slower. Try it now while changing a texture rectangle in the <a href="#_sprite_window">Sprite window</a>.</p>
+</div>
+<div class="paragraph">
+<p>You can use the usual <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>X</kbd></span>, <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>C</kbd></span>, and <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>V</kbd></span> to cut, copy, and paste text in a text input widget.</p>
+</div>
+<div class="paragraph">
+<p>You can drag and drop colors around, for example, the background color of the <a href="#_canvas_window">Canvas window</a> onto the sprite color in the <a href="#_sprite_window">Sprite window</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_menus">Menus</h2>
 <div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="menus.png" alt="Menus">
-</div>
-</div>
 <div class="sect2">
 <h3 id="_file_menu">File menu</h3>
 <div class="imageblock">
@@ -530,7 +544,7 @@ The menu item is available only if you have opened a project previously or if yo
 </div>
 <div class="paragraph">
 <p>Selecting <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Save as&#8230;&#8203;</b></span> will open a dialog window to specify the filename to use for saving.
-If the <code>Allow Overwrite</code> checkbox is not enabled the program will not save if a file with the same name already exists.</p>
+If the <code>Allow Overwrite</code> checkbox is not enabled the program will not save if a file with the same name exists already.</p>
 </div>
 <div class="paragraph">
 <p>Selecting <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Configuration</b></span> will open the configuration window.</p>
@@ -556,7 +570,7 @@ If the <code>Allow Overwrite</code> checkbox is not enabled the program will not
 </div>
 </div>
 <div class="sect1">
-<h2 id="_configuration_window">Configuration Window</h2>
+<h2 id="_configuration_window">Configuration window</h2>
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">
@@ -564,49 +578,69 @@ If the <code>Allow Overwrite</code> checkbox is not enabled the program will not
 </div>
 </div>
 <div class="paragraph">
-<p>The <code>Configuration</code> window contains some customizable properties that can be saved and will be used every time the program starts.</p>
+<p>The <code>Configuration</code> window contains some customizable properties that will be used every time the program starts.</p>
 </div>
 <div class="paragraph">
-<p>The top section allows to change the window size or to choose a fullscreen mode.
+<p>The top section allows you to change the window size or to choose a fullscreen mode.
 You can make the window <code>Resizable</code> or not as well as <code>Apply</code> your changes immediately or go back to <code>Current</code> window settings.</p>
 </div>
 <div class="paragraph">
-<p>Next you can enable or disable <code>Vertical Sync</code>. If you disasble it you can specify a <code>Frame Limit</code> to control the number of frames rendered per second or select <code>0</code> to switch it off.
+<p>Next, you can enable or disable <code>Vertical Sync</code>. If you disable it you can specify a <code>Frame Limit</code> to control the number of frames rendered per second or select <code>0</code> to switch it off.
 To apply the changes in this section you need to save the configuration and restart the program.</p>
 </div>
 <div class="paragraph">
 <p>You can choose the initial canvas size that will be used when the program starts for the first time as well as the maximum size of the Lua project file.</p>
 </div>
 <div class="paragraph">
-<p>After that you can choose the name of a project file that will be loaded the first time you start the program and optionally play it right away.</p>
+<p>After that, you can choose the name of a project file that will be loaded the first time you start the program and optionally play it right away.</p>
 </div>
 <div class="paragraph">
 <p>The last two text input widgets will let you choose a path for textures and sprites that will be concatenated if you specify a relative path when loading.</p>
 </div>
 <div class="paragraph">
-<p>At the very bottom of the window two buttons will <code>Load</code> or <code>Save</code> the configuration to the <code>config.lua</code> file in the same directory as the program executable.</p>
+<p>Upon closing the window the configuration will be saved in the <code>config.lua</code> file in the same directory as the program executable.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_main_window">Main Window</h2>
+<h2 id="_textures_window">Textures window</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>The <code>Main</code> window is placed on the left by default. From it, you can access most of the program functionalities.</p>
-</div>
-<div class="sect2">
-<h3 id="_canvas_section">Canvas section</h3>
 <div class="imageblock">
 <div class="content">
-<img src="canvas.png" alt="Canvas section">
+<img src="textures_window.png" alt="Textures window">
 </div>
 </div>
 <div class="paragraph">
-<p>From the Canvas section, the first on top, you can change different options related to your canvas.
-The canvas is your working area for animations.</p>
+<p>One of the tabs in the top left corner of the interface is the <code>Textures</code> window.</p>
 </div>
 <div class="paragraph">
-<p>You can change the zoom level, you can change its size and you can change its background color.</p>
+<p>Before being able to create any sprite you need to load at least one texture from here. Just write the path of the file, either absolute or relative to the textures path you chose in the <a href="#_configuration_window">Configuration window</a>, and press the <code>Load</code> button.</p>
+</div>
+<div class="paragraph">
+<p>You can delete the selected texture by clicking the <code>Remove</code> button or pressing the <kbd>Delete</kbd> key while the cursor is over this window.</p>
+</div>
+<div class="paragraph">
+<p>When you create a new sprite it will use the texture you selected in this window.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sprites_window">Sprites window</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="sprites_window.png" alt="Sprites window">
+</div>
+</div>
+<div class="paragraph">
+<p>Next to the <a href="#_textures_window">Textures window</a> tab, you will find the <code>Sprites</code> window.
+You can use it to <code>Add</code> and <code>Remove</code> sprites or to move an existing sprite to a higher or lower drawing layer.</p>
+</div>
+<div class="paragraph">
+<p>You can also delete the selected sprite by pressing the <kbd>Delete</kbd> key while the cursor is over this window.</p>
+</div>
+<div class="paragraph">
+<p>At the beginning of each entry, there is a checkbox you can use to make the sprite visible or not.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -615,59 +649,98 @@ The canvas is your working area for animations.</p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-You can change the canvas zoom level by hovering on the Canvas window, pressing the <kbd>Ctrl</kbd> key and scrolling the mouse wheel.
+The texture icon at the end of an entry indicates that the sprite is using the currently selected texture.
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>To change the canvas size you need to first choose a size preset and then click on the <code>Apply</code> button.
-You can also select <code>Custom</code> and then enter a custom size.</p>
-</div>
-<div class="paragraph">
-<p>When you change the background color don&#8217;t forget to also change the alpha opacity or you might not see the color you selected to appear in the canvas.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_sprites_section">Sprites section</h3>
+<div class="sect1">
+<h2 id="_animations_window">Animations window</h2>
+<div class="sectionbody">
 <div class="imageblock">
 <div class="content">
-<img src="sprites1.png" alt="Sprites section 1">
+<img src="animations_window.png" alt="Animations window">
 </div>
 </div>
 <div class="paragraph">
-<p>From the Sprites section, just below the Canvas one, you can create your sprites and change their properties.</p>
+<p>In the lower part of the left side of the interface, you will find the <code>Animations</code> window.</p>
 </div>
 <div class="paragraph">
-<p>The first thing to do is loading a texture by writing its name in the <code>Filename</code> input text widget and then click the <code>Load</code> button.</p>
+<p>You can use it to <code>Add</code> and <code>Remove</code> animations and to change their state with the <code>Stop</code>, <code>Pause</code> and <code>Play</code> buttons.</p>
 </div>
 <div class="paragraph">
-<p>Once a texture is loaded you will have access to an <code>Add</code> button that allows you to create new sprites.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="sprites2.png" alt="Sprites section 2">
-</div>
+<p>You can delete the selected animation also by pressing the <kbd>Delete</kbd> key while the cursor is over this window.</p>
 </div>
 <div class="paragraph">
-<p>After having created a sprite more options will be available.</p>
+<p>You can find an icon about the current animation state at the end of an animation entry.</p>
 </div>
-<div class="paragraph">
-<p>You can delete the sprite you just created by clicking the <code>Remove</code> button or pressing the <kbd>Delete</kbd> key.</p>
-</div>
-<div class="paragraph">
-<p>If you have created more than one sprite you can change the drawing order between them with the <code>Move Up</code> and <code>Move Down</code> buttons.</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Pressing <kbd>Space</kbd> will toggle the animation state between playing and paused.
+</td>
+</tr>
+</table>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="sprites3.png" alt="Sprites section 3">
+<img src="animation_types.png" alt="Animation types">
 </div>
 </div>
 <div class="paragraph">
-<p>The <code>Sprite</code> drop-down menu shows every available sprite and lets you choose one to work with.</p>
+<p>Before pressing the <code>Add</code> button choose one of the four animation types.</p>
 </div>
 <div class="paragraph">
-<p>You will be able to give it a name, make it invisible, give it a parent sprite, change its position, rotation, scale and anchor point. You will also be able to select a texture rectangle, flip the texture, select a blending type and change its color.</p>
+<p>The <code>Parallel Group</code> and <code>Sequential Group</code> help to organize together multiple animations. They will be played together or one after another depending on the group type. An animation group can also be composed of sub-groups.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The sprite icon at the end of an entry indicates that the animation is assigned to the currently selected sprite. When you select a different animation its assigned sprite will be automatically selected.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <code>Sequential Group</code> type is currently disabled until some related bugs are fixed.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sprite_window">Sprite window</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="sprite_window.png" alt="Sprite window">
+</div>
+</div>
+<div class="paragraph">
+<p>On the top part of the right side of the interface, you will find the <code>Sprite</code> window.</p>
+</div>
+<div class="paragraph">
+<p>You can change all the properties of the selected sprite from here.</p>
+</div>
+<div class="paragraph">
+<p>You will be able to give it a name, give it a parent sprite, change its position, rotation, scale and anchor point. You will also be able to select a texture rectangle, flip the texture, select a blending type and change its color.</p>
 </div>
 <div class="paragraph">
 <p>When you set a parent for a sprite its properties will depend upon its parent&#8217;s properties, the properties of its grandparent and so on. The parent-child sprite relationship is a powerful way to achieve very complex chained transformations.</p>
@@ -682,68 +755,34 @@ You can also select <code>Custom</code> and then enter a custom size.</p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-You can use the <code>TexRect</code> window to help you set up a texture rectangle using the mouse. Enable the <code>Show Preview</code> checkbox for the <code>TexRect</code> window to appear.
+You can use the <a href="#_texrect_window">TexRect window</a> to help you set up a texture rectangle using the mouse.
 </td>
 </tr>
 </table>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_animation_window">Animation window</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Next to the <a href="#_sprite_window">Sprite window</a> tab, you will find the <code>Animation</code> window, where you can change all the properties of the selected animation.</p>
+</div>
+<div class="paragraph">
+<p>For every type of animation, including a group one, you will be able to change its name at the top of the interface.</p>
 </div>
 <div class="sect2">
-<h3 id="_animations_section">Animations section</h3>
+<h3 id="_property_animation_window">Property animation window</h3>
 <div class="imageblock">
 <div class="content">
-<img src="animations.png" alt="Animations section">
+<img src="property_animation_window.png" alt="Property animation window">
 </div>
 </div>
 <div class="paragraph">
-<p>The animations section lets you create four different kinds of animation.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="animation_types.png" alt="Animation types">
-</div>
+<p>With the <code>Sprite</code> drop-down menu you can choose the sprite whose property you want to change.</p>
 </div>
 <div class="paragraph">
-<p>Just select a type from the drop-down menu then click the <code>Add</code> button.</p>
-</div>
-<div class="sect3">
-<h4 id="_animation_group">Animation group</h4>
-<div class="imageblock">
-<div class="content">
-<img src="parallel_group.png" alt="Parallel group">
-</div>
-</div>
-<div class="paragraph">
-<p>You can create a <code>Parallel Group</code> or a <code>Sequential Group</code> as a way to organize together multiple animations. They will be played together or one after another depending on the group type.</p>
-</div>
-<div class="paragraph">
-<p>You can give a name to an animation group and create sub-animations with the <code>Add</code> button.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-An animation group can be composed of animation sub-groups.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>You can control the state of an animation group with the <code>Stop</code>, <code>Pause</code> and <code>Play</code> buttons and use the <code>Remove</code> one to destroy it together with all contained animations.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_property_animation">Property animation</h4>
-<div class="imageblock">
-<div class="content">
-<img src="property_animation.png" alt="Property animation">
-</div>
-</div>
-<div class="paragraph">
-<p>A property animation can animate some properties of a sprite such as:</p>
+<p>Just beneath you can choose which property to animate:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -766,12 +805,6 @@ An animation group can be composed of animation sub-groups.
 <p>Color channels</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>Similarly to an animation group you can change its name at the top of the interface. At the bottom, you can control its state with the <code>Stop</code>, <code>Pause</code> and <code>Play</code> buttons or use the <code>Remove</code> one to destroy it.</p>
-</div>
-<div class="paragraph">
-<p>With the <code>Sprite</code> drop-down menu you can choose the sprite whose property you want to change, then you can choose which property with the <code>Property</code> drop-down menu just beneath it.</p>
 </div>
 <div class="paragraph">
 <p>You can change the easing curve of the time parameter between a list of curves like:</p>
@@ -821,21 +854,24 @@ The function will take the time parameter, a number between 0 and 1, and return 
 <p>You can change the <code>Speed</code> to make the animation slower or faster, and you can change the <code>Start</code> and <code>End</code> value to affect its range.</p>
 </div>
 <div class="paragraph">
-<p>The last slider, <code>Time</code>, is updated in real-time according to current time value. When the animation is not playing you can directly change it to see how it affects your sprite property. You can also read the current <code>Value</code> for the easing curve.</p>
+<p>The last slider, <code>Time</code>, is updated in real-time according to current time value. When the animation is not playing you can directly change it to see how it affects your sprite property.</p>
+</div>
+<div class="paragraph">
+<p>You can also read the current value for the easing curve and have a look at a graphical plot of recent <code>Values</code>.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_grid_animation">Grid animation</h4>
+<div class="sect2">
+<h3 id="_grid_animation_window">Grid animation window</h3>
 <div class="imageblock">
 <div class="content">
-<img src="grid_animation.png" alt="Grid animation">
+<img src="grid_animation_window.png" alt="Grid animation window">
 </div>
 </div>
 <div class="paragraph">
 <p>A grid animation deforms your sprite shape to achieve some special effects.</p>
 </div>
 <div class="paragraph">
-<p>The interface is identical to the <a href="#_property_animation">Property animation</a> one with some small but important differences.</p>
+<p>The interface is identical to the <a href="#Property animation">[Property animation]</a> one with some small but important differences.</p>
 </div>
 <div class="paragraph">
 <p>Instead of being able to choose which sprite property to affect you will be able to choose a grid <code>Function</code>.</p>
@@ -882,11 +918,13 @@ Functions can be combined by adding multiple grid animations that affect the sam
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_render_section">Render section</h3>
+</div>
+<div class="sect1">
+<h2 id="_render_window">Render window</h2>
+<div class="sectionbody">
 <div class="imageblock">
 <div class="content">
-<img src="render.png" alt="Render section">
+<img src="render_window.png" alt="Render window">
 </div>
 </div>
 <div class="paragraph">
@@ -917,6 +955,65 @@ Functions can be combined by adding multiple grid animations that affect the sam
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_canvas_window">Canvas window</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="canvas_window.png" alt="Canvas window">
+</div>
+</div>
+<div class="paragraph">
+<p>At the center of the interface lies the <code>Canvas</code> window. The canvas is your working area for animations.</p>
+</div>
+<div class="paragraph">
+<p>At the top of this window, you will find some controls to change the zoom level, its size, and its background color.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can change the canvas zoom level by hovering on the Canvas window, pressing the <kbd>Ctrl</kbd> key and scrolling the mouse wheel.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>When you change the background color don&#8217;t forget to change the alpha opacity or you might not see the color you selected in the canvas.</p>
+</div>
+<div class="paragraph">
+<p>When the <code>Borders</code> checkbox is enabled a colored rectangle will show the current size of the canvas.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Pressing the arrow keys while the cursor is on the canvas will move the selected sprite in one pixel increments for precise positioning.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="canvas_window_anchor.png" alt="Canvas window anchor">
+</div>
+</div>
+<div class="paragraph">
+<p>You can also change the sprite anchor point by pressing <kbd>Shift</kbd> and the left mouse button and dragging the red point around the red rectangle.</p>
+</div>
+<div class="paragraph">
+<p>If you instead press <kbd>Ctrl</kbd> and the left mouse button a blue point and a blue rectangle will appear to allow you to set the grid anchor point used by Grid animations.</p>
+</div>
+<div class="paragraph">
+<p>You can also press <span class="keyseq"><kbd>Shift</kbd>+<kbd>Ctrl</kbd></span> together and use the mouse to set both the sprite and the grid anchor points in one go.</p>
+</div>
+</div>
 </div>
 <div class="sect1">
 <h2 id="_texrect_window">TexRect window</h2>
@@ -927,58 +1024,24 @@ Functions can be combined by adding multiple grid animations that affect the sam
 </div>
 </div>
 <div class="paragraph">
-<p>In the <a href="#_sprites_section">Sprites section</a> you can find a <code>Show Preview</code> checkbox. If it is enabled the <code>TexRect</code> window will be available.</p>
+<p>The <code>TexRect</code> window is available when at least one sprite has been created.
+It shows you which part of the texture will be used by the sprite for rendering.</p>
 </div>
 <div class="paragraph">
-<p>This window shows you which part of the texture will be used by the sprite for rendering.</p>
-</div>
-<div class="paragraph">
-<p>You can use the mouse to select a rectangular region and fine-tune its size in the <a href="#_sprites_section">Sprites section</a> of the interface.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_canvas_window">Canvas window</h2>
-<div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="canvas_window.png" alt="Canvas window">
-</div>
-</div>
-<div class="paragraph">
-<p>The <code>Canvas</code> window is where all animations will be played.</p>
-</div>
-<div class="paragraph">
-<p>You can change the zoom level in the <a href="#_canvas_section">Canvas section</a> or by pressing <kbd>Ctrl</kbd> and using the mouse wheel.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Pressing the arrow keys will move the sprite in one pixel increments to allow for precise presitioning.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>You can also change the sprite anchor point by pressing <kbd>Shift</kbd> and the left mouse button and dragging the red point around the red rectangle.</p>
-</div>
-<div class="paragraph">
-<p>If you instead press <kbd>Ctrl</kbd> and the left mouse button a blue point and a blue rectangle will appear to allow you to set the grid anchor point used by <a href="#_grid_animation">Grid animation</a>s.</p>
-</div>
-<div class="paragraph">
-<p>You can also press <span class="keyseq"><kbd>Shift</kbd>+<kbd>Ctrl</kbd></span> together and use the mouse to set both the sprite and the grid anchor points in one go.</p>
+<p>You can use the mouse to select a rectangular region and fine-tune its size in the <a href="#Sprites section">[Sprites section]</a> of the interface.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_status_bar">Status bar</h2>
 <div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="status_bar.png" alt="Status bar">
+</div>
+</div>
 <div class="paragraph">
-<p>Underneath the <a href="#_texrect_window">TexRect window</a> and the <a href="#_canvas_window">Canvas window</a> there is a status bar. It will show error and information messages as well as the mouse coordinates during some operations.</p>
+<p>At the bottom of the interface, you will find the status bar. It will show error and information messages as well as the mouse coordinates during some operations.</p>
 </div>
 </div>
 </div>
