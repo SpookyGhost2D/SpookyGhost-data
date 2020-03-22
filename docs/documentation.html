@@ -451,6 +451,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_help_menu">Help menu</a></li>
 </ul>
 </li>
+<li><a href="#_file_dialog">File Dialog</a></li>
 <li><a href="#_configuration_window">Configuration window</a></li>
 <li><a href="#_textures_window">Textures window</a></li>
 <li><a href="#_sprites_window">Sprites window</a></li>
@@ -482,7 +483,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>When you are satisfied with the results you can export the animation as single frames or as one big spritesheet.</p>
 </div>
 <div class="paragraph">
-<p>SpookyGhost is still at an early stage of development. If you find any issue or bug please report it on: <a href="https://encelo.itch.io/spookyghost/community" class="bare">https://encelo.itch.io/spookyghost/community</a>.</p>
+<p>SpookyGhost is still at an early stage of development. If you find any issue or bug please report it on <a href="https://encelo.itch.io/spookyghost/community" class="bare">https://encelo.itch.io/spookyghost/community</a>.</p>
 </div>
 <hr>
 </div>
@@ -521,13 +522,8 @@ Another interesting functionality is the ability to modify the speed of change o
 <div class="paragraph">
 <p>Selecting <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">New</b></span> or pressing <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>N</kbd></span> will remove all animations, sprites, and textures.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="open_dialog.png" alt="Open Dialog">
-</div>
-</div>
 <div class="paragraph">
-<p>Selecting <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Open</b></span> or pressing <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>O</kbd></span> will open a dialog window to specify the project file to load.</p>
+<p>Selecting <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Open</b></span> or pressing <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>O</kbd></span> will open the <a href="#_file_dialog">File Dialog</a> window to specify the project file to load. The file dialog will only show files with the <code>lua</code> extension.</p>
 </div>
 <div class="paragraph">
 <p>Selecting <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Open Bundled</b></span> will open a list of projects to load.
@@ -537,13 +533,8 @@ They are distributed alongside the program as examples.</p>
 <p>Selecting <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Save</b></span> or pressing <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>S</kbd></span> will save the currently opened project.
 The menu item is available only if you have opened a project previously or if you have already saved it with a name.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="saveas_dialog.png" alt="Save as Dialog">
-</div>
-</div>
 <div class="paragraph">
-<p>Selecting <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Save as&#8230;&#8203;</b></span> will open a dialog window to specify the filename to use for saving.
+<p>Selecting <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Save as&#8230;&#8203;</b></span> will open the <a href="#_file_dialog">File Dialog</a> window to specify the filename to use for saving.
 If the <code>Allow Overwrite</code> checkbox is not enabled the program will not save if a file with the same name exists already.</p>
 </div>
 <div class="paragraph">
@@ -566,6 +557,41 @@ If the <code>Allow Overwrite</code> checkbox is not enabled the program will not
 <div class="paragraph">
 <p>Selecting <span class="menuseq"><b class="menu">Help</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">About</b></span> will open the about window with information about the program version.</p>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_file_dialog">File Dialog</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When you have to browse your filesystem to load or save files or choose directories, the program will present you with a <code>File Dialog</code> window.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="file_dialog_open.png" alt="Open a project file">
+</div>
+</div>
+<div class="paragraph">
+<p>The file dialog will show you all the entries inside a directory together with their types (file or directories), access permissions, sizes, and last modification dates. It will also color executables with a shade of green and filter files by extension if needed, for example when loading a project file or a texture.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="file_dialog_save.png" alt="Save a project file">
+</div>
+</div>
+<div class="paragraph">
+<p>When saving a project file the file dialog will be slightly different. It will have an <code>Allow Overwrite</code> checkbox to by-pass the check for an existing file and it will allow you to write in the text input widget and choose a name for the new file.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="file_dialog_dir.png" alt="Choose a destination directory">
+</div>
+</div>
+<div class="paragraph">
+<p>When deciding the destination directory for rendered frames the file dialog will allow directories to be selected.</p>
+</div>
+<div class="paragraph">
+<p>All kinds of file dialogs have a set of checkbox to show or hide file permissions, sizes, and dates plus a checkbox that when enabled will show hidden files or directories. As you can see in the last screenshot there is also a drop-down menu to select the entries sorting based on names, sizes or dates.</p>
 </div>
 </div>
 </div>
@@ -614,7 +640,7 @@ To apply the changes in this section you need to save the configuration and rest
 <p>One of the tabs in the top left corner of the interface is the <code>Textures</code> window.</p>
 </div>
 <div class="paragraph">
-<p>Before being able to create any sprite you need to load at least one texture from here. Just write the path of the file, either absolute or relative to the textures path you chose in the <a href="#_configuration_window">Configuration window</a>, and press the <code>Load</code> button.</p>
+<p>Before being able to create any sprite you need to load at least one texture from here. Clicking the <code>Load</code> button will open the <a href="#_file_dialog">File Dialog</a> window. The file dialog will only show files with the <code>png</code> extension.</p>
 </div>
 <div class="paragraph">
 <p>You can delete the selected texture by clicking the <code>Remove</code> button or pressing the <kbd>Delete</kbd> key while the cursor is over this window.</p>
@@ -694,7 +720,7 @@ Pressing <kbd>Space</kbd> will toggle the animation state between playing and pa
 </div>
 </div>
 <div class="paragraph">
-<p>Before pressing the <code>Add</code> button choose one of the four animation types.</p>
+<p>Before pressing the <code>Add</code> button, choose one of the four animation types.</p>
 </div>
 <div class="paragraph">
 <p>The <code>Parallel Group</code> and <code>Sequential Group</code> help to organize together multiple animations. They will be played together or one after another depending on the group type. An animation group can also be composed of sub-groups.</p>
@@ -779,7 +805,7 @@ You can use the <a href="#_texrect_window">TexRect window</a> to help you set up
 </div>
 </div>
 <div class="paragraph">
-<p>With the <code>Sprite</code> drop-down menu you can choose the sprite whose property you want to change.</p>
+<p>With the <code>Sprite</code> drop-down menu, you can choose the sprite whose property you want to change.</p>
 </div>
 <div class="paragraph">
 <p>Just beneath you can choose which property to animate:</p>
@@ -931,7 +957,10 @@ Functions can be combined by adding multiple grid animations that affect the sam
 <p>When you are happy with the results of your animation it is time to export it.</p>
 </div>
 <div class="paragraph">
-<p>You can choose a prefix for the files that are going to be created. Just specify a path and a filename without the extension.</p>
+<p>Clicking the button on top will open the <a href="#_file_dialog">File Dialog</a> window to choose a destination directory.</p>
+</div>
+<div class="paragraph">
+<p>You can then choose a prefix for the files that are going to be created. Just specify a filename without the extension.</p>
 </div>
 <div class="paragraph">
 <p>You can then choose to resize the canvas before saving its contents and then choose how many frames to generate per second.</p>

@@ -12,7 +12,7 @@ You can animate many different properties like the size, rotation, position, and
 
 When you are satisfied with the results you can export the animation as single frames or as one big spritesheet.
 
-SpookyGhost is still at an early stage of development. If you find any issue or bug please report it on: https://encelo.itch.io/spookyghost/community.
+SpookyGhost is still at an early stage of development. If you find any issue or bug please report it on https://encelo.itch.io/spookyghost/community.
 
 '''
 
@@ -36,8 +36,7 @@ image::file_menu.png[File Menu]
 
 Selecting menu:File[New] or pressing kbd:[Ctrl+N] will remove all animations, sprites, and textures.
 
-image::open_dialog.png[Open Dialog]
-Selecting menu:File[Open] or pressing kbd:[Ctrl+O] will open a dialog window to specify the project file to load.
+Selecting menu:File[Open] or pressing kbd:[Ctrl+O] will open the <<File Dialog>> window to specify the project file to load. The file dialog will only show files with the `lua` extension.
 
 Selecting menu:File[Open Bundled] will open a list of projects to load.
 They are distributed alongside the program as examples.
@@ -45,8 +44,7 @@ They are distributed alongside the program as examples.
 Selecting menu:File[Save] or pressing kbd:[Ctrl+S] will save the currently opened project.
 The menu item is available only if you have opened a project previously or if you have already saved it with a name.
 
-image::saveas_dialog.png[Save as Dialog]
-Selecting menu:File[Save as...] will open a dialog window to specify the filename to use for saving.
+Selecting menu:File[Save as...] will open the <<File Dialog>> window to specify the filename to use for saving.
 If the `Allow Overwrite` checkbox is not enabled the program will not save if a file with the same name exists already.
 
 Selecting menu:File[Configuration] will open the configuration window.
@@ -59,6 +57,24 @@ image::help_menu.png[Help Menu]
 Selecting menu:Help[Documentation] or pressing kbd:[F1] will open this documentation file.
 
 Selecting menu:Help[About] will open the about window with information about the program version.
+
+== File Dialog
+
+When you have to browse your filesystem to load or save files or choose directories, the program will present you with a `File Dialog` window.
+
+image::file_dialog_open.png[Open a project file]
+
+The file dialog will show you all the entries inside a directory together with their types (file or directories), access permissions, sizes, and last modification dates. It will also color executables with a shade of green and filter files by extension if needed, for example when loading a project file or a texture.
+
+image::file_dialog_save.png[Save a project file]
+
+When saving a project file the file dialog will be slightly different. It will have an `Allow Overwrite` checkbox to by-pass the check for an existing file and it will allow you to write in the text input widget and choose a name for the new file.
+
+image::file_dialog_dir.png[Choose a destination directory]
+
+When deciding the destination directory for rendered frames the file dialog will allow directories to be selected.
+
+All kinds of file dialogs have a set of checkbox to show or hide file permissions, sizes, and dates plus a checkbox that when enabled will show hidden files or directories. As you can see in the last screenshot there is also a drop-down menu to select the entries sorting based on names, sizes or dates.
 
 == Configuration window
 
@@ -86,7 +102,7 @@ image::textures_window.png[Textures window]
 
 One of the tabs in the top left corner of the interface is the `Textures` window.
 
-Before being able to create any sprite you need to load at least one texture from here. Just write the path of the file, either absolute or relative to the textures path you chose in the <<Configuration window>>, and press the `Load` button.
+Before being able to create any sprite you need to load at least one texture from here. Clicking the `Load` button will open the <<File Dialog>> window. The file dialog will only show files with the `png` extension.
 
 You can delete the selected texture by clicking the `Remove` button or pressing the kbd:[Delete] key while the cursor is over this window.
 
@@ -121,7 +137,7 @@ TIP: Pressing kbd:[Space] will toggle the animation state between playing and pa
 
 image::animation_types.png[Animation types]
 
-Before pressing the `Add` button choose one of the four animation types.
+Before pressing the `Add` button, choose one of the four animation types.
 
 The `Parallel Group` and `Sequential Group` help to organize together multiple animations. They will be played together or one after another depending on the group type. An animation group can also be composed of sub-groups.
 
@@ -155,7 +171,7 @@ For every type of animation, including a group one, you will be able to change i
 
 image::property_animation_window.png[Property animation window]
 
-With the `Sprite` drop-down menu you can choose the sprite whose property you want to change.
+With the `Sprite` drop-down menu, you can choose the sprite whose property you want to change.
 
 Just beneath you can choose which property to animate:
 
@@ -221,7 +237,9 @@ image::render_window.png[Render window]
 
 When you are happy with the results of your animation it is time to export it.
 
-You can choose a prefix for the files that are going to be created. Just specify a path and a filename without the extension.
+Clicking the button on top will open the <<File Dialog>> window to choose a destination directory.
+
+You can then choose a prefix for the files that are going to be created. Just specify a filename without the extension.
 
 You can then choose to resize the canvas before saving its contents and then choose how many frames to generate per second.
 
