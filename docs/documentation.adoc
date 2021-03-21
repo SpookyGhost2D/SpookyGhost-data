@@ -147,6 +147,12 @@ Before pressing the btn:[Add] button, choose one of the four animation types.
 
 The `Parallel Group` and `Sequential Group` help to organize together multiple animations. They will be played together or one after another depending on the group type. An animation group can also be composed of sub-groups.
 
+[TIP]
+====
+image::drag_drop_animations.png[Drag and Drop Animations]
+You can change the parent and children relationships or reorder the list by drag and drop.
+====
+
 TIP: The sprite icon at the end of an entry indicates that the animation is assigned to the currently selected sprite. When you select a different animation its assigned sprite will be automatically selected.
 
 NOTE: The `Sequential Group` type is currently disabled until some related bugs are fixed.
