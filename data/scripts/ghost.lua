@@ -25,7 +25,6 @@ sprites =
 		scale_factor = {x = 0.985342, y = 1.000000},
 		anchor_point = {x = 0.000000, y = 0.000000},
 		color = {r = 1.000000, g = 1.000000, b = 1.000000, a = 1.000000},
-		grid_anchor_point = {x = 0.000000, y = 38.000000},
 		texrect = {x = 0, y = 0, w = 96, h = 96},
 		flip_x = false,
 		flip_y = false,
@@ -36,13 +35,8 @@ sprites =
 animations =
 {
 	{
-		name = "Root Animation",
-		parent = -1,
-		type = "parallel_group",
-	},
-	{
 		name = "",
-		parent = 0,
+		parent = -1,
 		type = "grid_animation",
 		sprite = 0,
 		speed = 1.000000,
@@ -75,7 +69,7 @@ animations =
 	},
 	{
 		name = "",
-		parent = 0,
+		parent = -1,
 		type = "property_animation",
 		sprite = 0,
 		speed = 1.000000,
@@ -92,4 +86,3 @@ animations =
 		property_name = "Scale X",
 	},
 }
-
