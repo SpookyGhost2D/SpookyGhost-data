@@ -141,6 +141,8 @@ You can delete the selected animation also by pressing the kbd:[Delete] key whil
 
 With the btn:[Clone] button it is possible to create a copy of the selected animation or animation group.
 
+At the beginning of each entry, there is a checkbox you can use to make the animation enabled or not. A disabled animation will not be played by the parent group that contains it.
+
 You can find an icon about the current animation state at the end of an animation entry.
 
 TIP: Pressing kbd:[Space] will toggle the animation state between playing and paused.
@@ -314,6 +316,9 @@ image::status_bar.png[Status bar]
 At the bottom of the interface, you will find the status bar. It will show error and information messages as well as the mouse coordinates during some operations.
 
 == Changelog
+
+=== 06 April 2021
+* *[NEW]* Add a checkbox to enable or disable an animation
 
 === 02 April 2021
 * *[NEW]* Add clone buttons for sprites and animations

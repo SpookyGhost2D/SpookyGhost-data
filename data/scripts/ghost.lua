@@ -1,4 +1,4 @@
-version = 1
+version = 2
 
 canvas =
 {
@@ -22,7 +22,7 @@ sprites =
 		visible = true,
 		position = {x = 48.000000, y = 48.000000},
 		rotation = 0.000000,
-		scale_factor = {x = 0.985342, y = 1.000000},
+		scale_factor = {x = 1.000000, y = 1.000000},
 		anchor_point = {x = 0.000000, y = 0.000000},
 		color = {r = 1.000000, g = 1.000000, b = 1.000000, a = 1.000000},
 		texrect = {x = 0, y = 0, w = 96, h = 96},
@@ -36,6 +36,7 @@ animations =
 {
 	{
 		name = "",
+		enabled = true,
 		parent = -1,
 		type = "grid_animation",
 		sprite = 0,
@@ -69,6 +70,7 @@ animations =
 	},
 	{
 		name = "",
+		enabled = true,
 		parent = -1,
 		type = "property_animation",
 		sprite = 0,

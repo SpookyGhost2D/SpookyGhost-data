@@ -1,4 +1,4 @@
-version = 1
+version = 2
 
 canvas =
 {
@@ -126,6 +126,7 @@ animations =
 {
 	{
 		name = "",
+		enabled = true,
 		parent = -1,
 		type = "grid_animation",
 		sprite = 3,
@@ -159,6 +160,7 @@ animations =
 	},
 	{
 		name = "",
+		enabled = true,
 		parent = -1,
 		type = "grid_animation",
 		sprite = 5,
@@ -192,6 +194,7 @@ animations =
 	},
 	{
 		name = "",
+		enabled = true,
 		parent = -1,
 		type = "grid_animation",
 		sprite = 6,
@@ -225,6 +228,7 @@ animations =
 	},
 	{
 		name = "",
+		enabled = true,
 		parent = -1,
 		type = "grid_animation",
 		sprite = 0,
@@ -258,6 +262,7 @@ animations =
 	},
 	{
 		name = "",
+		enabled = true,
 		parent = -1,
 		type = "property_animation",
 		sprite = 6,
