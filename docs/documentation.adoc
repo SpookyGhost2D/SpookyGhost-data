@@ -25,7 +25,7 @@ SpookyGhost interface is made with https://github.com/ocornut/imgui[ImGui]. You 
 
 You can drag windows around and anchor them into any corner, change the split space between them or tab them one next to another.
 
-If you press kbd:[Ctrl] while clicking on a slider or drag box you can input value as text.
+If you press kbd:[Ctrl] while clicking on a slider or a drag box you can input the value with the keyboard.
 Another interesting functionality is the ability to modify the speed of change of drag boxes by pressing kbd:[Shift] or kbd:[Alt]. With the first key, the change will be faster while with the second one it will be slower. Try it now while changing a texture rectangle in the <<Sprite window>>.
 
 You can use the usual kbd:[Ctrl + X], kbd:[Ctrl + C], and kbd:[Ctrl + V] to cut, copy, and paste text in a text input widget.
@@ -39,7 +39,7 @@ image::file_menu.png[File Menu]
 
 Selecting menu:File[New] or pressing kbd:[Ctrl+N] will remove all animations, sprites, and textures.
 
-Selecting menu:File[Open] or pressing kbd:[Ctrl+O] will open the <<File Dialog>> window to specify the project file to load. The file dialog will only show files with the `lua` extension.
+Selecting menu:File[Open] or pressing kbd:[Ctrl+O] will open the <<File dialog>> window to specify the project file to load. The file dialog will only show files with the `lua` extension.
 
 Selecting menu:File[Open Bundled] will open a list of projects to load.
 They are distributed alongside the program as examples.
@@ -47,7 +47,7 @@ They are distributed alongside the program as examples.
 Selecting menu:File[Save] or pressing kbd:[Ctrl+S] will save the currently opened project.
 The menu item is available only if you have opened a project previously or if you have already saved it with a name.
 
-Selecting menu:File[Save as...] will open the <<File Dialog>> window to specify the filename to use for saving.
+Selecting menu:File[Save as...] will open the <<File dialog>> window to specify the filename to use for saving.
 If the `Allow Overwrite` checkbox is not enabled the program will not save if a file with the same name exists already.
 
 Selecting menu:File[Configuration] will open the configuration window.
@@ -59,11 +59,13 @@ image::help_menu.png[Help Menu]
 
 Selecting menu:Help[Documentation] or pressing kbd:[F1] will open this documentation file.
 
+Selecting menu:Help[Tips] will open the <<Tips window>>.
+
 Selecting menu:Help[About] will open the about window with information about the program version.
 
-== File Dialog
+== File dialog
 
-When you have to browse your filesystem to load or save files or choose directories, the program will present you with a `File Dialog` window.
+When you have to browse your filesystem to load or save files or choose directories, the program will present you with a `file dialog` window.
 
 image::file_dialog_open.png[Open a project file]
 
@@ -78,6 +80,17 @@ image::file_dialog_dir.png[Choose a destination directory]
 When deciding the destination directory for rendered frames the file dialog will allow directories to be selected.
 
 All kinds of file dialogs have a set of checkbox to show or hide file permissions, sizes, and dates plus a checkbox that when enabled will show hidden files or directories. As you can see in the last screenshot there is also a drop-down menu to select the entries sorting based on names, sizes or dates.
+
+== Tips window
+
+image::tips_window.png[Tips window]
+
+The `Tips` window will show you a random tip about the program everytime you start it.
+
+You can read to the previous or the next tip with the btn:[Prev] and btn:[Next] buttons.
+
+There is also a checkbox to enable or disable the default behavior of automatically showing this window on start up.
+The same checkbox is also present in the <<Configuration window>>.
 
 == Configuration window
 
@@ -95,7 +108,9 @@ You can choose the initial canvas size that will be used when the program starts
 
 After that, you can choose the name of a project file that will be loaded the first time you start the program and optionally play it right away.
 
-The last three text input widgets will let you choose a path for textures, sprites, and scripts that will be concatenated if you specify a relative path when loading.
+The three text input widgets will let you choose a path for textures, sprites, and scripts that will be concatenated if you specify a relative path when loading.
+
+With the last checkbox you can enable or disable the automatic showing of the <<Tips window>> when the program starts up.
 
 Upon closing the window the configuration will be saved in the `config.lua` file in the same directory as the program executable.
 
@@ -105,7 +120,7 @@ image::textures_window.png[Textures window]
 
 One of the tabs in the top left corner of the interface is the `Textures` window.
 
-Before being able to create any sprite you need to load at least one texture from here. Clicking the btn:[Load] button will open the <<File Dialog>> window. The file dialog will only show files with the `png` extension.
+Before being able to create any sprite you need to load at least one texture from here. Clicking the btn:[Load] button will open the <<File dialog>> window. The file dialog will only show files with the `png` extension.
 
 You can delete the selected texture by clicking the btn:[Remove] button or pressing the kbd:[Delete] key while the cursor is over this window.
 
@@ -166,7 +181,7 @@ At the beginning of each entry, there is a checkbox you can use to make the anim
 
 You can find an icon about the current animation state at the end of an animation entry.
 
-TIP: Pressing kbd:[Space] will toggle the animation state between playing and paused.
+TIP: Pressing kbd:[Space] when hovering on the Canvas window will toggle the animation state between playing and paused.
 
 image::animation_types.png[Animation types]
 
@@ -299,7 +314,7 @@ image::render_window.png[Render window]
 
 When you are happy with the results of your animation it is time to export it.
 
-Clicking the button on top will open the <<File Dialog>> window to choose a destination directory.
+Clicking the button on top will open the <<File dialog>> window to choose a destination directory.
 
 You can then choose a prefix for the files that are going to be created. Just specify a filename without the extension.
 
@@ -329,7 +344,7 @@ When you change the background color don't forget to change the alpha opacity or
 
 When the btn:[Borders] checkbox is enabled a colored rectangle will show the current size of the canvas.
 
-TIP: Pressing the arrow keys while the cursor is on the canvas will move the selected sprite in one pixel increments for precise positioning.
+TIP: Pressing the arrow keys while the cursor is on the Canvas window will move the selected sprite in one pixel increments for precise positioning.
 
 image::canvas_window_anchor.png[Canvas window anchor]
 
@@ -832,6 +847,9 @@ set_vertices_v(vertices_v)
 ----
 
 == Changelog
+
+=== 06 May 2021
+* *[NEW]* Add the tips window: by default it will show up when the program starts
 
 === 02 May 2021
 * *[FIX]* Reset the sprite grid when removing a grid or a script animation assigned to that sprite

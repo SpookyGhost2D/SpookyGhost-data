@@ -665,7 +665,8 @@ pre.rouge {
 <li><a href="#_help_menu">Help menu</a></li>
 </ul>
 </li>
-<li><a href="#_file_dialog">File Dialog</a></li>
+<li><a href="#_file_dialog">File dialog</a></li>
+<li><a href="#_tips_window">Tips window</a></li>
 <li><a href="#_configuration_window">Configuration window</a></li>
 <li><a href="#_textures_window">Textures window</a></li>
 <li><a href="#_sprites_window">Sprites window</a></li>
@@ -686,6 +687,7 @@ pre.rouge {
 <li><a href="#_lua_animation_api">Lua animation API</a></li>
 <li><a href="#_changelog">Changelog</a>
 <ul class="sectlevel2">
+<li><a href="#_06_may_2021">06 May 2021</a></li>
 <li><a href="#_02_may_2021">02 May 2021</a></li>
 <li><a href="#_25_april_2021">25 April 2021</a></li>
 <li><a href="#_06_april_2021">06 April 2021</a></li>
@@ -730,7 +732,7 @@ pre.rouge {
 <p>You can drag windows around and anchor them into any corner, change the split space between them or tab them one next to another.</p>
 </div>
 <div class="paragraph">
-<p>If you press <kbd>Ctrl</kbd> while clicking on a slider or drag box you can input value as text.
+<p>If you press <kbd>Ctrl</kbd> while clicking on a slider or a drag box you can input the value with the keyboard.
 Another interesting functionality is the ability to modify the speed of change of drag boxes by pressing <kbd>Shift</kbd> or <kbd>Alt</kbd>. With the first key, the change will be faster while with the second one it will be slower. Try it now while changing a texture rectangle in the <a href="#_sprite_window">Sprite window</a>.</p>
 </div>
 <div class="paragraph">
@@ -755,7 +757,7 @@ Another interesting functionality is the ability to modify the speed of change o
 <p>Selecting <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">New</b></span> or pressing <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>N</kbd></span> will remove all animations, sprites, and textures.</p>
 </div>
 <div class="paragraph">
-<p>Selecting <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Open</b></span> or pressing <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>O</kbd></span> will open the <a href="#_file_dialog">File Dialog</a> window to specify the project file to load. The file dialog will only show files with the <code>lua</code> extension.</p>
+<p>Selecting <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Open</b></span> or pressing <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>O</kbd></span> will open the <a href="#_file_dialog">File dialog</a> window to specify the project file to load. The file dialog will only show files with the <code>lua</code> extension.</p>
 </div>
 <div class="paragraph">
 <p>Selecting <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Open Bundled</b></span> will open a list of projects to load.
@@ -766,7 +768,7 @@ They are distributed alongside the program as examples.</p>
 The menu item is available only if you have opened a project previously or if you have already saved it with a name.</p>
 </div>
 <div class="paragraph">
-<p>Selecting <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Save as&#8230;&#8203;</b></span> will open the <a href="#_file_dialog">File Dialog</a> window to specify the filename to use for saving.
+<p>Selecting <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Save as&#8230;&#8203;</b></span> will open the <a href="#_file_dialog">File dialog</a> window to specify the filename to use for saving.
 If the <code>Allow Overwrite</code> checkbox is not enabled the program will not save if a file with the same name exists already.</p>
 </div>
 <div class="paragraph">
@@ -787,16 +789,19 @@ If the <code>Allow Overwrite</code> checkbox is not enabled the program will not
 <p>Selecting <span class="menuseq"><b class="menu">Help</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Documentation</b></span> or pressing <kbd>F1</kbd> will open this documentation file.</p>
 </div>
 <div class="paragraph">
+<p>Selecting <span class="menuseq"><b class="menu">Help</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Tips</b></span> will open the <a href="#_tips_window">Tips window</a>.</p>
+</div>
+<div class="paragraph">
 <p>Selecting <span class="menuseq"><b class="menu">Help</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">About</b></span> will open the about window with information about the program version.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_file_dialog">File Dialog</h2>
+<h2 id="_file_dialog">File dialog</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>When you have to browse your filesystem to load or save files or choose directories, the program will present you with a <code>File Dialog</code> window.</p>
+<p>When you have to browse your filesystem to load or save files or choose directories, the program will present you with a <code>file dialog</code> window.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -828,6 +833,26 @@ If the <code>Allow Overwrite</code> checkbox is not enabled the program will not
 </div>
 </div>
 <div class="sect1">
+<h2 id="_tips_window">Tips window</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="tips_window.png" alt="Tips window">
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>Tips</code> window will show you a random tip about the program everytime you start it.</p>
+</div>
+<div class="paragraph">
+<p>You can read to the previous or the next tip with the <b class="button">Prev</b> and <b class="button">Next</b> buttons.</p>
+</div>
+<div class="paragraph">
+<p>There is also a checkbox to enable or disable the default behavior of automatically showing this window on start up.
+The same checkbox is also present in the <a href="#_configuration_window">Configuration window</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_configuration_window">Configuration window</h2>
 <div class="sectionbody">
 <div class="imageblock">
@@ -853,7 +878,10 @@ To apply the changes in this section you need to save the configuration and rest
 <p>After that, you can choose the name of a project file that will be loaded the first time you start the program and optionally play it right away.</p>
 </div>
 <div class="paragraph">
-<p>The last three text input widgets will let you choose a path for textures, sprites, and scripts that will be concatenated if you specify a relative path when loading.</p>
+<p>The three text input widgets will let you choose a path for textures, sprites, and scripts that will be concatenated if you specify a relative path when loading.</p>
+</div>
+<div class="paragraph">
+<p>With the last checkbox you can enable or disable the automatic showing of the <a href="#_tips_window">Tips window</a> when the program starts up.</p>
 </div>
 <div class="paragraph">
 <p>Upon closing the window the configuration will be saved in the <code>config.lua</code> file in the same directory as the program executable.</p>
@@ -872,7 +900,7 @@ To apply the changes in this section you need to save the configuration and rest
 <p>One of the tabs in the top left corner of the interface is the <code>Textures</code> window.</p>
 </div>
 <div class="paragraph">
-<p>Before being able to create any sprite you need to load at least one texture from here. Clicking the <b class="button">Load</b> button will open the <a href="#_file_dialog">File Dialog</a> window. The file dialog will only show files with the <code>png</code> extension.</p>
+<p>Before being able to create any sprite you need to load at least one texture from here. Clicking the <b class="button">Load</b> button will open the <a href="#_file_dialog">File dialog</a> window. The file dialog will only show files with the <code>png</code> extension.</p>
 </div>
 <div class="paragraph">
 <p>You can delete the selected texture by clicking the <b class="button">Remove</b> button or pressing the <kbd>Delete</kbd> key while the cursor is over this window.</p>
@@ -1010,7 +1038,7 @@ You can reload a script also by pressing <kbd>F5</kbd>.
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Pressing <kbd>Space</kbd> will toggle the animation state between playing and paused.
+Pressing <kbd>Space</kbd> when hovering on the Canvas window will toggle the animation state between playing and paused.
 </td>
 </tr>
 </table>
@@ -1305,7 +1333,7 @@ This option is useful to show a preview of how the script animation is affecting
 <p>When you are happy with the results of your animation it is time to export it.</p>
 </div>
 <div class="paragraph">
-<p>Clicking the button on top will open the <a href="#_file_dialog">File Dialog</a> window to choose a destination directory.</p>
+<p>Clicking the button on top will open the <a href="#_file_dialog">File dialog</a> window to choose a destination directory.</p>
 </div>
 <div class="paragraph">
 <p>You can then choose a prefix for the files that are going to be created. Just specify a filename without the extension.</p>
@@ -1371,7 +1399,7 @@ You can change the canvas zoom level by hovering on the Canvas window, pressing 
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Pressing the arrow keys while the cursor is on the canvas will move the selected sprite in one pixel increments for precise positioning.
+Pressing the arrow keys while the cursor is on the Canvas window will move the selected sprite in one pixel increments for precise positioning.
 </td>
 </tr>
 </table>
@@ -1869,6 +1897,16 @@ It can be one of the members of the <code>blending_preset</code> table: <code>DI
 <div class="sect1">
 <h2 id="_changelog">Changelog</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_06_may_2021">06 May 2021</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>[NEW]</strong> Add the tips window: by default it will show up when the program starts</p>
+</li>
+</ul>
+</div>
+</div>
 <div class="sect2">
 <h3 id="_02_may_2021">02 May 2021</h3>
 <div class="ulist">
