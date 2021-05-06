@@ -5,10 +5,13 @@
 :icons: font
 :favicon:
 :experimental:
+:source-highlighter: rouge
 
 SpookyGhost is a procedural animation tool for sprites made with the https://ncine.github.io/[nCine].
 
 You can animate many different properties like the size, rotation, position, and color of your sprites, as well as deform their shape.
+
+If you want you can use Lua to write scripts for custom made animations.
 
 When you are satisfied with the results you can export the animation as single frames or as one big spritesheet.
 
@@ -92,7 +95,7 @@ You can choose the initial canvas size that will be used when the program starts
 
 After that, you can choose the name of a project file that will be loaded the first time you start the program and optionally play it right away.
 
-The last two text input widgets will let you choose a path for textures and sprites that will be concatenated if you specify a relative path when loading.
+The last three text input widgets will let you choose a path for textures, sprites, and scripts that will be concatenated if you specify a relative path when loading.
 
 Upon closing the window the configuration will be saved in the `config.lua` file in the same directory as the program executable.
 
@@ -128,6 +131,24 @@ You can reorder the list with the btn:[Move Up] and btn:[Move Down] buttons or b
 ====
 
 TIP: The texture icon at the end of an entry indicates that the sprite is using the currently selected texture.
+
+== Scripts window
+
+image::scripts_window.png[Scripts window]
+
+Next to the <<Sprites window>> tab, you will find the `Scripts` window.
+You can use it to btn:[Load] and btn:[Remove] Lua scripts as well as btn:[Reload] them when they have changed on disk.
+
+You can also delete the selected script by pressing the kbd:[Delete] key while the cursor is over this window.
+
+At the end of each entry you will find either a checkmark or a cross icon.
+The first one tells you that there are no syntax errors and the script is able to run while the second indicates the opposite.
+
+image::script_error.png[Script error]
+
+In case of errors that prevent a script from running you can hover on the entry to show a tooltip with the error message.
+
+TIP: You can reload a script also by pressing kbd:[F5].
 
 == Animations window
 
@@ -202,7 +223,8 @@ Just beneath you can choose which property to animate:
 * Opacity
 * Color channels
 
-Next to the property name there is a checkbox with a lock icon. When it is enabled the curve value is applied to the property even if the animation is currently stopped or paused. This option is useful to show a preview of the sprite affected by the property animation.
+Next to the property name there is a checkbox with a lock icon. When it is enabled the curve value is applied to the property even if the animation is currently stopped or paused.
+This option is useful to show a preview of how the property animation is affecting the sprite given the current curve value.
 
 You can change the easing curve of the time parameter between a list of curves like:
 
@@ -248,13 +270,29 @@ There are five different grid functions to choose from:
 * Skew Y
 * Zoom
 
-Next to the grid function name there is a checkbox with a lock icon. When it is enabled the curve value is applied to the function even if the animation is currently stopped or paused. This option is useful to show a preview of the sprite affected by the grid animation.
+Next to the grid function name there is a checkbox with a lock icon. When it is enabled the curve value is applied to the function even if the animation is currently stopped or paused.
+This option is useful to show a preview of how the grid animation is affecting the sprite given the current curve value.
 
 TIP: Functions can be combined by adding multiple grid animations that affect the same sprite. For example, you can add a `Wave X` and a `Wave Y` function to make the sprite wave in both directions.
 
 Depending on which function you choose a different list of parameters will appear. They will allow you to tweak the results of the grid deformation.
 
 Some grid functions have an anchor related parameter, it can be edited with the mouse in the <<Canvas window>>.
+
+=== Script animation window
+
+image::script_animation_window.png[Script animation window]
+
+A script animation runs a particular Lua script to perform a custom animation.
+
+The interface is very similar to a <<Property animation>> or a <<Grid animation>>.
+
+You can choose the sprite to animate as well as the script you want to use among the ones currently loaded.
+
+Similarly to the <<Scripts window>> a checkmark or a cross icon will tell you if a script is able to run.
+
+Next to the script name there is a checkbox with a lock icon. When it is enabled the script will be invoked even if the animation is currently stopped or paused.
+This option is useful to show a preview of how the script animation is affecting the sprite given the current curve value.
 
 == Render window
 image::render_window.png[Render window]
@@ -315,7 +353,494 @@ image::status_bar.png[Status bar]
 
 At the bottom of the interface, you will find the status bar. It will show error and information messages as well as the mouse coordinates during some operations.
 
+== Lua animation API
+
+[discrete]
+=== get_canvas_width() / get_canvas_height()
+
+Returns the canvas width or height in pixels.
+
+[source,lua]
+----
+local canvas_width = get_canvas_width()
+local canvas_height = get_canvas_height()
+print("canvas size: " .. canvas_width .. "x" .. canvas_height)
+----
+
+[discrete]
+=== get_texture_width() /  get_texture_height()
+
+Returns the sprite texture width or height in pixels.
+
+[source,lua]
+----
+local texture_width = get_texture_width()
+local texture_height = get_texture_height()
+print("texture size: " .. texture_width .. "x" .. texture_height)
+----
+
+[discrete]
+=== get_width() / get_height()
+
+Returns the sprite width or height  in pixels.
+
+[source,lua]
+----
+local width = get_width()
+local height = get_height()
+print("sprite size: " .. width .. "x" .. height)
+----
+
+[discrete]
+=== get_position()
+
+Returns the position of the sprite in pixels as a table with the `x` and the `y` fields.
+
+[source,lua]
+----
+local position = get_position()
+print("position x: " .. position.x .. " y: " .. position.y)
+----
+
+[discrete]
+=== get_x() / get_y()
+
+Returns the `x` or `y` component of the position of the sprite in pixels.
+
+[source,lua]
+----
+local x = get_x()
+local y = get_y()
+print("position x: " .. x .. " y: " .. y)
+----
+
+[discrete]
+=== get_rotation()
+
+Returns the rotation of the sprite in degrees.
+
+[source,lua]
+----
+local rotation = get_rotation()
+print("rotation: " .. rotation)
+----
+
+[discrete]
+=== get_scale()
+
+Returns the scale of the sprite as a table with the `x` and the `y` fields.
+
+[source,lua]
+----
+local scale = get_scale()
+print("scale x: " .. scale.x .. " y: " .. scale.y)
+----
+
+[discrete]
+=== get_scale_x() / get_scale_y()
+
+Returns the `x` or `y` component of the scale of the sprite.
+
+[source,lua]
+----
+local scale_x = get_scale_x()
+local scale_y = get_scale_y()
+print("scale x: " .. scale_x .. " y: " .. scale_y)
+----
+
+[discrete]
+=== get_anchor()
+
+Returns the anchor point of the sprite in pixels as a table with the `x` and the `y` fields.
+
+[source,lua]
+----
+local anchor = get_anchor()
+print("anchor x: " .. anchor.x .. " y: " .. anchor.y)
+----
+
+[discrete]
+=== get_anchor_x() / get_anchor_y()
+
+Returns the `x` or `y` component of the anchor point of the sprite.
+
+[source,lua]
+----
+local anchor_x = get_anchor_x()
+local anchor_y = get_anchor_y()
+print("anchor x: " .. anchor_x .. " y: " .. anchor_y)
+----
+
+[discrete]
+=== get_color()
+
+Returns the color of the sprite as a table with the `r`, `g`, `b` and `a` fields for the normalized values of the red, green, blue and alpha channels.
+
+[source,lua]
+----
+local color = get_color()
+print(string.format("color: #%X%X%X%X", math.floor(color.r * 255 + 0.5), math.floor(color.g * 255 + 0.5), math.floor(color.b * 255 + 0.5), math.floor(color.a * 255 + 0.5)))
+----
+
+[discrete]
+=== get_texrect()
+
+Returns the texture rectangle of the sprite as a table with the `x`, `y`, `w` and `h` fields for the position, the width, and the height of the rectangle.
+
+[source,lua]
+----
+local rect = get_texrect()
+print("texrect x: " .. rect.x .. " y: " .. rect.y .. " w: " .. rect.w .. " h: " .. rect.h)
+----
+
+[discrete]
+=== get_flipped_x() / get_flipped_y()
+
+Returns the value of the horizontal or vertical flipping flag of the sprite.
+
+[source,lua]
+----
+local is_hflipped = get_flipped_x()
+local is_vflipped = get_flipped_y()
+print("flipped h: " .. (is_hflipped and 'true' or 'false') .. " v: " .. (is_vflipped and 'true' or 'false'))
+----
+
+[discrete]
+=== get_blending()
+
+Returns the current blending preset value of the sprite.
+It can be one of the members of the `blending_preset` table: `DISABLED`, `ALPHA`, `PREMULTIPLIED_ALPHA`, `ADDITIVE`, or `MULTIPLY`.
+
+[source,lua]
+----
+local blending = get_blending()
+
+local blending_string = "UNKNOWN"
+if blending == blending_preset.DISABLED then
+	blending_string = "DISABLED"
+elseif blending == blending_preset.ALPHA then
+	blending_string = "ALPHA"
+elseif blending == blending_preset.PREMULTIPLIED_ALPHA then
+	blending_string = "PREMULTIPLIED_ALPHA"
+elseif blending == blending_preset.ADDITIVE then
+	blending_string = "ADDITIVE"
+elseif blending == blending_preset.MULTIPLY then
+	blending_string = "MULTIPLY"
+end
+
+print("blending: " .. blending_string)
+----
+
+[discrete]
+=== get_num_vertices()
+
+Returns the number of vertices of the sprite grid.
+
+[source,lua]
+----
+local num_vertices = get_num_vertices()
+print("number of vertices: " .. num_vertices)
+----
+
+[discrete]
+=== get_vertices()
+
+Returns all the vertices of the sprite grid as an array of tables with the `x`, `y`, `u`, and `v` fields for the positions and the texture coordinates.
+
+[source,lua]
+----
+local vertices = get_vertices()
+-- Print the position and texture coordinates of the first four vertices
+for i = 1, 4 do
+	print(string.format("vertex #%d x: %f y: %f u: %f v: %f", i, vertices[i].x, vertices[i].y, vertices[i].u, vertices[i].v))
+end
+----
+
+[discrete]
+=== get_vertices_xy()
+
+Returns all the vertices of the sprite grid as an array of tables with the `x` and `y` fields for the positions.
+
+[source,lua]
+----
+local vertices_xy = get_vertices_xy()
+-- Print the position of the first four vertices
+for i = 1, 4 do
+	print(string.format("vertex #%d x: %f y: %f", i, vertices_xy[i].x, vertices_xy[i].y))
+end
+----
+
+[discrete]
+=== get_vertices_uv()
+
+Returns all the vertices of the sprite grid as an array of tables with the `u` and `v` fields for the texture coordinates.
+
+[source,lua]
+----
+local vertices_uv = get_vertices_uv()
+-- Print the texture coordinates of the first four vertices
+for i = 1, 4 do
+	print(string.format("vertex #%d u: %f v: %f", i, vertices_uv[i].u, vertices_uv[i].v))
+end
+----
+
+[discrete]
+=== get_vertices_x() / get_vertices_y() / get_vertices_u() / get_vertices_v()
+
+Returns all the vertices of the sprite grid as an array of `x`, `y`, `u`, or `v` components of the positions or texture coordinates.
+
+[source,lua]
+----
+local vertices_x = get_vertices_x()
+local vertices_y = get_vertices_y()
+local vertices_u = get_vertices_u()
+local vertices_v = get_vertices_v()
+-- Print the texture coordinates of the first four vertices
+for i = 1, 4 do
+	print(string.format("vertex #%d x: %f y: %f u: %f v: %f", i, vertices_x[i], vertices_y[i], vertices_u[i], vertices_v[i]))
+end
+----
+
+[discrete]
+=== set_position()
+
+Sets the position of the sprite in pixels through a table with the `x` and the `y` fields.
+
+[source,lua]
+----
+new_position = { x = 0, y = 0 }
+set_position(new_position)
+----
+
+[discrete]
+=== set_x() / set_y()
+
+Sets the `x` or `y` component of the position of the sprite in pixels.
+
+[source,lua]
+----
+set_x(0)
+set_y(0)
+----
+
+[discrete]
+=== set_rotation()
+
+Sets the rotation of the sprite in degrees.
+
+[source,lua]
+----
+set_rotation(0)
+----
+
+[discrete]
+=== set_scale()
+
+Sets the scale of the sprite through a table with the `x` and the `y` fields.
+
+[source,lua]
+----
+new_scale = { x = 1, y = 1 }
+set_scale(new_scale)
+----
+
+[discrete]
+=== set_scale_x() / set_scale_y()
+
+Sets the `x` or `y` component of the scale of the sprite.
+
+[source,lua]
+----
+set_scale_x(1)
+set_scale_y(1)
+----
+
+[discrete]
+=== set_anchor()
+
+Sets the anchor point of the sprite in pixels with one rgument: as a table with the `x` and the `y` fields.
+
+[source,lua]
+----
+new_anchor = { x = 0, y = 0 }
+set_anchor(new_anchor)
+----
+
+[discrete]
+=== set_anchor_x() / set_anchor_y()
+
+Sets the `x` or `y` component of the anchor point of the sprite.
+
+[source,lua]
+----
+set_anchor_x(0)
+set_anchor_y(0)
+----
+
+[discrete]
+=== set_color()
+
+Sets the color of the sprite through a table with the `r`, `g`, `b` and `a` fields for the normalized values of the red, green, blue and alpha channels.
+
+[source,lua]
+----
+new_color = { r = 1.0, g = 1.0, b = 1.0, a = 1.0}
+set_color(new_color)
+----
+
+[discrete]
+=== set_texrect()
+
+Sets the texture rectangle of the sprite through a table with the `x`, `y`, `w` and `h` fields for the position, the width, and the height of the rectangle.
+
+[source,lua]
+----
+new_rect = { x = 0, y = 0, w = get_texture_width(), h = get_texture_height()}
+set_texrect(new_rect)
+----
+
+[discrete]
+=== set_flipped_x() / set_flipped_y()
+
+Sets the value of the horizontal or vertical flipping flag of the sprite.
+
+[source,lua]
+----
+set_flipped_x(false)
+set_flipped_y(false)
+----
+
+[discrete]
+=== set_blending()
+
+Sets the blending preset value of the sprite.
+It can be one of the members of the `blending_preset` table: `DISABLED`, `ALPHA`, `PREMULTIPLIED_ALPHA`, `ADDITIVE`, or `MULTIPLY`.
+
+[source,lua]
+----
+set_blending(blending_preset.ALPHA)
+----
+
+[discrete]
+=== set_vertices()
+
+Sets all the vertices of the sprite grid with one argument: an array of tables with the `x`, `y`, `u`, and `v` fields for the positions and the texture coordinates.
+
+[source,lua]
+----
+local vertices = get_vertices()
+
+-- Change the position and texture coordinate of the first vertex
+vertices[1].x = 0
+vertices[1].y = 0
+vertices[1].u = 0
+vertices[1].v = 0
+
+set_vertices(vertices)
+----
+
+[discrete]
+=== set_vertices_xy()
+
+Sets all the vertices of the sprite grid with one argument: an array of tables with the `x` and `y` fields for the positions.
+
+[source,lua]
+----
+local vertices_xy = get_vertices_xy()
+
+-- Change the position of the first vertex
+vertices_xy[1].x = 0
+vertices_xy[1].y = 0
+
+set_vertices_xy(vertices_xy)
+----
+
+[discrete]
+=== set_vertices_uv()
+
+Sets all the vertices of the sprite grid with one argument: an array of tables with the `u` and `v` fields for the texture coordinates.
+
+[source,lua]
+----
+local vertices_uv = get_vertices_uv()
+
+-- Change the texture coordinate of the first vertex
+vertices_uv[1].u = 0
+vertices_uv[1].v = 0
+
+set_vertices_uv(vertices_uv)
+----
+
+[discrete]
+=== set_vertices_x()
+
+Sets all the vertices of the sprite grid with one argument: an array of `x` components of the positions.
+
+[source,lua]
+----
+local vertices_x = get_vertices_x()
+
+-- Change the horizontal position of the first vertex
+vertices_x[1] = 0
+
+set_vertices_x(vertices_x)
+----
+
+[discrete]
+=== set_vertices_y()
+
+Sets all the vertices of the sprite grid with one argument: an array of `y` components of the positions.
+
+[source,lua]
+----
+local vertices_y = get_vertices_y()
+
+-- Change the vertical position of the first vertex
+vertices_y[1] = 0
+
+set_vertices_y(vertices_y)
+----
+
+[discrete]
+=== set_vertices_u()
+
+Sets all the vertices of the sprite grid with one argument: an array of `u` components of the texture coordinates.
+
+[source,lua]
+----
+local vertices_u = get_vertices_u()
+
+-- Change the horizontal texture coordinate of the first vertex
+vertices_u[1] = 0
+
+set_vertices_u(vertices_u)
+----
+
+[discrete]
+=== set_vertices_v()
+
+Sets all the vertices of the sprite grid with one argument: an array of `v` components of the texture coordinates.
+
+[source,lua]
+----
+local vertices_v = get_vertices_v()
+
+-- Change the vertical texture coordinate of the first vertex
+vertices_v[1] = 0
+
+set_vertices_v(vertices_v)
+----
+
 == Changelog
+
+=== 02 May 2021
+* *[FIX]* Reset the sprite grid when removing a grid or a script animation assigned to that sprite
+
+=== 25 April 2021
+* *[NEW]* Add support for Lua script animations
+** Add a new script type animation and a script resource
+** Add a new scripts window to the user interface
+* *[FIX]* Fix a crash when changing the texture rectangle of a sprite with a grid animation
 
 === 06 April 2021
 * *[NEW]* Add a checkbox to enable or disable an animation
