@@ -124,6 +124,10 @@ Before being able to create any sprite you need to load at least one texture fro
 
 You can delete the selected texture by clicking the btn:[Remove] button or pressing the kbd:[Delete] key while the cursor is over this window.
 
+image::context_menu_textures.png[Context menu for textures]
+
+Some of those actions are also available in the context menu that appears when you right-click on a texture.
+
 When you create a new sprite it will use the texture you selected in this window.
 
 == Sprites window
@@ -136,6 +140,10 @@ You can use it to btn:[Add] and btn:[Remove] sprites or to move an existing spri
 You can also delete the selected sprite by pressing the kbd:[Delete] key while the cursor is over this window.
 
 With the btn:[Clone] button, it is possible to create a copy of the selected sprite.
+
+image::context_menu_sprites.png[Context menu for sprites]
+
+Some of those actions are also available in the context menu that appears when you right-click on a sprite.
 
 At the beginning of each entry, there is a checkbox you can use to make the sprite visible or not.
 
@@ -159,6 +167,10 @@ Below you will find some buttons that you can use to btn:[Load] and btn:[Remove]
 
 You can also delete the selected script by pressing the kbd:[Delete] key while the cursor is over this window.
 
+image::context_menu_scripts.png[Context menu for scripts]
+
+Some of those actions are also available in the context menu that appears when you right-click on a script.
+
 At the end of each entry, you will find either a checkmark or a cross icon.
 The first one tells you that there are no syntax errors and the script can run while the second indicates the opposite.
 
@@ -179,6 +191,10 @@ You can use it to btn:[Add] and btn:[Remove] animations and to change their stat
 You can delete the selected animation also by pressing the kbd:[Delete] key while the cursor is over this window.
 
 With the btn:[Clone] button, it is possible to create a copy of the selected animation or animation group.
+
+image::context_menu_animations.png[Context menu for animations]
+
+Some of those actions are also available in the context menu that appears when you right-click on an animation.
 
 At the beginning of each entry, there is a checkbox you can use to make the animation enabled or not. A disabled animation will not be played by the parent group that contains it.
 
@@ -338,6 +354,8 @@ How big a single frame and the sprite sheet are going to be can be read in the `
 image::canvas_window.png[Canvas window]
 
 At the center of the interface lies the `Canvas` window. The canvas is your working area for animations.
+
+If you press kbd:[Alt] you can drag the selected sprite around by clicking anywhere in the canvas.
 
 At the top of this window, you will find some controls to change the zoom level, its size, and its background color.
 
@@ -850,6 +868,10 @@ set_vertices_v(vertices_v)
 ----
 
 == Changelog
+
+=== 10 May 2021
+* *[NEW]* Add context menus for textures, sprites, scritps, and animations
+* *[FIX]* Require pressing btn:[Alt] to drag a sprite on the canvas to prevent accidental movements
 
 === 09 May 2021
 * *[NEW]* Add a combo box to load bundled scripts

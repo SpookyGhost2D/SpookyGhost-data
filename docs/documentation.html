@@ -687,6 +687,7 @@ pre.rouge {
 <li><a href="#_lua_animation_api">Lua animation API</a></li>
 <li><a href="#_changelog">Changelog</a>
 <ul class="sectlevel2">
+<li><a href="#_10_may_2021">10 May 2021</a></li>
 <li><a href="#_09_may_2021">09 May 2021</a></li>
 <li><a href="#_06_may_2021">06 May 2021</a></li>
 <li><a href="#_02_may_2021">02 May 2021</a></li>
@@ -906,6 +907,14 @@ To apply the changes in this section you need to save the configuration and rest
 <div class="paragraph">
 <p>You can delete the selected texture by clicking the <b class="button">Remove</b> button or pressing the <kbd>Delete</kbd> key while the cursor is over this window.</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="context_menu_textures.png" alt="Context menu for textures">
+</div>
+</div>
+<div class="paragraph">
+<p>Some of those actions are also available in the context menu that appears when you right-click on a texture.</p>
+</div>
 <div class="paragraph">
 <p>When you create a new sprite it will use the texture you selected in this window.</p>
 </div>
@@ -928,6 +937,14 @@ You can use it to <b class="button">Add</b> and <b class="button">Remove</b> spr
 </div>
 <div class="paragraph">
 <p>With the <b class="button">Clone</b> button, it is possible to create a copy of the selected sprite.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="context_menu_sprites.png" alt="Context menu for sprites">
+</div>
+</div>
+<div class="paragraph">
+<p>Some of those actions are also available in the context menu that appears when you right-click on a sprite.</p>
 </div>
 <div class="paragraph">
 <p>At the beginning of each entry, there is a checkbox you can use to make the sprite visible or not.</p>
@@ -985,6 +1002,14 @@ The texture icon at the end of an entry indicates that the sprite is using the c
 <div class="paragraph">
 <p>You can also delete the selected script by pressing the <kbd>Delete</kbd> key while the cursor is over this window.</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="context_menu_scripts.png" alt="Context menu for scripts">
+</div>
+</div>
+<div class="paragraph">
+<p>Some of those actions are also available in the context menu that appears when you right-click on a script.</p>
+</div>
 <div class="paragraph">
 <p>At the end of each entry, you will find either a checkmark or a cross icon.
 The first one tells you that there are no syntax errors and the script can run while the second indicates the opposite.</p>
@@ -1030,6 +1055,14 @@ You can reload a script also by pressing <kbd>F5</kbd>.
 </div>
 <div class="paragraph">
 <p>With the <b class="button">Clone</b> button, it is possible to create a copy of the selected animation or animation group.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="context_menu_animations.png" alt="Context menu for animations">
+</div>
+</div>
+<div class="paragraph">
+<p>Some of those actions are also available in the context menu that appears when you right-click on an animation.</p>
 </div>
 <div class="paragraph">
 <p>At the beginning of each entry, there is a checkbox you can use to make the animation enabled or not. A disabled animation will not be played by the parent group that contains it.</p>
@@ -1376,6 +1409,9 @@ This option is useful to show a preview of how the script animation is affecting
 </div>
 <div class="paragraph">
 <p>At the center of the interface lies the <code>Canvas</code> window. The canvas is your working area for animations.</p>
+</div>
+<div class="paragraph">
+<p>If you press <kbd>Alt</kbd> you can drag the selected sprite around by clicking anywhere in the canvas.</p>
 </div>
 <div class="paragraph">
 <p>At the top of this window, you will find some controls to change the zoom level, its size, and its background color.</p>
@@ -1903,6 +1939,19 @@ It can be one of the members of the <code>blending_preset</code> table: <code>DI
 <div class="sect1">
 <h2 id="_changelog">Changelog</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_10_may_2021">10 May 2021</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>[NEW]</strong> Add context menus for textures, sprites, scritps, and animations</p>
+</li>
+<li>
+<p><strong>[FIX]</strong> Require pressing <b class="button">Alt</b> to drag a sprite on the canvas to prevent accidental movements</p>
+</li>
+</ul>
+</div>
+</div>
 <div class="sect2">
 <h3 id="_09_may_2021">09 May 2021</h3>
 <div class="ulist">
