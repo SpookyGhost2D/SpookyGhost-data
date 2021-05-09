@@ -11,9 +11,9 @@ SpookyGhost is a procedural animation tool for sprites made with the https://nci
 
 You can animate many different properties like the size, rotation, position, and color of your sprites, as well as deform their shape.
 
-If you want you can use Lua to write scripts for custom made animations.
+If you want you can use Lua to write scripts for custom-made animations.
 
-When you are satisfied with the results you can export the animation as single frames or as one big spritesheet.
+When you are satisfied with the results you can export the animation as single frames or as one big sprite sheet.
 
 SpookyGhost is still at an early stage of development. If you find any issue or bug please report it on https://encelo.itch.io/spookyghost/community.
 
@@ -73,23 +73,23 @@ The file dialog will show you all the entries inside a directory together with t
 
 image::file_dialog_save.png[Save a project file]
 
-When saving a project file the file dialog will be slightly different. It will have an btn:[Overwrite] checkbox to by-pass the check for an existing file and it will allow you to write in the text input widget and choose a name for the new file.
+When saving a project file the file dialog will be slightly different. It will have an btn:[Overwrite] checkbox to bypass the check for an existing file and it will allow you to write in the text input widget and choose a name for the new file.
 
 image::file_dialog_dir.png[Choose a destination directory]
 
 When deciding the destination directory for rendered frames the file dialog will allow directories to be selected.
 
-All kinds of file dialogs have a set of checkbox to show or hide file permissions, sizes, and dates plus a checkbox that when enabled will show hidden files or directories. As you can see in the last screenshot there is also a drop-down menu to select the entries sorting based on names, sizes or dates.
+All kinds of file dialogs have a set of checkboxes to show or hide file permissions, sizes, and dates plus a checkbox that when enabled will show hidden files or directories. As you can see in the last screenshot there is also a drop-down menu to select the entries sorting based on names, sizes, or dates.
 
 == Tips window
 
 image::tips_window.png[Tips window]
 
-The `Tips` window will show you a random tip about the program everytime you start it.
+The `Tips` window will show you a random tip about the program every time you start it.
 
 You can read to the previous or the next tip with the btn:[Prev] and btn:[Next] buttons.
 
-There is also a checkbox to enable or disable the default behavior of automatically showing this window on start up.
+There is also a checkbox to enable or disable the default behavior of automatically showing this window on start.
 The same checkbox is also present in the <<Configuration window>>.
 
 == Configuration window
@@ -135,7 +135,7 @@ You can use it to btn:[Add] and btn:[Remove] sprites or to move an existing spri
 
 You can also delete the selected sprite by pressing the kbd:[Delete] key while the cursor is over this window.
 
-With the btn:[Clone] button it is possible to create a copy of the selected sprite.
+With the btn:[Clone] button, it is possible to create a copy of the selected sprite.
 
 At the beginning of each entry, there is a checkbox you can use to make the sprite visible or not.
 
@@ -152,16 +152,19 @@ TIP: The texture icon at the end of an entry indicates that the sprite is using 
 image::scripts_window.png[Scripts window]
 
 Next to the <<Sprites window>> tab, you will find the `Scripts` window.
-You can use it to btn:[Load] and btn:[Remove] Lua scripts as well as btn:[Reload] them when they have changed on disk.
+
+At the top, there is a combo box with a list of scripts that are distributed with the program: use it to easily load the default scripts.
+
+Below you will find some buttons that you can use to btn:[Load] and btn:[Remove] Lua scripts as well as btn:[Reload] them when they have changed on disk.
 
 You can also delete the selected script by pressing the kbd:[Delete] key while the cursor is over this window.
 
-At the end of each entry you will find either a checkmark or a cross icon.
-The first one tells you that there are no syntax errors and the script is able to run while the second indicates the opposite.
+At the end of each entry, you will find either a checkmark or a cross icon.
+The first one tells you that there are no syntax errors and the script can run while the second indicates the opposite.
 
 image::script_error.png[Script error]
 
-In case of errors that prevent a script from running you can hover on the entry to show a tooltip with the error message.
+In case of errors that prevent a script from running, you can hover on the entry to show a tooltip with the error message.
 
 TIP: You can reload a script also by pressing kbd:[F5].
 
@@ -171,11 +174,11 @@ image::animations_window.png[Animations window]
 
 In the lower part of the left side of the interface, you will find the `Animations` window.
 
-You can use it to btn:[Add] and btn:[Remove] animations and to change their state with the btn:[Stop], btn:[Pause] and btn:[Play] buttons.
+You can use it to btn:[Add] and btn:[Remove] animations and to change their state with the btn:[Stop], btn:[Pause], and btn:[Play] buttons.
 
 You can delete the selected animation also by pressing the kbd:[Delete] key while the cursor is over this window.
 
-With the btn:[Clone] button it is possible to create a copy of the selected animation or animation group.
+With the btn:[Clone] button, it is possible to create a copy of the selected animation or animation group.
 
 At the beginning of each entry, there is a checkbox you can use to make the animation enabled or not. A disabled animation will not be played by the parent group that contains it.
 
@@ -209,11 +212,11 @@ On the top part of the right side of the interface, you will find the `Sprite` w
 
 You can change all the properties of the selected sprite from here.
 
-You will be able to give it a name, give it a parent sprite, change its position, rotation, scale and anchor point. You will also be able to select a texture rectangle, flip the texture, select a blending type and change its color.
+You will be able to give it a name, give it a parent sprite, change its position, rotation, scale, and anchor point. You will also be able to select a texture rectangle, flip the texture, select a blending type and change its color.
 
-When you set a parent for a sprite its properties will depend upon its parent's properties, the properties of its grandparent and so on. The parent-child sprite relationship is a powerful way to achieve very complex chained transformations.
+When you set a parent for a sprite its properties will depend upon its parent's properties, the properties of its grandparent, and so on. The parent-child sprite relationship is a powerful way to achieve very complex chained transformations.
 
-Selecting a texture rectangle is useful when your texture is a spritesheet and you only want to use a specific area as your sprite.
+Selecting a texture rectangle is useful when your texture is a sprite sheet and you only want to use a specific area as your sprite.
 
 TIP: You can use the <<TexRect window>> to help you set up a texture rectangle using the mouse.
 
@@ -238,7 +241,7 @@ Just beneath you can choose which property to animate:
 * Opacity
 * Color channels
 
-Next to the property name there is a checkbox with a lock icon. When it is enabled the curve value is applied to the property even if the animation is currently stopped or paused.
+Next to the property name, there is a checkbox with a lock icon. When it is enabled the curve value is applied to the property even if the animation is currently stopped or paused.
 This option is useful to show a preview of how the property animation is affecting the sprite given the current curve value.
 
 You can change the easing curve of the time parameter between a list of curves like:
@@ -252,7 +255,7 @@ You can change the easing curve of the time parameter between a list of curves l
 * Exponential
 * Circular
 
-You can then select the `Direction`: `Forward` or `Backward`. And then the `Loop Mode`: `Disabled`, `Rewind` or `Ping Pong`.
+You can then select the `Direction`: `Forward` or `Backward`. And then the `Loop Mode`: `Disabled`, `Rewind`, or `Ping Pong`.
 
 You are then presented with two sliders that let you `Shift` and `Scale` the value returned by the curve function.
 The function will take the time parameter, a number between 0 and 1, and return another value between 0 and 1.
@@ -263,7 +266,7 @@ Going below there is another block of options. They are related to time: the inp
 
 You can change the `Speed` to make the animation slower or faster, and you can change the `Start` and `End` value to affect its range.
 
-The last slider, `Time`, is updated in real-time according to current time value. When the animation is not playing you can directly change it to see how it affects your sprite property.
+The last slider, `Time`, is updated in real-time according to the current time value. When the animation is not playing you can directly change it to see how it affects your sprite property.
 
 You can also read the current value for the easing curve and have a look at a graphical plot of recent `Values`.
 
@@ -285,7 +288,7 @@ There are five different grid functions to choose from:
 * Skew Y
 * Zoom
 
-Next to the grid function name there is a checkbox with a lock icon. When it is enabled the curve value is applied to the function even if the animation is currently stopped or paused.
+Next to the grid function name, there is a checkbox with a lock icon. When it is enabled the curve value is applied to the function even if the animation is currently stopped or paused.
 This option is useful to show a preview of how the grid animation is affecting the sprite given the current curve value.
 
 TIP: Functions can be combined by adding multiple grid animations that affect the same sprite. For example, you can add a `Wave X` and a `Wave Y` function to make the sprite wave in both directions.
@@ -304,9 +307,9 @@ The interface is very similar to a <<Property animation>> or a <<Grid animation>
 
 You can choose the sprite to animate as well as the script you want to use among the ones currently loaded.
 
-Similarly to the <<Scripts window>> a checkmark or a cross icon will tell you if a script is able to run.
+Similarly to the <<Scripts window>>, a checkmark or a cross icon will tell you if a script can run.
 
-Next to the script name there is a checkbox with a lock icon. When it is enabled the script will be invoked even if the animation is currently stopped or paused.
+Next to the script name, there is a checkbox with a lock icon. When it is enabled the script will be invoked even if the animation is currently stopped or paused.
 This option is useful to show a preview of how the script animation is affecting the sprite given the current curve value.
 
 == Render window
@@ -328,7 +331,7 @@ image::render_progress.png[Render progress]
 
 While the operation is in progress you can click the btn:[Cancel] button or press the kbd:[Esc] key to cancel it.
 
-How big a single frame and the spritesheet are going to be can be read in the `Frame size` and `Spritesheet size` text widgets.
+How big a single frame and the sprite sheet are going to be can be read in the `Frame size` and `Spritesheet size` text widgets.
 
 == Canvas window
 
@@ -338,13 +341,13 @@ At the center of the interface lies the `Canvas` window. The canvas is your work
 
 At the top of this window, you will find some controls to change the zoom level, its size, and its background color.
 
-TIP: You can change the canvas zoom level by hovering on the Canvas window, pressing the kbd:[Ctrl] key and scrolling the mouse wheel.
+TIP: You can change the canvas zoom level by hovering on the Canvas window, pressing the kbd:[Ctrl] key, and scrolling the mouse wheel.
 
 When you change the background color don't forget to change the alpha opacity or you might not see the color you selected in the canvas.
 
 When the btn:[Borders] checkbox is enabled a colored rectangle will show the current size of the canvas.
 
-TIP: Pressing the arrow keys while the cursor is on the Canvas window will move the selected sprite in one pixel increments for precise positioning.
+TIP: Pressing the arrow keys while the cursor is on the Canvas window will move the selected sprite in one-pixel increments for precise positioning.
 
 image::canvas_window_anchor.png[Canvas window anchor]
 
@@ -848,8 +851,13 @@ set_vertices_v(vertices_v)
 
 == Changelog
 
+=== 09 May 2021
+* *[NEW]* Add a combo box to load bundled scripts
+* *[FIX]* Fix bundled projects loading when the configured textures path is not the default one
+* *[FIX]* Many fixes to the Emscripten and Android experimental versions
+
 === 06 May 2021
-* *[NEW]* Add the tips window: by default it will show up when the program starts
+* *[NEW]* Add the tips window: by default, it will show up when the program starts
 
 === 02 May 2021
 * *[FIX]* Reset the sprite grid when removing a grid or a script animation assigned to that sprite
