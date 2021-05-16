@@ -21,7 +21,7 @@ SpookyGhost is still at an early stage of development. If you find any issue or 
 
 == ImGui interface
 
-SpookyGhost interface is made with https://github.com/ocornut/imgui[ImGui]. You can use most of ImGui user interaction capabilities while using the program.
+SpookyGhost interface is made with https://github.com/ocornut/imgui[ImGui]. You can use most of ImGui's user interaction capabilities while using the program.
 
 You can drag windows around and anchor them into any corner, change the split space between them or tab them one next to another.
 
@@ -212,6 +212,10 @@ image::sequential_animation_window.png[Sequential animation window]
 
 The `Sequential Group` animation window has the same `Direction` and `Loop Mode` options as the non-group animation types.
 
+Like all animation types, it has a `Delay` value that allows setting a delay in seconds between the time the animation goes into the playing state and the animation start.
+
+Like all loopable animations, there is also a `Loop Delay` value that allows setting a delay in seconds between each loop reset.
+
 [TIP]
 ====
 image::drag_drop_animations.png[Drag and Drop Animations]
@@ -260,6 +264,8 @@ Just beneath you can choose which property to animate:
 Next to the property name, there is a checkbox with a lock icon. When it is enabled the curve value is applied to the property even if the animation is currently stopped or paused.
 This option is useful to show a preview of how the property animation is affecting the sprite given the current curve value.
 
+Like all animation types, it has a `Delay` value that allows setting a delay in seconds between the time the animation goes into the playing state and the animation start.
+
 You can change the easing curve of the time parameter between a list of curves like:
 
 * Linear
@@ -273,6 +279,8 @@ You can change the easing curve of the time parameter between a list of curves l
 
 You can then select the `Direction`: `Forward` or `Backward`. And then the `Loop Mode`: `Disabled`, `Rewind`, or `Ping Pong`.
 
+Like all loopable animations, there is also a `Loop Delay` value that allows setting a delay in seconds between each loop reset.
+
 You are then presented with two sliders that let you `Shift` and `Scale` the value returned by the curve function.
 The function will take the time parameter, a number between 0 and 1, and return another value between 0 and 1.
 
@@ -280,7 +288,9 @@ You can then shift this value and scale it according to your needs. For example,
 
 Going below there is another block of options. They are related to time: the input parameter to the easing function.
 
-You can change the `Speed` to make the animation slower or faster, and you can change the `Start` and `End` value to affect its range.
+You can change the `Speed` to make the animation slower or faster, and you can change the `Start` and `End` values to affect its range.
+
+The `Initial` value is very similar to the `Start` and `End` values but, instead of defining a range, it allows to specify an initial value within the range. It is very useful, for example, when you want to reuse the same animation and the same range multiple times on different sprites but you want them to play staggered.
 
 The last slider, `Time`, is updated in real-time according to the current time value. When the animation is not playing you can directly change it to see how it affects your sprite property.
 
@@ -292,7 +302,7 @@ image::grid_animation_window.png[Grid animation window]
 
 A grid animation deforms your sprite shape to achieve some special effects.
 
-The interface is identical to the <<Property animation>> one with some small but important differences.
+The interface is identical to the <<Property animation window>> one with some small but important differences.
 
 Instead of being able to choose which sprite property to affect you will be able to choose a grid `Function`.
 
@@ -319,7 +329,7 @@ image::script_animation_window.png[Script animation window]
 
 A script animation runs a particular Lua script to perform a custom animation.
 
-The interface is very similar to a <<Property animation>> or a <<Grid animation>>.
+The interface is very similar to a <<Property animation window>> or a <<Grid animation window>>.
 
 You can choose the sprite to animate as well as the script you want to use among the ones currently loaded.
 
@@ -868,6 +878,12 @@ set_vertices_v(vertices_v)
 ----
 
 == Changelog
+
+=== 16 May 2021
+* *[NEW]* Add delay, loop delay and initial time values
+* *[FIX]* Reverse the direction of animations when the parent sequential group is going backward
+* *[FIX]* Correct the detection of textures and scripts that are not relocatable
+* *[FIX]* Disable animation locking when the parent group is playing
 
 === 10 May 2021
 * *[NEW]* Add context menus for textures, sprites, scritps, and animations

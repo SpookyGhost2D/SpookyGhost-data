@@ -687,6 +687,7 @@ pre.rouge {
 <li><a href="#_lua_animation_api">Lua animation API</a></li>
 <li><a href="#_changelog">Changelog</a>
 <ul class="sectlevel2">
+<li><a href="#_16_may_2021">16 May 2021</a></li>
 <li><a href="#_10_may_2021">10 May 2021</a></li>
 <li><a href="#_09_may_2021">09 May 2021</a></li>
 <li><a href="#_06_may_2021">06 May 2021</a></li>
@@ -728,7 +729,7 @@ pre.rouge {
 <h2 id="_imgui_interface">ImGui interface</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>SpookyGhost interface is made with <a href="https://github.com/ocornut/imgui">ImGui</a>. You can use most of ImGui user interaction capabilities while using the program.</p>
+<p>SpookyGhost interface is made with <a href="https://github.com/ocornut/imgui">ImGui</a>. You can use most of ImGui&#8217;s user interaction capabilities while using the program.</p>
 </div>
 <div class="paragraph">
 <p>You can drag windows around and anchor them into any corner, change the split space between them or tab them one next to another.</p>
@@ -1101,6 +1102,12 @@ Pressing <kbd>Space</kbd> when hovering on the Canvas window will toggle the ani
 <div class="paragraph">
 <p>The <code>Sequential Group</code> animation window has the same <code>Direction</code> and <code>Loop Mode</code> options as the non-group animation types.</p>
 </div>
+<div class="paragraph">
+<p>Like all animation types, it has a <code>Delay</code> value that allows setting a delay in seconds between the time the animation goes into the playing state and the animation start.</p>
+</div>
+<div class="paragraph">
+<p>Like all loopable animations, there is also a <code>Loop Delay</code> value that allows setting a delay in seconds between each loop reset.</p>
+</div>
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -1220,6 +1227,9 @@ You can use the <a href="#_texrect_window">TexRect window</a> to help you set up
 This option is useful to show a preview of how the property animation is affecting the sprite given the current curve value.</p>
 </div>
 <div class="paragraph">
+<p>Like all animation types, it has a <code>Delay</code> value that allows setting a delay in seconds between the time the animation goes into the playing state and the animation start.</p>
+</div>
+<div class="paragraph">
 <p>You can change the easing curve of the time parameter between a list of curves like:</p>
 </div>
 <div class="ulist">
@@ -1254,6 +1264,9 @@ This option is useful to show a preview of how the property animation is affecti
 <p>You can then select the <code>Direction</code>: <code>Forward</code> or <code>Backward</code>. And then the <code>Loop Mode</code>: <code>Disabled</code>, <code>Rewind</code>, or <code>Ping Pong</code>.</p>
 </div>
 <div class="paragraph">
+<p>Like all loopable animations, there is also a <code>Loop Delay</code> value that allows setting a delay in seconds between each loop reset.</p>
+</div>
+<div class="paragraph">
 <p>You are then presented with two sliders that let you <code>Shift</code> and <code>Scale</code> the value returned by the curve function.
 The function will take the time parameter, a number between 0 and 1, and return another value between 0 and 1.</p>
 </div>
@@ -1264,7 +1277,10 @@ The function will take the time parameter, a number between 0 and 1, and return 
 <p>Going below there is another block of options. They are related to time: the input parameter to the easing function.</p>
 </div>
 <div class="paragraph">
-<p>You can change the <code>Speed</code> to make the animation slower or faster, and you can change the <code>Start</code> and <code>End</code> value to affect its range.</p>
+<p>You can change the <code>Speed</code> to make the animation slower or faster, and you can change the <code>Start</code> and <code>End</code> values to affect its range.</p>
+</div>
+<div class="paragraph">
+<p>The <code>Initial</code> value is very similar to the <code>Start</code> and <code>End</code> values but, instead of defining a range, it allows to specify an initial value within the range. It is very useful, for example, when you want to reuse the same animation and the same range multiple times on different sprites but you want them to play staggered.</p>
 </div>
 <div class="paragraph">
 <p>The last slider, <code>Time</code>, is updated in real-time according to the current time value. When the animation is not playing you can directly change it to see how it affects your sprite property.</p>
@@ -1284,7 +1300,7 @@ The function will take the time parameter, a number between 0 and 1, and return 
 <p>A grid animation deforms your sprite shape to achieve some special effects.</p>
 </div>
 <div class="paragraph">
-<p>The interface is identical to the <a href="#Property animation">[Property animation]</a> one with some small but important differences.</p>
+<p>The interface is identical to the <a href="#_property_animation_window">Property animation window</a> one with some small but important differences.</p>
 </div>
 <div class="paragraph">
 <p>Instead of being able to choose which sprite property to affect you will be able to choose a grid <code>Function</code>.</p>
@@ -1345,7 +1361,7 @@ Functions can be combined by adding multiple grid animations that affect the sam
 <p>A script animation runs a particular Lua script to perform a custom animation.</p>
 </div>
 <div class="paragraph">
-<p>The interface is very similar to a <a href="#Property animation">[Property animation]</a> or a <a href="#Grid animation">[Grid animation]</a>.</p>
+<p>The interface is very similar to a <a href="#_property_animation_window">Property animation window</a> or a <a href="#_grid_animation_window">Grid animation window</a>.</p>
 </div>
 <div class="paragraph">
 <p>You can choose the sprite to animate as well as the script you want to use among the ones currently loaded.</p>
@@ -1939,6 +1955,25 @@ It can be one of the members of the <code>blending_preset</code> table: <code>DI
 <div class="sect1">
 <h2 id="_changelog">Changelog</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_16_may_2021">16 May 2021</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>[NEW]</strong> Add delay, loop delay and initial time values</p>
+</li>
+<li>
+<p><strong>[FIX]</strong> Reverse the direction of animations when the parent sequential group is going backward</p>
+</li>
+<li>
+<p><strong>[FIX]</strong> Correct the detection of textures and scripts that are not relocatable</p>
+</li>
+<li>
+<p><strong>[FIX]</strong> Disable animation locking when the parent group is playing</p>
+</li>
+</ul>
+</div>
+</div>
 <div class="sect2">
 <h3 id="_10_may_2021">10 May 2021</h3>
 <div class="ulist">
