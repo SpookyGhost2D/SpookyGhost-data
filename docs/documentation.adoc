@@ -399,6 +399,42 @@ image::status_bar.png[Status bar]
 
 At the bottom of the interface, you will find the status bar. It will show error and information messages as well as the mouse coordinates during some operations.
 
+== Bundled projects files
+
+The program comes with some bundled project files to show its features and potential.
+
+[discrete]
+=== ghost.lua, laundry.lua, tree.lua
+Those three files are the classic projects distributed since the first versions of the program. They show what is visually and artistically achievable by using very few and simple animations.
+
+[discrete]
+=== delay.lua
+The project uses some very simple property animations that, together with different delay values, can achieve an interesting result.
+
+[discrete]
+=== ghost_sheet.lua
+The project uses the `texrect.lua` script to modify the texture rectangle and animate using a sprite sheet.
+
+[discrete]
+=== scripted_gridanims.lua
+The project uses the `skewx.lua`, `skewy.lua`, `wavex.lua`, `wavey.lua`, and `zoom.lua` scripts to show how a Lua script can replicate the same functions of a grid animation, albeit consuming a bit more CPU power.
+
+[discrete]
+=== scripted_rotations.lua
+The project uses the `circle.lua` script to show some rotating ghost sprites.
+
+[discrete]
+=== scripted_rotations_staggered.lua
+The project is very similar to `scripted_rotations.lua` and it also uses the `circle.lua` script. The difference here is the use of different initial values to create out-of-phase rotations.
+
+[discrete]
+=== sequential_square.lua
+The project uses two sequential animation groups to move a sprite along a path shaped as a square while also using some grid animations to perform a zoom at the same time.
+
+[discrete]
+=== sequential_reverse.lua
+The project has a long sequential animation group that can perfectly loop by automatically change the direction of the property animations it contains.
+
 == Lua animation API
 
 [discrete]
@@ -878,6 +914,13 @@ set_vertices_v(vertices_v)
 ----
 
 == Changelog
+
+=== 18 May 2021
+* *[FIX]* Fix UV coordinates of texture rectangles
+* *[FIX]* Replace backslashes with slashes in Windows file paths
+* *[FIX]* Update the selected sprite index when removing a texture
+* *[FIX]* Snap anchor point position to the pixel
+* *[FIX]* Validate texture rectangle GUI values before applying them
 
 === 16 May 2021
 * *[NEW]* Add delay, loop delay and initial time values
