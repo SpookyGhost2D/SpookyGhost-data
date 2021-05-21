@@ -216,6 +216,8 @@ Like all animation types, it has a `Delay` value that allows setting a delay in 
 
 Like all loopable animations, there is also a `Loop Delay` value that allows setting a delay in seconds between each loop reset.
 
+Together with the `Parallel Group`, it also has a list of sprites with an btn:[Apply] button that overrides the sprite used by every contained animation. It comes in handy when you clone a group to apply the same animations to a different sprite.
+
 [TIP]
 ====
 image::drag_drop_animations.png[Drag and Drop Animations]
@@ -232,7 +234,7 @@ On the top part of the right side of the interface, you will find the `Sprite` w
 
 You can change all the properties of the selected sprite from here.
 
-You will be able to give it a name, give it a parent sprite, change its position, rotation, scale, and anchor point. You will also be able to select a texture rectangle, flip the texture, select a blending type and change its color.
+You will be able to give it a name, give it a parent sprite, change its position, rotation, scale, and anchor point. You will also be able to select a texture rectangle, flip the texture, select a blending type separately for the RGB and alpha channels and change its color.
 
 When you set a parent for a sprite its properties will depend upon its parent's properties, the properties of its grandparent, and so on. The parent-child sprite relationship is a powerful way to achieve very complex chained transformations.
 
@@ -588,14 +590,21 @@ print("flipped h: " .. (is_hflipped and 'true' or 'false') .. " v: " .. (is_vfli
 ----
 
 [discrete]
-=== get_blending()
+=== get_rgb_blending() / get_alpha_blending()
 
-Returns the current blending preset value of the sprite.
+Returns the current blending preset value for the RGB or alpha channels of the sprite.
 It can be one of the members of the `blending_preset` table: `DISABLED`, `ALPHA`, `PREMULTIPLIED_ALPHA`, `ADDITIVE`, or `MULTIPLY`.
+
+* `DISABLED`: source factor is `GL_ONE`, destination factor is `GL_ZERO`.
+* `ALPHA`: source factor is `GL_SRC_ALPHA`, destination factor is `GL_ONE_MINUS_SRC_ALPHA`.
+* `PREMULTIPLIED_ALPHA`: source factor is `GL_ONE`, destination factor is `GL_ONE_MINUS_SRC_ALPHA`.
+* `ADDITIVE`: source factor is `GL_SRC_ALPHA`, destination factor is `GL_ONE`.
+* `MULTIPLY`: source factor is `GL_DST_COLOR`, destination factor is `GL_ZERO`.
+
 
 [source,lua]
 ----
-local blending = get_blending()
+local blending = get_rgb_blending()
 
 local blending_string = "UNKNOWN"
 if blending == blending_preset.DISABLED then
@@ -793,14 +802,14 @@ set_flipped_y(false)
 ----
 
 [discrete]
-=== set_blending()
+=== set_rgb_blending() / set_alpha_blending()
 
-Sets the blending preset value of the sprite.
+Sets the blending preset value for the RGB or alpha channels of the sprite.
 It can be one of the members of the `blending_preset` table: `DISABLED`, `ALPHA`, `PREMULTIPLIED_ALPHA`, `ADDITIVE`, or `MULTIPLY`.
 
 [source,lua]
 ----
-set_blending(blending_preset.ALPHA)
+set_rgb_blending(blending_preset.ALPHA)
 ----
 
 [discrete]
@@ -915,10 +924,17 @@ set_vertices_v(vertices_v)
 
 == Changelog
 
+=== 21 May 2021
+* *[NEW]* Set separate blending presets for RGB and alpha channels (also through scripting)
+* *[NEW]* Add a button to override the sprite used by every animation inside a group
+* *[NEW]* Add a "Select Parent" item in the contextual menu of sprites and animations
+
 === 18 May 2021
 * *[FIX]* Fix UV coordinates of texture rectangles
 * *[FIX]* Replace backslashes with slashes in Windows file paths
+* *[FIX]* Change the code that updates the selected animation when removing one
 * *[FIX]* Update the selected sprite index when removing a texture
+* *[FIX]* Clamp texture coordinates wrapping to edges
 * *[FIX]* Snap anchor point position to the pixel
 * *[FIX]* Validate texture rectangle GUI values before applying them
 
