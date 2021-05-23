@@ -189,109 +189,7 @@ animations =
 		enabled = true,
 		parent = -1,
 		type = "grid_animation",
-		sprite = 5,
-		speed = 0.400000,
-		curve =
-		{
-			type = "linear",
-			direction = "forward",
-			loop_mode = "rewind",
-			start_time = 0.000000,
-			end_time = 1.000000,
-			scale = 1.000000,
-			shift = 0.100000,
-		},
-		function_name = "Wave X",
-		parameters =
-		{
-			{
-				name = "Amplitude",
-				value = 0.125000,
-			},
-			{
-				name = "Frequency",
-				value = 1.000000,
-			},
-			{
-				name = "Anchor Y",
-				value = -23.000000,
-			},
-		},
-	},
-	{
-		name = "",
-		enabled = true,
-		parent = -1,
-		type = "grid_animation",
-		sprite = 1,
-		speed = 0.400000,
-		curve =
-		{
-			type = "linear",
-			direction = "forward",
-			loop_mode = "rewind",
-			start_time = 0.000000,
-			end_time = 1.000000,
-			scale = 1.000000,
-			shift = 0.075000,
-		},
-		function_name = "Wave X",
-		parameters =
-		{
-			{
-				name = "Amplitude",
-				value = 0.125000,
-			},
-			{
-				name = "Frequency",
-				value = 1.000000,
-			},
-			{
-				name = "Anchor Y",
-				value = -31.000000,
-			},
-		},
-	},
-	{
-		name = "",
-		enabled = true,
-		parent = -1,
-		type = "grid_animation",
-		sprite = 8,
-		speed = 0.400000,
-		curve =
-		{
-			type = "linear",
-			direction = "forward",
-			loop_mode = "rewind",
-			start_time = 0.000000,
-			end_time = 1.000000,
-			scale = 1.000000,
-			shift = 0.050000,
-		},
-		function_name = "Wave X",
-		parameters =
-		{
-			{
-				name = "Amplitude",
-				value = 0.125000,
-			},
-			{
-				name = "Frequency",
-				value = 1.000000,
-			},
-			{
-				name = "Anchor Y",
-				value = -21.000000,
-			},
-		},
-	},
-	{
-		name = "",
-		enabled = true,
-		parent = -1,
-		type = "grid_animation",
-		sprite = 3,
+		sprite = 6,
 		speed = 0.400000,
 		curve =
 		{
@@ -303,20 +201,20 @@ animations =
 			scale = 1.000000,
 			shift = 0.000000,
 		},
-		function_name = "Wave X",
+		function_name = "Wave Y",
 		parameters =
 		{
 			{
 				name = "Amplitude",
-				value = 0.125000,
+				value = 0.015000,
 			},
 			{
 				name = "Frequency",
 				value = 1.000000,
 			},
 			{
-				name = "Anchor Y",
-				value = -30.000000,
+				name = "Anchor X",
+				value = 5.000000,
 			},
 		},
 	},
@@ -359,7 +257,7 @@ animations =
 		enabled = true,
 		parent = -1,
 		type = "grid_animation",
-		sprite = 6,
+		sprite = 3,
 		speed = 0.400000,
 		curve =
 		{
@@ -371,20 +269,122 @@ animations =
 			scale = 1.000000,
 			shift = 0.000000,
 		},
-		function_name = "Wave Y",
+		function_name = "Wave X",
 		parameters =
 		{
 			{
 				name = "Amplitude",
-				value = 0.015000,
+				value = 0.125000,
 			},
 			{
 				name = "Frequency",
 				value = 1.000000,
 			},
 			{
-				name = "Anchor X",
-				value = 5.000000,
+				name = "Anchor Y",
+				value = -30.000000,
+			},
+		},
+	},
+	{
+		name = "",
+		enabled = true,
+		parent = -1,
+		type = "grid_animation",
+		sprite = 8,
+		speed = 0.400000,
+		curve =
+		{
+			type = "linear",
+			direction = "forward",
+			loop_mode = "rewind",
+			start_time = 0.000000,
+			end_time = 1.000000,
+			scale = 1.000000,
+			shift = 0.050000,
+		},
+		function_name = "Wave X",
+		parameters =
+		{
+			{
+				name = "Amplitude",
+				value = 0.125000,
+			},
+			{
+				name = "Frequency",
+				value = 1.000000,
+			},
+			{
+				name = "Anchor Y",
+				value = -21.000000,
+			},
+		},
+	},
+	{
+		name = "",
+		enabled = true,
+		parent = -1,
+		type = "grid_animation",
+		sprite = 1,
+		speed = 0.400000,
+		curve =
+		{
+			type = "linear",
+			direction = "forward",
+			loop_mode = "rewind",
+			start_time = 0.000000,
+			end_time = 1.000000,
+			scale = 1.000000,
+			shift = 0.075000,
+		},
+		function_name = "Wave X",
+		parameters =
+		{
+			{
+				name = "Amplitude",
+				value = 0.125000,
+			},
+			{
+				name = "Frequency",
+				value = 1.000000,
+			},
+			{
+				name = "Anchor Y",
+				value = -31.000000,
+			},
+		},
+	},
+	{
+		name = "",
+		enabled = true,
+		parent = -1,
+		type = "grid_animation",
+		sprite = 5,
+		speed = 0.400000,
+		curve =
+		{
+			type = "linear",
+			direction = "forward",
+			loop_mode = "rewind",
+			start_time = 0.000000,
+			end_time = 1.000000,
+			scale = 1.000000,
+			shift = 0.100000,
+		},
+		function_name = "Wave X",
+		parameters =
+		{
+			{
+				name = "Amplitude",
+				value = 0.125000,
+			},
+			{
+				name = "Frequency",
+				value = 1.000000,
+			},
+			{
+				name = "Anchor Y",
+				value = -23.000000,
 			},
 		},
 	},

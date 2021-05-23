@@ -128,6 +128,59 @@ animations =
 		name = "",
 		enabled = true,
 		parent = -1,
+		type = "property_animation",
+		sprite = 6,
+		speed = 0.400000,
+		curve =
+		{
+			type = "quad",
+			direction = "forward",
+			loop_mode = "ping_pong",
+			start_time = 0.000000,
+			end_time = 1.000000,
+			scale = 1.000000,
+			shift = 69.000000,
+		},
+		property_name = "Position X",
+	},
+	{
+		name = "",
+		enabled = true,
+		parent = -1,
+		type = "grid_animation",
+		sprite = 6,
+		speed = 0.400000,
+		curve =
+		{
+			type = "linear",
+			direction = "forward",
+			loop_mode = "rewind",
+			start_time = 0.000000,
+			end_time = 1.000000,
+			scale = 1.000000,
+			shift = 0.000000,
+		},
+		function_name = "Wave Y",
+		parameters =
+		{
+			{
+				name = "Amplitude",
+				value = 0.030000,
+			},
+			{
+				name = "Frequency",
+				value = 0.100000,
+			},
+			{
+				name = "Anchor X",
+				value = 1.000000,
+			},
+		},
+	},
+	{
+		name = "",
+		enabled = true,
+		parent = -1,
 		type = "grid_animation",
 		sprite = 3,
 		speed = 0.200000,
@@ -197,40 +250,6 @@ animations =
 		enabled = true,
 		parent = -1,
 		type = "grid_animation",
-		sprite = 6,
-		speed = 0.400000,
-		curve =
-		{
-			type = "linear",
-			direction = "forward",
-			loop_mode = "rewind",
-			start_time = 0.000000,
-			end_time = 1.000000,
-			scale = 1.000000,
-			shift = 0.000000,
-		},
-		function_name = "Wave Y",
-		parameters =
-		{
-			{
-				name = "Amplitude",
-				value = 0.030000,
-			},
-			{
-				name = "Frequency",
-				value = 0.100000,
-			},
-			{
-				name = "Anchor X",
-				value = 1.000000,
-			},
-		},
-	},
-	{
-		name = "",
-		enabled = true,
-		parent = -1,
-		type = "grid_animation",
 		sprite = 0,
 		speed = 0.100000,
 		curve =
@@ -259,24 +278,5 @@ animations =
 				value = 13.000000,
 			},
 		},
-	},
-	{
-		name = "",
-		enabled = true,
-		parent = -1,
-		type = "property_animation",
-		sprite = 6,
-		speed = 0.400000,
-		curve =
-		{
-			type = "quad",
-			direction = "forward",
-			loop_mode = "ping_pong",
-			start_time = 0.000000,
-			end_time = 1.000000,
-			scale = 1.000000,
-			shift = 69.000000,
-		},
-		property_name = "Position X",
 	},
 }
