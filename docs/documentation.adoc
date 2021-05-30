@@ -147,6 +147,8 @@ Some of those actions are also available in the context menu that appears when y
 
 At the beginning of each entry, there is a checkbox you can use to make the sprite visible or not.
 
+The list order is reversed so that the top sprite is also the one that will be rendered on top of the others.
+
 [TIP]
 ====
 image::drag_drop_sprites.png[Drag and Drop Sprites]
@@ -206,17 +208,21 @@ image::animation_types.png[Animation types]
 
 Before pressing the btn:[Add] button, choose one of the four animation types.
 
+=== Animation groups
+
 The `Parallel Group` and `Sequential Group` help to organize together multiple animations. They will be played together or one after another depending on the group type. An animation group can also be composed of sub-groups.
 
 image::sequential_animation_window.png[Sequential animation window]
 
-The `Sequential Group` animation window has the same `Direction` and `Loop Mode` options as the non-group animation types.
+Their window has the same `Direction` and `Loop Mode` options as the non-group animation types.
 
-Like all animation types, it has a `Delay` value that allows setting a delay in seconds between the time the animation goes into the playing state and the animation start.
+Like all animation types, they have a `Delay` value that allows setting a delay in seconds between the time the animation goes into the playing state and the animation start.
 
-Like all loopable animations, there is also a `Loop Delay` value that allows setting a delay in seconds between each loop reset.
+They also have a `Loop Delay` value that allows setting a delay in seconds between each loop reset.
 
-Together with the `Parallel Group`, it also has a list of sprites with an btn:[Apply] button that overrides the sprite used by every contained animation. It comes in handy when you clone a group to apply the same animations to a different sprite.
+At the bottom there is a list of sprites with an btn:[Apply] button that overrides the sprite used by every contained animation. It comes in handy when you clone a group and want to apply the same animations to a different sprite.
+
+IMPORTANT: Animations inside a Sequential Group will not be able to loop.
 
 [TIP]
 ====
@@ -924,11 +930,22 @@ set_vertices_v(vertices_v)
 
 == Changelog
 
+[discrete]
+=== 30 May 2021
+* *[NEW]* Add direction and loop mode to parallel groups
+* *[FIX]* Fix sequential group playing when some contained animations are disabled
+* *[FIX]* Fix the override functionality of animation groups containing property animations
+* *[FIX]* Disable looping for animations inside a sequential group
+* *[FIX]* Set the correct parent of contained animations when cloning a group
+* *[FIX]* Reverse order in the sprites window to match rendering layer order
+
+[discrete]
 === 21 May 2021
 * *[NEW]* Set separate blending presets for RGB and alpha channels (also through scripting)
 * *[NEW]* Add a button to override the sprite used by every animation inside a group
 * *[NEW]* Add a "Select Parent" item in the contextual menu of sprites and animations
 
+[discrete]
 === 18 May 2021
 * *[FIX]* Fix UV coordinates of texture rectangles
 * *[FIX]* Replace backslashes with slashes in Windows file paths
@@ -938,36 +955,44 @@ set_vertices_v(vertices_v)
 * *[FIX]* Snap anchor point position to the pixel
 * *[FIX]* Validate texture rectangle GUI values before applying them
 
+[discrete]
 === 16 May 2021
 * *[NEW]* Add delay, loop delay and initial time values
 * *[FIX]* Reverse the direction of animations when the parent sequential group is going backward
 * *[FIX]* Correct the detection of textures and scripts that are not relocatable
 * *[FIX]* Disable animation locking when the parent group is playing
 
+[discrete]
 === 10 May 2021
 * *[NEW]* Add context menus for textures, sprites, scritps, and animations
 * *[FIX]* Require pressing btn:[Alt] to drag a sprite on the canvas to prevent accidental movements
 
+[discrete]
 === 09 May 2021
 * *[NEW]* Add a combo box to load bundled scripts
 * *[FIX]* Fix bundled projects loading when the configured textures path is not the default one
 * *[FIX]* Many fixes to the Emscripten and Android experimental versions
 
+[discrete]
 === 06 May 2021
 * *[NEW]* Add the tips window: by default, it will show up when the program starts
 
+[discrete]
 === 02 May 2021
 * *[FIX]* Reset the sprite grid when removing a grid or a script animation assigned to that sprite
 
+[discrete]
 === 25 April 2021
 * *[NEW]* Add support for Lua script animations
 ** Add a new script type animation and a script resource
 ** Add a new scripts window to the user interface
 * *[FIX]* Fix a crash when changing the texture rectangle of a sprite with a grid animation
 
+[discrete]
 === 06 April 2021
 * *[NEW]* Add a checkbox to enable or disable an animation
 
+[discrete]
 === 02 April 2021
 * *[NEW]* Add clone buttons for sprites and animations
 * *[NEW]* Add move up and down buttons in the animations windows
@@ -975,6 +1000,7 @@ set_vertices_v(vertices_v)
 * *[FIX]* Select the dropped animation when drag'n'dropping
 * *[FIX]* Automatically select a newly created animation
 
+[discrete]
 === 01 April 2021
 * *[NEW]* Reactivate sequential animation groups
 * *[NEW]* Add direction and loop mode to sequential groups
@@ -983,11 +1009,13 @@ set_vertices_v(vertices_v)
 * *[FIX]* Set the grid function when deserializing a grid animation
 * *[FIX]* Hide the grid function interface if there are no sprites to animate
 
+[discrete]
 === 30 March 2021
 * *[NEW]* Add support for drag and drop in the animations window
 * *[NEW]* Show the animation manager root group in the animations window
 * *[FIX]* Assign the selected sprite to newly created property and grid animations
 
+[discrete]
 === 28 February 2021
 * *[NEW]* Add support for drag and drop in the sprites window
 * *[FIX]* Put the move up and down sprite buttons on the same line as the add and remove ones
@@ -995,5 +1023,6 @@ set_vertices_v(vertices_v)
 * *[FIX]* Avoid displaying the remove button if there are no textures or sprites
 * *[FIX]* Fix a crash when recursively removing an animation and its children
 
+[discrete]
 === 24 May 2020
 Last paid version on Itch.io
