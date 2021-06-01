@@ -9,9 +9,6 @@ canvas =
 textures =
 {
 	{
-		name = "spirit.png",
-	},
-	{
 		name = "idle_ghost_spritesheet.png",
 	},
 }
@@ -19,7 +16,7 @@ textures =
 sprites =
 {
 	{
-		texture = 1,
+		texture = 0,
 		parent = -1,
 		name = "Ghost",
 		visible = true,

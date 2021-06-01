@@ -765,10 +765,17 @@ The menu item is available only if you have opened a project previously or if yo
 If the <code>Allow Overwrite</code> checkbox is not enabled the program will not save if a file with the same name exists already.</p>
 </div>
 <div class="paragraph">
-<p>Selecting <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Configuration</b></span> will open the configuration window.</p>
+<p>Selecting <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Quick Open</b></span> or pressing <kbd>F9</kbd> will open the last file saved with the <code>Quick Save</code> function. Keep in mind that the operation will be performed without asking the user to first save the current project.</p>
 </div>
 <div class="paragraph">
-<p>Selecting <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Quit</b></span> or pressing <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Q</kbd></span> will quit the program.</p>
+<p>Selecting <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Quick Save</b></span> or pressing <kbd>F5</kbd> will save a project file using a combination of the date and time as the name.
+It can be a way to save multiple versions of your project while working on it.</p>
+</div>
+<div class="paragraph">
+<p>Selecting <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Configuration</b></span> will open the <a href="#_configuration_window">Configuration window</a>.</p>
+</div>
+<div class="paragraph">
+<p>Selecting <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Quit</b></span> or pressing <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Q</kbd></span> will open a modal window asking if you want to quit the program.</p>
 </div>
 </div>
 <div class="sect2">
@@ -909,6 +916,25 @@ To apply the changes in this section you need to save the configuration and rest
 <div class="paragraph">
 <p>When you create a new sprite it will use the texture you selected in this window.</p>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="imageblock">
+<div class="content">
+<img src="tooltip_textures.png" alt="Tooltip image textures">
+</div>
+</div>
+<div class="paragraph">
+<p>If you hover with the mouse on a texture a small preview will appear as a tooltip.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -957,6 +983,25 @@ You can use it to <b class="button">Add</b> and <b class="button">Remove</b> spr
 </div>
 <div class="paragraph">
 <p>You can reorder the list with the <b class="button">Move Up</b> and <b class="button">Move Down</b> buttons or by drag and drop.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="imageblock">
+<div class="content">
+<img src="tooltip_sprites.png" alt="Tooltip image sprites">
+</div>
+</div>
+<div class="paragraph">
+<p>If you hover with the mouse on a sprite a small preview will appear as a tooltip.</p>
 </div>
 </td>
 </tr>
@@ -1023,7 +1068,7 @@ The first one tells you that there are no syntax errors and the script can run w
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-You can reload a script also by pressing <kbd>F5</kbd>.
+You can reload a script also by pressing <span class="keyseq"><kbd>CTRL</kbd>+<kbd>R</kbd></span>.
 </td>
 </tr>
 </table>
@@ -2025,6 +2070,26 @@ It can be one of the members of the <code>blending_preset</code> table: <code>DI
 <div class="sect1">
 <h2 id="_changelog">Changelog</h2>
 <div class="sectionbody">
+<h3 id="_01_june_2021" class="discrete">01 June 2021</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>[NEW]</strong> Add an image preview tooltip for textures and sprites</p>
+</li>
+<li>
+<p><strong>[NEW]</strong> Add a <code>Quick Load</code> and <code>Quick Save</code> functionality</p>
+</li>
+<li>
+<p><strong>[NEW]</strong> Add a confirmation modal window when trying to quit the program</p>
+</li>
+<li>
+<p><strong>[FIX]</strong> Change the keyboard shortcut for reloading a script</p>
+</li>
+<li>
+<p><strong>[FIX]</strong> Fix the file lists in the bundled textures and scripts combo boxes</p>
+</li>
+</ul>
+</div>
 <h3 id="_30_may_2021" class="discrete">30 May 2021</h3>
 <div class="ulist">
 <ul>

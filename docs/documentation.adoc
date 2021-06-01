@@ -37,22 +37,27 @@ You can drag and drop colors around, for example, the background color of the <<
 === File menu
 image::file_menu.png[File Menu]
 
-Selecting menu:File[New] or pressing kbd:[Ctrl+N] will remove all animations, sprites, and textures.
+Selecting menu:File[New] or pressing kbd:[Ctrl + N] will remove all animations, sprites, and textures.
 
-Selecting menu:File[Open] or pressing kbd:[Ctrl+O] will open the <<File dialog>> window to specify the project file to load. The file dialog will only show files with the `lua` extension.
+Selecting menu:File[Open] or pressing kbd:[Ctrl + O] will open the <<File dialog>> window to specify the project file to load. The file dialog will only show files with the `lua` extension.
 
 Selecting menu:File[Open Bundled] will open a list of projects to load.
 They are distributed alongside the program as examples.
 
-Selecting menu:File[Save] or pressing kbd:[Ctrl+S] will save the currently opened project.
+Selecting menu:File[Save] or pressing kbd:[Ctrl + S] will save the currently opened project.
 The menu item is available only if you have opened a project previously or if you have already saved it with a name.
 
 Selecting menu:File[Save as...] will open the <<File dialog>> window to specify the filename to use for saving.
 If the `Allow Overwrite` checkbox is not enabled the program will not save if a file with the same name exists already.
 
-Selecting menu:File[Configuration] will open the configuration window.
+Selecting menu:File[Quick Open] or pressing kbd:[F9] will open the last file saved with the `Quick Save` function. Keep in mind that the operation will be performed without asking the user to first save the current project.
 
-Selecting menu:File[Quit] or pressing kbd:[Ctrl+Q] will quit the program.
+Selecting menu:File[Quick Save] or pressing kbd:[F5] will save a project file using a combination of the date and time as the name.
+It can be a way to save multiple versions of your project while working on it.
+
+Selecting menu:File[Configuration] will open the <<Configuration window>>.
+
+Selecting menu:File[Quit] or pressing kbd:[Ctrl + Q] will open a modal window asking if you want to quit the program.
 
 === Help menu
 image::help_menu.png[Help Menu]
@@ -130,6 +135,12 @@ Some of those actions are also available in the context menu that appears when y
 
 When you create a new sprite it will use the texture you selected in this window.
 
+[TIP]
+====
+image::tooltip_textures.png[Tooltip image textures]
+If you hover with the mouse on a texture a small preview will appear as a tooltip.
+====
+
 == Sprites window
 
 image::sprites_window.png[Sprites window]
@@ -153,6 +164,12 @@ The list order is reversed so that the top sprite is also the one that will be r
 ====
 image::drag_drop_sprites.png[Drag and Drop Sprites]
 You can reorder the list with the btn:[Move Up] and btn:[Move Down] buttons or by drag and drop.
+====
+
+[TIP]
+====
+image::tooltip_sprites.png[Tooltip image sprites]
+If you hover with the mouse on a sprite a small preview will appear as a tooltip.
 ====
 
 TIP: The texture icon at the end of an entry indicates that the sprite is using the currently selected texture.
@@ -180,7 +197,7 @@ image::script_error.png[Script error]
 
 In case of errors that prevent a script from running, you can hover on the entry to show a tooltip with the error message.
 
-TIP: You can reload a script also by pressing kbd:[F5].
+TIP: You can reload a script also by pressing kbd:[CTRL + R].
 
 == Animations window
 
@@ -929,6 +946,14 @@ set_vertices_v(vertices_v)
 ----
 
 == Changelog
+
+[discrete]
+=== 01 June 2021
+* *[NEW]* Add an image preview tooltip for textures and sprites
+* *[NEW]* Add a `Quick Load` and `Quick Save` functionality
+* *[NEW]* Add a confirmation modal window when trying to quit the program
+* *[FIX]* Change the keyboard shortcut for reloading a script
+* *[FIX]* Fix the file lists in the bundled textures and scripts combo boxes
 
 [discrete]
 === 30 May 2021
