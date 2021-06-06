@@ -1607,6 +1607,12 @@ It shows you which part of the texture will be used by the sprite for rendering.
 <div class="sect1">
 <h2 id="_lua_animation_api">Lua animation API</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Each Lua script needs to define an <code>update(value)</code> function. It will be called each frame of the animation with a different <code>value</code> parameter.</p>
+</div>
+<div class="paragraph">
+<p>If you need to perform some calculation only once, when the animation is first started, consider using the <code>init(value)</code> function as an optimization.</p>
+</div>
 <h3 id="_get_canvas_width_get_canvas_height" class="discrete">get_canvas_width() / get_canvas_height()</h3>
 <div class="paragraph">
 <p>Returns the canvas width or height in pixels.</p>

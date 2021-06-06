@@ -461,6 +461,9 @@ The project uses two sequential animation groups to move a sprite along a path s
 The project has a long sequential animation group that can perfectly loop by automatically change the direction of the property animations it contains.
 
 == Lua animation API
+Each Lua script needs to define an `update(value)` function. It will be called each frame of the animation with a different `value` parameter.
+
+If you need to perform some calculation only once, when the animation is first started, consider using the `init(value)` function as an optimization.
 
 [discrete]
 === get_canvas_width() / get_canvas_height()
