@@ -109,7 +109,7 @@ You can make the window btn:[Resizable] or not as well as btn:[Apply] your chang
 Next, you can enable or disable btn:[Vertical Sync]. If you disable it you can specify a `Frame Limit` to control the number of frames rendered per second or select `0` to switch it off.
 To apply the changes in this section you need to save the configuration and restart the program.
 
-You can choose the initial canvas size that will be used when the program starts for the first time as well as the maximum size of the Lua project file.
+You can choose the initial canvas size that will be used when the program starts for the first time.
 
 After that, you can choose the name of a project file that will be loaded the first time you start the program and optionally play it right away.
 
@@ -206,6 +206,8 @@ image::animations_window.png[Animations window]
 In the lower part of the left side of the interface, you will find the `Animations` window.
 
 You can use it to btn:[Add] and btn:[Remove] animations and to change their state with the btn:[Stop], btn:[Pause], and btn:[Play] buttons.
+
+Below those buttons there is slider to control the global speed multiplier, it can be used to change the speed of all animations at once.
 
 You can delete the selected animation also by pressing the kbd:[Delete] key while the cursor is over this window.
 
@@ -949,6 +951,11 @@ set_vertices_v(vertices_v)
 ----
 
 == Changelog
+
+[discrete]
+=== 16 July 2021
+* *[NEW]* Add a global speed multiplier for all animations
+* *[FIX]* Remove the `Savefile Size` configuration entry as it is not needed anymore
 
 [discrete]
 === 01 June 2021
