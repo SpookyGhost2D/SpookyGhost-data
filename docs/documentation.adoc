@@ -129,6 +129,8 @@ Before being able to create any sprite you need to load at least one texture fro
 
 You can delete the selected texture by clicking the btn:[Remove] button or pressing the kbd:[Delete] key while the cursor is over this window.
 
+You can load a different file for your texture using the btn:[Reload] button. Your sprites and your animations will update with the new image.
+
 image::context_menu_textures.png[Context menu for textures]
 
 Some of those actions are also available in the context menu that appears when you right-click on a texture.
@@ -150,7 +152,7 @@ You can use it to btn:[Add] and btn:[Remove] sprites or to move an existing spri
 
 You can also delete the selected sprite by pressing the kbd:[Delete] key while the cursor is over this window.
 
-With the btn:[Clone] button, it is possible to create a copy of the selected sprite.
+With the btn:[Clone] button, it is possible to create a copy of the selected sprite. The animations assigned to the original sprite will be cloned as well. If the selected sprite has children sprites they will be cloned too.
 
 image::context_menu_sprites.png[Context menu for sprites]
 
@@ -160,10 +162,13 @@ At the beginning of each entry, there is a checkbox you can use to make the spri
 
 The list order is reversed so that the top sprite is also the one that will be rendered on top of the others.
 
-[TIP]
-====
 image::drag_drop_sprites.png[Drag and Drop Sprites]
 You can reorder the list with the btn:[Move Up] and btn:[Move Down] buttons or by drag and drop.
+
+[TIP]
+====
+image::edit_sprite_name.png[Edit Sprite Name]
+You can quickly edit a sprite name by clicking on a sprite while pressing kbd:[CTRL].
 ====
 
 [TIP]
@@ -221,6 +226,12 @@ At the beginning of each entry, there is a checkbox you can use to make the anim
 
 You can find an icon about the current animation state at the end of an animation entry.
 
+[TIP]
+====
+image::edit_animation_name.png[Edit Animation Name]
+You can quickly edit an animation name by clicking on a animation while pressing kbd:[CTRL].
+====
+
 TIP: Pressing kbd:[Space] when hovering on the Canvas window will toggle the animation state between playing and paused.
 
 image::animation_types.png[Animation types]
@@ -259,7 +270,7 @@ On the top part of the right side of the interface, you will find the `Sprite` w
 
 You can change all the properties of the selected sprite from here.
 
-You will be able to give it a name, give it a parent sprite, change its position, rotation, scale, and anchor point. You will also be able to select a texture rectangle, flip the texture, select a blending type separately for the RGB and alpha channels and change its color.
+You will be able to give it a name, change its texture, set a parent sprite, change its position, rotation, scale, and anchor point. You will also be able to select a texture rectangle, flip the texture, select a blending type separately for the RGB and alpha channels and change its color.
 
 When you set a parent for a sprite its properties will depend upon its parent's properties, the properties of its grandparent, and so on. The parent-child sprite relationship is a powerful way to achieve very complex chained transformations.
 
@@ -384,7 +395,9 @@ image::render_progress.png[Render progress]
 
 While the operation is in progress you can click the btn:[Cancel] button or press the kbd:[Esc] key to cancel it.
 
-How big a single frame and the sprite sheet are going to be can be read in the `Frame size` and `Spritesheet size` text widgets.
+When the saving operation is completed the window and the system taskbar will flash to notify its success.
+
+You can read how big a single frame and the sprite sheet are going to be in the `Frame size` and `Spritesheet size` text widgets.
 
 == Canvas window
 
@@ -951,6 +964,19 @@ set_vertices_v(vertices_v)
 ----
 
 == Changelog
+
+[discrete]
+=== 14 September 2021
+* *[NEW]* Edit sprites and animations name in the Sprites and Animations windows
+* *[NEW]* Load a different file for a texture without affecting sprites or animations
+* *[NEW]* Change the texture associated to a sprite without affecting its animations
+* *[NEW]* When cloning a sprite also clone its children and its animations
+* *[NEW]* Flash the window and system taskbar when a render is finished on a desktop platform
+* *[FIX]* Fix the sprite, property, and script assignment when cloning an animation
+* *[FIX]* Fix the move direction of the move up and down buttons in the sprites window
+* *[FIX]* Disable (without hiding) the move up and down buttons in the sprites window when they cannot be used
+* *[FIX]* Disable (without hiding) the move up and down buttons in the animations window when they cannot be used
+* *[FIX]* Disable (without hiding) the next and previous buttons in the tips window when they cannot be used
 
 [discrete]
 === 16 July 2021
