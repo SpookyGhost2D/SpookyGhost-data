@@ -92,7 +92,7 @@ image::tips_window.png[Tips window]
 
 The `Tips` window will show you a random tip about the program every time you start it.
 
-You can read to the previous or the next tip with the btn:[Prev] and btn:[Next] buttons.
+You can read the previous or the next tip with the btn:[Prev] and btn:[Next] buttons. You can also navigate them with the left or right arrow key while the cursor is over this window.
 
 There is also a checkbox to enable or disable the default behavior of automatically showing this window on start.
 The same checkbox is also present in the <<Configuration window>>.
@@ -150,9 +150,15 @@ image::sprites_window.png[Sprites window]
 Next to the <<Textures window>> tab, you will find the `Sprites` window.
 You can use it to btn:[Add] and btn:[Remove] sprites or to move an existing sprite to a higher or lower drawing layer.
 
-You can also delete the selected sprite by pressing the kbd:[Delete] key while the cursor is over this window.
+With the btn:[Add Group] button you can create sprite groups, use them to organize your sprites or other groups.
+
+Next to a sprite or a group there is a color square that will help you locate the corresponding animations in the <<Animations window>>.
+You can click on any of those squares to pick a different color. A sprite inside a group will use its parent group color but it will revert to the original one once it is taken out.
+
+You can also delete the selected sprite or group by pressing the kbd:[Delete] key while the cursor is over this window.
 
 With the btn:[Clone] button, it is possible to create a copy of the selected sprite. The animations assigned to the original sprite will be cloned as well. If the selected sprite has children sprites they will be cloned too.
+If you select a group and clone it then every contained sprites will be clones, including their animations and children sprites.
 
 image::context_menu_sprites.png[Context menu for sprites]
 
@@ -164,6 +170,7 @@ The list order is reversed so that the top sprite is also the one that will be r
 
 image::drag_drop_sprites.png[Drag and Drop Sprites]
 You can reorder the list with the btn:[Move Up] and btn:[Move Down] buttons or by drag and drop.
+You can also move them with the up or down arrow key while the cursor is over this window.
 
 [TIP]
 ====
@@ -222,7 +229,9 @@ image::context_menu_animations.png[Context menu for animations]
 
 Some of those actions are also available in the context menu that appears when you right-click on an animation.
 
-At the beginning of each entry, there is a checkbox you can use to make the animation enabled or not. A disabled animation will not be played by the parent group that contains it.
+At the beginning of each entry, there is a color square that matches the color of the assigned sprite or its parent group.
+
+Next to it there is a checkbox you can use to make the animation enabled or not. A disabled animation will not be played by the parent group that contains it.
 
 You can find an icon about the current animation state at the end of an animation entry.
 
@@ -258,6 +267,7 @@ IMPORTANT: Animations inside a Sequential Group will not be able to loop.
 ====
 image::drag_drop_animations.png[Drag and Drop Animations]
 You can reorder the child order with the btn:[Move Up] and btn:[Move Down] buttons or change the parent and children relationships by drag and drop.
+You can also move them with the up or down arrow key while the cursor is over this window.
 ====
 
 TIP: The sprite icon at the end of an entry indicates that the animation is assigned to the currently selected sprite. When you select a different animation its assigned sprite will be automatically selected.
@@ -964,6 +974,28 @@ set_vertices_v(vertices_v)
 ----
 
 == Changelog
+
+[discrete]
+=== 12 October 2021
+* *[NEW]* Add groups to organize sprites
+* *[NEW]* Add colors to sprites and groups to easily locate corresponding animations
+* *[NEW]* Assign a name to a newly created sprite, group, or animation
+* *[FIX]* Reverse list of sprites in combo boxes to match the rendering layer order
+* *[FIX]* Clone corresponding animations when cloning a sprite
+* *[FIX]* Unassign a sprite's parent if the latter is deleted
+
+[discrete]
+=== 07 October 2021
+* *[NEW]* Move sprites and animations with the up or down arrow key
+* *[NEW]* Navigate tips with the left or right arrow key
+* *[FIX]* Disable (without hiding) all the buttons from the textures, sprites, scripts and animations windows
+* *[FIX]* Disable (without hiding) the context menu items that cannot be selected
+* *[FIX]* Select the texture, sprite, script, or animation when opening its context menu
+* *[FIX]* In the animations window, replace the child index with a progressive number
+* *[FIX]* Show the texrect window even when there are no sprites
+* *[FIX]* Hide the root animation entry if the are no animations
+* *[FIX]* Show an horizontal separator even without a tree list below it
+* *[FIX]* Fix the selection after an animation drag and drop
 
 [discrete]
 === 14 September 2021

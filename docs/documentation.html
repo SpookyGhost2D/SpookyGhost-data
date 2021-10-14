@@ -846,7 +846,7 @@ It can be a way to save multiple versions of your project while working on it.</
 <p>The <code>Tips</code> window will show you a random tip about the program every time you start it.</p>
 </div>
 <div class="paragraph">
-<p>You can read to the previous or the next tip with the <b class="button">Prev</b> and <b class="button">Next</b> buttons.</p>
+<p>You can read the previous or the next tip with the <b class="button">Prev</b> and <b class="button">Next</b> buttons. You can also navigate them with the left or right arrow key while the cursor is over this window.</p>
 </div>
 <div class="paragraph">
 <p>There is also a checkbox to enable or disable the default behavior of automatically showing this window on start.
@@ -955,10 +955,18 @@ To apply the changes in this section you need to save the configuration and rest
 You can use it to <b class="button">Add</b> and <b class="button">Remove</b> sprites or to move an existing sprite to a higher or lower drawing layer.</p>
 </div>
 <div class="paragraph">
-<p>You can also delete the selected sprite by pressing the <kbd>Delete</kbd> key while the cursor is over this window.</p>
+<p>With the <b class="button">Add Group</b> button you can create sprite groups, use them to organize your sprites or other groups.</p>
 </div>
 <div class="paragraph">
-<p>With the <b class="button">Clone</b> button, it is possible to create a copy of the selected sprite. The animations assigned to the original sprite will be cloned as well. If the selected sprite has children sprites they will be cloned too.</p>
+<p>Next to a sprite or a group there is a color square that will help you locate the corresponding animations in the <a href="#_animations_window">Animations window</a>.
+You can click on any of those squares to pick a different color. A sprite inside a group will use its parent group color but it will revert to the original one once it is taken out.</p>
+</div>
+<div class="paragraph">
+<p>You can also delete the selected sprite or group by pressing the <kbd>Delete</kbd> key while the cursor is over this window.</p>
+</div>
+<div class="paragraph">
+<p>With the <b class="button">Clone</b> button, it is possible to create a copy of the selected sprite. The animations assigned to the original sprite will be cloned as well. If the selected sprite has children sprites they will be cloned too.
+If you select a group and clone it then every contained sprites will be clones, including their animations and children sprites.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -980,7 +988,8 @@ You can use it to <b class="button">Add</b> and <b class="button">Remove</b> spr
 </div>
 </div>
 <div class="paragraph">
-<p>You can reorder the list with the <b class="button">Move Up</b> and <b class="button">Move Down</b> buttons or by drag and drop.</p>
+<p>You can reorder the list with the <b class="button">Move Up</b> and <b class="button">Move Down</b> buttons or by drag and drop.
+You can also move them with the up or down arrow key while the cursor is over this window.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1120,7 +1129,10 @@ You can reload a script also by pressing <span class="keyseq"><kbd>CTRL</kbd>+<k
 <p>Some of those actions are also available in the context menu that appears when you right-click on an animation.</p>
 </div>
 <div class="paragraph">
-<p>At the beginning of each entry, there is a checkbox you can use to make the animation enabled or not. A disabled animation will not be played by the parent group that contains it.</p>
+<p>At the beginning of each entry, there is a color square that matches the color of the assigned sprite or its parent group.</p>
+</div>
+<div class="paragraph">
+<p>Next to it there is a checkbox you can use to make the animation enabled or not. A disabled animation will not be played by the parent group that contains it.</p>
 </div>
 <div class="paragraph">
 <p>You can find an icon about the current animation state at the end of an animation entry.</p>
@@ -1211,7 +1223,8 @@ Animations inside a Sequential Group will not be able to loop.
 </div>
 </div>
 <div class="paragraph">
-<p>You can reorder the child order with the <b class="button">Move Up</b> and <b class="button">Move Down</b> buttons or change the parent and children relationships by drag and drop.</p>
+<p>You can reorder the child order with the <b class="button">Move Up</b> and <b class="button">Move Down</b> buttons or change the parent and children relationships by drag and drop.
+You can also move them with the up or down arrow key while the cursor is over this window.</p>
 </div>
 </td>
 </tr>
@@ -2114,6 +2127,64 @@ It can be one of the members of the <code>blending_preset</code> table: <code>DI
 <div class="sect1">
 <h2 id="_changelog">Changelog</h2>
 <div class="sectionbody">
+<h3 id="_12_october_2021" class="discrete">12 October 2021</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>[NEW]</strong> Add groups to organize sprites</p>
+</li>
+<li>
+<p><strong>[NEW]</strong> Add colors to sprites and groups to easily locate corresponding animations</p>
+</li>
+<li>
+<p><strong>[NEW]</strong> Assign a name to a newly created sprite, group, or animation</p>
+</li>
+<li>
+<p><strong>[FIX]</strong> Reverse list of sprites in combo boxes to match the rendering layer order</p>
+</li>
+<li>
+<p><strong>[FIX]</strong> Clone corresponding animations when cloning a sprite</p>
+</li>
+<li>
+<p><strong>[FIX]</strong> Unassign a sprite&#8217;s parent if the latter is deleted</p>
+</li>
+</ul>
+</div>
+<h3 id="_07_october_2021" class="discrete">07 October 2021</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>[NEW]</strong> Move sprites and animations with the up or down arrow key</p>
+</li>
+<li>
+<p><strong>[NEW]</strong> Navigate tips with the left or right arrow key</p>
+</li>
+<li>
+<p><strong>[FIX]</strong> Disable (without hiding) all the buttons from the textures, sprites, scripts and animations windows</p>
+</li>
+<li>
+<p><strong>[FIX]</strong> Disable (without hiding) the context menu items that cannot be selected</p>
+</li>
+<li>
+<p><strong>[FIX]</strong> Select the texture, sprite, script, or animation when opening its context menu</p>
+</li>
+<li>
+<p><strong>[FIX]</strong> In the animations window, replace the child index with a progressive number</p>
+</li>
+<li>
+<p><strong>[FIX]</strong> Show the texrect window even when there are no sprites</p>
+</li>
+<li>
+<p><strong>[FIX]</strong> Hide the root animation entry if the are no animations</p>
+</li>
+<li>
+<p><strong>[FIX]</strong> Show an horizontal separator even without a tree list below it</p>
+</li>
+<li>
+<p><strong>[FIX]</strong> Fix the selection after an animation drag and drop</p>
+</li>
+</ul>
+</div>
 <h3 id="_14_september_2021" class="discrete">14 September 2021</h3>
 <div class="ulist">
 <ul>
