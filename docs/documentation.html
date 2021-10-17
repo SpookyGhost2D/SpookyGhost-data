@@ -1498,10 +1498,14 @@ This option is useful to show a preview of how the script animation is affecting
 <p>You can then choose a prefix for the files that are going to be created. Just specify a filename without the extension.</p>
 </div>
 <div class="paragraph">
-<p>You can then choose to resize the canvas before saving its contents and then choose how many frames to generate per second.</p>
+<p>You can then choose to resize the canvas before saving its contents and then choose how many frames to generate per second.
+The resize combo box will also show the size of a resized frame.</p>
 </div>
 <div class="paragraph">
-<p>Based on the <code>FPS</code> value you will then be able to change the number of frames produces either by setting its number directly or by choosing a duration.</p>
+<p>Based on the <code>FPS</code> value you will then be able to change the number of frames produced either by setting its number directly or by choosing a duration.</p>
+</div>
+<div class="paragraph">
+<p>The <code>Layout</code> combo box will let you specify how the frames will be arranged inside a spritesheet. You can choose between a rectangle arrangement that prioritizes the horizontal or vertical dimension (<code>HRectangle</code> and <code>VRectangle</code>), a horizontal or vertical strip (<code>HStrip</code> and <code>VStrip</code>), or specify <code>Custom</code> values for the two dimensions.</p>
 </div>
 <div class="paragraph">
 <p>When you are ready you can either press <code>Save Frames</code> and have all the frames saved as distinct PNG images or press <code>Save Spritesheet</code> and save all frames in a single big PNG image.</p>
@@ -2127,6 +2131,20 @@ It can be one of the members of the <code>blending_preset</code> table: <code>DI
 <div class="sect1">
 <h2 id="_changelog">Changelog</h2>
 <div class="sectionbody">
+<h3 id="_17_october_2021" class="discrete">17 October 2021</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>[NEW]</strong> Add an option to specify the frames layout inside a spritesheet</p>
+</li>
+<li>
+<p><strong>[FIX]</strong> Clear the spritesheet texture before rendering frames</p>
+</li>
+<li>
+<p><strong>[FIX]</strong> Stabilize tips window size by extending tips strings with new lines</p>
+</li>
+</ul>
+</div>
 <h3 id="_12_october_2021" class="discrete">12 October 2021</h3>
 <div class="ulist">
 <ul>

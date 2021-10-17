@@ -396,8 +396,11 @@ Clicking the button on top will open the <<File dialog>> window to choose a dest
 You can then choose a prefix for the files that are going to be created. Just specify a filename without the extension.
 
 You can then choose to resize the canvas before saving its contents and then choose how many frames to generate per second.
+The resize combo box will also show the size of a resized frame.
 
-Based on the `FPS` value you will then be able to change the number of frames produces either by setting its number directly or by choosing a duration.
+Based on the `FPS` value you will then be able to change the number of frames produced either by setting its number directly or by choosing a duration.
+
+The `Layout` combo box will let you specify how the frames will be arranged inside a spritesheet. You can choose between a rectangle arrangement that prioritizes the horizontal or vertical dimension (`HRectangle` and `VRectangle`), a horizontal or vertical strip (`HStrip` and `VStrip`), or specify `Custom` values for the two dimensions.
 
 When you are ready you can either press `Save Frames` and have all the frames saved as distinct PNG images or press `Save Spritesheet` and save all frames in a single big PNG image.
 
@@ -974,6 +977,12 @@ set_vertices_v(vertices_v)
 ----
 
 == Changelog
+
+[discrete]
+=== 17 October 2021
+* *[NEW]* Add an option to specify the frames layout inside a spritesheet
+* *[FIX]* Clear the spritesheet texture before rendering frames
+* *[FIX]* Stabilize tips window size by extending tips strings with new lines
 
 [discrete]
 === 12 October 2021
