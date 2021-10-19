@@ -660,9 +660,11 @@ pre.rouge {
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_imgui_interface">ImGui interface</a></li>
-<li><a href="#_menus">Menus</a>
+<li><a href="#_interface">Interface</a>
 <ul class="sectlevel2">
+<li><a href="#_imgui_interaction">ImGui interaction</a></li>
+<li><a href="#_menus">Menus</a>
+<ul class="sectlevel3">
 <li><a href="#_file_menu">File menu</a></li>
 <li><a href="#_help_menu">Help menu</a></li>
 </ul>
@@ -674,13 +676,13 @@ pre.rouge {
 <li><a href="#_sprites_window">Sprites window</a></li>
 <li><a href="#_scripts_window">Scripts window</a></li>
 <li><a href="#_animations_window">Animations window</a>
-<ul class="sectlevel2">
+<ul class="sectlevel3">
 <li><a href="#_animation_groups">Animation groups</a></li>
 </ul>
 </li>
 <li><a href="#_sprite_window">Sprite window</a></li>
 <li><a href="#_animation_window">Animation window</a>
-<ul class="sectlevel2">
+<ul class="sectlevel3">
 <li><a href="#_property_animation_window">Property animation window</a></li>
 <li><a href="#_grid_animation_window">Grid animation window</a></li>
 <li><a href="#_script_animation_window">Script animation window</a></li>
@@ -691,6 +693,8 @@ pre.rouge {
 <li><a href="#_texrect_window">TexRect window</a></li>
 <li><a href="#_status_bar">Status bar</a></li>
 <li><a href="#_bundled_projects_files">Bundled projects files</a></li>
+</ul>
+</li>
 <li><a href="#_lua_animation_api">Lua animation API</a></li>
 <li><a href="#_changelog">Changelog</a></li>
 </ul>
@@ -718,8 +722,10 @@ pre.rouge {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_imgui_interface">ImGui interface</h2>
+<h2 id="_interface">Interface</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_imgui_interaction">ImGui interaction</h3>
 <div class="paragraph">
 <p>SpookyGhost interface is made with <a href="https://github.com/ocornut/imgui">ImGui</a>. You can use most of ImGui&#8217;s user interaction capabilities while using the program.</p>
 </div>
@@ -737,12 +743,10 @@ Another interesting functionality is the ability to modify the speed of change o
 <p>You can drag and drop colors around, for example, the background color of the <a href="#_canvas_window">Canvas window</a> onto the sprite color in the <a href="#_sprite_window">Sprite window</a>.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_menus">Menus</h2>
-<div class="sectionbody">
 <div class="sect2">
-<h3 id="_file_menu">File menu</h3>
+<h3 id="_menus">Menus</h3>
+<div class="sect3">
+<h4 id="_file_menu">File menu</h4>
 <div class="imageblock">
 <div class="content">
 <img src="file_menu.png" alt="File Menu">
@@ -780,8 +784,8 @@ It can be a way to save multiple versions of your project while working on it.</
 <p>Selecting <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Quit</b></span> or pressing <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Q</kbd></span> will open a modal window asking if you want to quit the program.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_help_menu">Help menu</h3>
+<div class="sect3">
+<h4 id="_help_menu">Help menu</h4>
 <div class="imageblock">
 <div class="content">
 <img src="help_menu.png" alt="Help Menu">
@@ -798,10 +802,8 @@ It can be a way to save multiple versions of your project while working on it.</
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_file_dialog">File dialog</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_file_dialog">File dialog</h3>
 <div class="paragraph">
 <p>When you have to browse your filesystem to load or save files or choose directories, the program will present you with a <code>file dialog</code> window.</p>
 </div>
@@ -833,10 +835,8 @@ It can be a way to save multiple versions of your project while working on it.</
 <p>All kinds of file dialogs have a set of checkboxes to show or hide file permissions, sizes, and dates plus a checkbox that when enabled will show hidden files or directories. As you can see in the last screenshot there is also a drop-down menu to select the entries sorting based on names, sizes, or dates.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_tips_window">Tips window</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_tips_window">Tips window</h3>
 <div class="imageblock">
 <div class="content">
 <img src="tips_window.png" alt="Tips window">
@@ -853,10 +853,8 @@ It can be a way to save multiple versions of your project while working on it.</
 The same checkbox is also present in the <a href="#_configuration_window">Configuration window</a>.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_configuration_window">Configuration window</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_configuration_window">Configuration window</h3>
 <div class="imageblock">
 <div class="content">
 <img src="configuration_window.png" alt="Configuration window">
@@ -889,10 +887,8 @@ To apply the changes in this section you need to save the configuration and rest
 <p>Upon closing the window the configuration will be saved in the <code>config.lua</code> file in the same directory as the program executable.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_textures_window">Textures window</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_textures_window">Textures window</h3>
 <div class="imageblock">
 <div class="content">
 <img src="textures_window.png" alt="Textures window">
@@ -941,10 +937,8 @@ To apply the changes in this section you need to save the configuration and rest
 </table>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_sprites_window">Sprites window</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_sprites_window">Sprites window</h3>
 <div class="imageblock">
 <div class="content">
 <img src="sprites_window.png" alt="Sprites window">
@@ -1042,10 +1036,8 @@ The texture icon at the end of an entry indicates that the sprite is using the c
 </table>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_scripts_window">Scripts window</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_scripts_window">Scripts window</h3>
 <div class="imageblock">
 <div class="content">
 <img src="scripts_window.png" alt="Scripts window">
@@ -1096,10 +1088,8 @@ You can reload a script also by pressing <span class="keyseq"><kbd>CTRL</kbd>+<k
 </table>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_animations_window">Animations window</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_animations_window">Animations window</h3>
 <div class="imageblock">
 <div class="content">
 <img src="animations_window.png" alt="Animations window">
@@ -1176,8 +1166,8 @@ Pressing <kbd>Space</kbd> when hovering on the Canvas window will toggle the ani
 <div class="paragraph">
 <p>Before pressing the <b class="button">Add</b> button, choose one of the four animation types.</p>
 </div>
-<div class="sect2">
-<h3 id="_animation_groups">Animation groups</h3>
+<div class="sect3">
+<h4 id="_animation_groups">Animation groups</h4>
 <div class="paragraph">
 <p>The <code>Parallel Group</code> and <code>Sequential Group</code> help to organize together multiple animations. They will be played together or one after another depending on the group type. An animation group can also be composed of sub-groups.</p>
 </div>
@@ -1244,10 +1234,8 @@ The sprite icon at the end of an entry indicates that the animation is assigned 
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_sprite_window">Sprite window</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_sprite_window">Sprite window</h3>
 <div class="imageblock">
 <div class="content">
 <img src="sprite_window.png" alt="Sprite window">
@@ -1281,18 +1269,16 @@ You can use the <a href="#_texrect_window">TexRect window</a> to help you set up
 </table>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_animation_window">Animation window</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_animation_window">Animation window</h3>
 <div class="paragraph">
 <p>Next to the <a href="#_sprite_window">Sprite window</a> tab, you will find the <code>Animation</code> window, where you can change all the properties of the selected animation.</p>
 </div>
 <div class="paragraph">
 <p>For every type of animation, including a group one, you will be able to change its name at the top of the interface.</p>
 </div>
-<div class="sect2">
-<h3 id="_property_animation_window">Property animation window</h3>
+<div class="sect3">
+<h4 id="_property_animation_window">Property animation window</h4>
 <div class="imageblock">
 <div class="content">
 <img src="property_animation_window.png" alt="Property animation window">
@@ -1393,8 +1379,8 @@ The function will take the time parameter, a number between 0 and 1, and return 
 <p>You can also read the current value for the easing curve and have a look at a graphical plot of recent <code>Values</code>.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_grid_animation_window">Grid animation window</h3>
+<div class="sect3">
+<h4 id="_grid_animation_window">Grid animation window</h4>
 <div class="imageblock">
 <div class="content">
 <img src="grid_animation_window.png" alt="Grid animation window">
@@ -1454,8 +1440,8 @@ Functions can be combined by adding multiple grid animations that affect the sam
 <p>Some grid functions have an anchor related parameter, it can be edited with the mouse in the <a href="#_canvas_window">Canvas window</a>.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_script_animation_window">Script animation window</h3>
+<div class="sect3">
+<h4 id="_script_animation_window">Script animation window</h4>
 <div class="imageblock">
 <div class="content">
 <img src="script_animation_window.png" alt="Script animation window">
@@ -1479,10 +1465,8 @@ This option is useful to show a preview of how the script animation is affecting
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_render_window">Render window</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_render_window">Render window</h3>
 <div class="imageblock">
 <div class="content">
 <img src="render_window.png" alt="Render window">
@@ -1525,10 +1509,8 @@ The resize combo box will also show the size of a resized frame.</p>
 <p>You can read how big a single frame and the sprite sheet are going to be in the <code>Frame size</code> and <code>Spritesheet size</code> text widgets.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_canvas_window">Canvas window</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_canvas_window">Canvas window</h3>
 <div class="imageblock">
 <div class="content">
 <img src="canvas_window.png" alt="Canvas window">
@@ -1588,10 +1570,8 @@ Pressing the arrow keys while the cursor is on the Canvas window will move the s
 <p>You can also press <span class="keyseq"><kbd>Shift</kbd>+<kbd>Ctrl</kbd></span> together and use the mouse to set both the sprite and the grid anchor points in one go.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_texrect_window">TexRect window</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_texrect_window">TexRect window</h3>
 <div class="imageblock">
 <div class="content">
 <img src="texrect_window.png" alt="TexRect window">
@@ -1605,10 +1585,8 @@ It shows you which part of the texture will be used by the sprite for rendering.
 <p>You can use the mouse to select a rectangular region and fine-tune its size in the <a href="#Sprites section">[Sprites section]</a> of the interface.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_status_bar">Status bar</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_status_bar">Status bar</h3>
 <div class="imageblock">
 <div class="content">
 <img src="status_bar.png" alt="Status bar">
@@ -1618,44 +1596,43 @@ It shows you which part of the texture will be used by the sprite for rendering.
 <p>At the bottom of the interface, you will find the status bar. It will show error and information messages as well as the mouse coordinates during some operations.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_bundled_projects_files">Bundled projects files</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_bundled_projects_files">Bundled projects files</h3>
 <div class="paragraph">
 <p>The program comes with some bundled project files to show its features and potential.</p>
 </div>
-<h3 id="_ghost_lua_laundry_lua_tree_lua" class="discrete">ghost.lua, laundry.lua, tree.lua</h3>
+<h4 id="_ghost_lua_laundry_lua_tree_lua" class="discrete">ghost.lua, laundry.lua, tree.lua</h4>
 <div class="paragraph">
 <p>Those three files are the classic projects distributed since the first versions of the program. They show what is visually and artistically achievable by using very few and simple animations.</p>
 </div>
-<h3 id="_delay_lua" class="discrete">delay.lua</h3>
+<h4 id="_delay_lua" class="discrete">delay.lua</h4>
 <div class="paragraph">
 <p>The project uses some very simple property animations that, together with different delay values, can achieve an interesting result.</p>
 </div>
-<h3 id="_ghost_sheet_lua" class="discrete">ghost_sheet.lua</h3>
+<h4 id="_ghost_sheet_lua" class="discrete">ghost_sheet.lua</h4>
 <div class="paragraph">
 <p>The project uses the <code>texrect.lua</code> script to modify the texture rectangle and animate using a sprite sheet.</p>
 </div>
-<h3 id="_scripted_gridanims_lua" class="discrete">scripted_gridanims.lua</h3>
+<h4 id="_scripted_gridanims_lua" class="discrete">scripted_gridanims.lua</h4>
 <div class="paragraph">
 <p>The project uses the <code>skewx.lua</code>, <code>skewy.lua</code>, <code>wavex.lua</code>, <code>wavey.lua</code>, and <code>zoom.lua</code> scripts to show how a Lua script can replicate the same functions of a grid animation, albeit consuming a bit more CPU power.</p>
 </div>
-<h3 id="_scripted_rotations_lua" class="discrete">scripted_rotations.lua</h3>
+<h4 id="_scripted_rotations_lua" class="discrete">scripted_rotations.lua</h4>
 <div class="paragraph">
 <p>The project uses the <code>circle.lua</code> script to show some rotating ghost sprites.</p>
 </div>
-<h3 id="_scripted_rotations_staggered_lua" class="discrete">scripted_rotations_staggered.lua</h3>
+<h4 id="_scripted_rotations_staggered_lua" class="discrete">scripted_rotations_staggered.lua</h4>
 <div class="paragraph">
 <p>The project is very similar to <code>scripted_rotations.lua</code> and it also uses the <code>circle.lua</code> script. The difference here is the use of different initial values to create out-of-phase rotations.</p>
 </div>
-<h3 id="_sequential_square_lua" class="discrete">sequential_square.lua</h3>
+<h4 id="_sequential_square_lua" class="discrete">sequential_square.lua</h4>
 <div class="paragraph">
 <p>The project uses two sequential animation groups to move a sprite along a path shaped as a square while also using some grid animations to perform a zoom at the same time.</p>
 </div>
-<h3 id="_sequential_reverse_lua" class="discrete">sequential_reverse.lua</h3>
+<h4 id="_sequential_reverse_lua" class="discrete">sequential_reverse.lua</h4>
 <div class="paragraph">
 <p>The project has a long sequential animation group that can perfectly loop by automatically change the direction of the property animations it contains.</p>
+</div>
 </div>
 </div>
 </div>
@@ -2131,7 +2108,7 @@ It can be one of the members of the <code>blending_preset</code> table: <code>DI
 <div class="sect1">
 <h2 id="_changelog">Changelog</h2>
 <div class="sectionbody">
-<h3 id="_17_october_2021" class="discrete">17 October 2021</h3>
+<h3 id="_17_october_2021_r66_on_itch_io" class="discrete">17 October 2021 (<strong>r66</strong> on Itch.io)</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2249,7 +2226,7 @@ It can be one of the members of the <code>blending_preset</code> table: <code>DI
 </li>
 </ul>
 </div>
-<h3 id="_01_june_2021" class="discrete">01 June 2021</h3>
+<h3 id="_01_june_2021_r60_on_itch_io" class="discrete">01 June 2021 (<strong>r60</strong> on Itch.io)</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2292,7 +2269,7 @@ It can be one of the members of the <code>blending_preset</code> table: <code>DI
 </li>
 </ul>
 </div>
-<h3 id="_21_may_2021" class="discrete">21 May 2021</h3>
+<h3 id="_21_may_2021_r58_on_itch_io" class="discrete">21 May 2021 (<strong>r58</strong> on Itch.io)</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2496,7 +2473,7 @@ It can be one of the members of the <code>blending_preset</code> table: <code>DI
 </li>
 </ul>
 </div>
-<h3 id="_24_may_2020" class="discrete">24 May 2020</h3>
+<h3 id="_24_may_2020_r33_on_itch_io" class="discrete">24 May 2020 (<strong>r33</strong> on Itch.io)</h3>
 <div class="paragraph">
 <p>Last paid version on Itch.io</p>
 </div>

@@ -19,7 +19,9 @@ If you find a bug in the program please open an https://github.com/SpookyGhost2D
 
 '''
 
-== ImGui interface
+== Interface
+
+=== ImGui interaction
 
 SpookyGhost interface is made with https://github.com/ocornut/imgui[ImGui]. You can use most of ImGui's user interaction capabilities while using the program.
 
@@ -32,9 +34,9 @@ You can use the usual kbd:[Ctrl + X], kbd:[Ctrl + C], and kbd:[Ctrl + V] to cut,
 
 You can drag and drop colors around, for example, the background color of the <<Canvas window>> onto the sprite color in the <<Sprite window>>.
 
-== Menus
+=== Menus
 
-=== File menu
+==== File menu
 image::file_menu.png[File Menu]
 
 Selecting menu:File[New] or pressing kbd:[Ctrl + N] will remove all animations, sprites, and textures.
@@ -59,7 +61,7 @@ Selecting menu:File[Configuration] will open the <<Configuration window>>.
 
 Selecting menu:File[Quit] or pressing kbd:[Ctrl + Q] will open a modal window asking if you want to quit the program.
 
-=== Help menu
+==== Help menu
 image::help_menu.png[Help Menu]
 
 Selecting menu:Help[Documentation] or pressing kbd:[F1] will open this documentation file.
@@ -68,7 +70,7 @@ Selecting menu:Help[Tips] will open the <<Tips window>>.
 
 Selecting menu:Help[About] will open the about window with information about the program version.
 
-== File dialog
+=== File dialog
 
 When you have to browse your filesystem to load or save files or choose directories, the program will present you with a `file dialog` window.
 
@@ -86,7 +88,7 @@ When deciding the destination directory for rendered frames the file dialog will
 
 All kinds of file dialogs have a set of checkboxes to show or hide file permissions, sizes, and dates plus a checkbox that when enabled will show hidden files or directories. As you can see in the last screenshot there is also a drop-down menu to select the entries sorting based on names, sizes, or dates.
 
-== Tips window
+=== Tips window
 
 image::tips_window.png[Tips window]
 
@@ -97,7 +99,7 @@ You can read the previous or the next tip with the btn:[Prev] and btn:[Next] but
 There is also a checkbox to enable or disable the default behavior of automatically showing this window on start.
 The same checkbox is also present in the <<Configuration window>>.
 
-== Configuration window
+=== Configuration window
 
 image::configuration_window.png[Configuration window]
 
@@ -119,7 +121,7 @@ With the last checkbox you can enable or disable the automatic showing of the <<
 
 Upon closing the window the configuration will be saved in the `config.lua` file in the same directory as the program executable.
 
-== Textures window
+=== Textures window
 
 image::textures_window.png[Textures window]
 
@@ -143,7 +145,7 @@ image::tooltip_textures.png[Tooltip image textures]
 If you hover with the mouse on a texture a small preview will appear as a tooltip.
 ====
 
-== Sprites window
+=== Sprites window
 
 image::sprites_window.png[Sprites window]
 
@@ -186,7 +188,7 @@ If you hover with the mouse on a sprite a small preview will appear as a tooltip
 
 TIP: The texture icon at the end of an entry indicates that the sprite is using the currently selected texture.
 
-== Scripts window
+=== Scripts window
 
 image::scripts_window.png[Scripts window]
 
@@ -211,7 +213,7 @@ In case of errors that prevent a script from running, you can hover on the entry
 
 TIP: You can reload a script also by pressing kbd:[CTRL + R].
 
-== Animations window
+=== Animations window
 
 image::animations_window.png[Animations window]
 
@@ -247,7 +249,7 @@ image::animation_types.png[Animation types]
 
 Before pressing the btn:[Add] button, choose one of the four animation types.
 
-=== Animation groups
+==== Animation groups
 
 The `Parallel Group` and `Sequential Group` help to organize together multiple animations. They will be played together or one after another depending on the group type. An animation group can also be composed of sub-groups.
 
@@ -272,7 +274,7 @@ You can also move them with the up or down arrow key while the cursor is over th
 
 TIP: The sprite icon at the end of an entry indicates that the animation is assigned to the currently selected sprite. When you select a different animation its assigned sprite will be automatically selected.
 
-== Sprite window
+=== Sprite window
 
 image::sprite_window.png[Sprite window]
 
@@ -288,13 +290,13 @@ Selecting a texture rectangle is useful when your texture is a sprite sheet and 
 
 TIP: You can use the <<TexRect window>> to help you set up a texture rectangle using the mouse.
 
-== Animation window
+=== Animation window
 
 Next to the <<Sprite window>> tab, you will find the `Animation` window, where you can change all the properties of the selected animation.
 
 For every type of animation, including a group one, you will be able to change its name at the top of the interface.
 
-=== Property animation window
+==== Property animation window
 
 image::property_animation_window.png[Property animation window]
 
@@ -344,7 +346,7 @@ The last slider, `Time`, is updated in real-time according to the current time v
 
 You can also read the current value for the easing curve and have a look at a graphical plot of recent `Values`.
 
-=== Grid animation window
+==== Grid animation window
 
 image::grid_animation_window.png[Grid animation window]
 
@@ -371,7 +373,7 @@ Depending on which function you choose a different list of parameters will appea
 
 Some grid functions have an anchor related parameter, it can be edited with the mouse in the <<Canvas window>>.
 
-=== Script animation window
+==== Script animation window
 
 image::script_animation_window.png[Script animation window]
 
@@ -386,7 +388,7 @@ Similarly to the <<Scripts window>>, a checkmark or a cross icon will tell you i
 Next to the script name, there is a checkbox with a lock icon. When it is enabled the script will be invoked even if the animation is currently stopped or paused.
 This option is useful to show a preview of how the script animation is affecting the sprite given the current curve value.
 
-== Render window
+=== Render window
 image::render_window.png[Render window]
 
 When you are happy with the results of your animation it is time to export it.
@@ -412,7 +414,7 @@ When the saving operation is completed the window and the system taskbar will fl
 
 You can read how big a single frame and the sprite sheet are going to be in the `Frame size` and `Spritesheet size` text widgets.
 
-== Canvas window
+=== Canvas window
 
 image::canvas_window.png[Canvas window]
 
@@ -438,7 +440,7 @@ If you instead press kbd:[Ctrl] and the left mouse button a blue point and a blu
 
 You can also press kbd:[Shift+Ctrl] together and use the mouse to set both the sprite and the grid anchor points in one go.
 
-== TexRect window
+=== TexRect window
 image::texrect_window.png[TexRect window]
 
 The `TexRect` window is available when at least one sprite has been created.
@@ -446,685 +448,47 @@ It shows you which part of the texture will be used by the sprite for rendering.
 
 You can use the mouse to select a rectangular region and fine-tune its size in the <<Sprites section>> of the interface.
 
-== Status bar
+=== Status bar
 
 image::status_bar.png[Status bar]
 
 At the bottom of the interface, you will find the status bar. It will show error and information messages as well as the mouse coordinates during some operations.
 
-== Bundled projects files
+=== Bundled projects files
 
 The program comes with some bundled project files to show its features and potential.
 
 [discrete]
-=== ghost.lua, laundry.lua, tree.lua
+==== ghost.lua, laundry.lua, tree.lua
 Those three files are the classic projects distributed since the first versions of the program. They show what is visually and artistically achievable by using very few and simple animations.
 
 [discrete]
-=== delay.lua
+==== delay.lua
 The project uses some very simple property animations that, together with different delay values, can achieve an interesting result.
 
 [discrete]
-=== ghost_sheet.lua
+==== ghost_sheet.lua
 The project uses the `texrect.lua` script to modify the texture rectangle and animate using a sprite sheet.
 
 [discrete]
-=== scripted_gridanims.lua
+==== scripted_gridanims.lua
 The project uses the `skewx.lua`, `skewy.lua`, `wavex.lua`, `wavey.lua`, and `zoom.lua` scripts to show how a Lua script can replicate the same functions of a grid animation, albeit consuming a bit more CPU power.
 
 [discrete]
-=== scripted_rotations.lua
+==== scripted_rotations.lua
 The project uses the `circle.lua` script to show some rotating ghost sprites.
 
 [discrete]
-=== scripted_rotations_staggered.lua
+==== scripted_rotations_staggered.lua
 The project is very similar to `scripted_rotations.lua` and it also uses the `circle.lua` script. The difference here is the use of different initial values to create out-of-phase rotations.
 
 [discrete]
-=== sequential_square.lua
+==== sequential_square.lua
 The project uses two sequential animation groups to move a sprite along a path shaped as a square while also using some grid animations to perform a zoom at the same time.
 
 [discrete]
-=== sequential_reverse.lua
+==== sequential_reverse.lua
 The project has a long sequential animation group that can perfectly loop by automatically change the direction of the property animations it contains.
 
-== Lua animation API
-Each Lua script needs to define an `update(value)` function. It will be called each frame of the animation with a different `value` parameter.
-
-If you need to perform some calculation only once, when the animation is first started, consider using the `init(value)` function as an optimization.
-
-[discrete]
-=== get_canvas_width() / get_canvas_height()
-
-Returns the canvas width or height in pixels.
-
-[source,lua]
-----
-local canvas_width = get_canvas_width()
-local canvas_height = get_canvas_height()
-print("canvas size: " .. canvas_width .. "x" .. canvas_height)
-----
-
-[discrete]
-=== get_texture_width() /  get_texture_height()
-
-Returns the sprite texture width or height in pixels.
-
-[source,lua]
-----
-local texture_width = get_texture_width()
-local texture_height = get_texture_height()
-print("texture size: " .. texture_width .. "x" .. texture_height)
-----
-
-[discrete]
-=== get_width() / get_height()
-
-Returns the sprite width or height  in pixels.
-
-[source,lua]
-----
-local width = get_width()
-local height = get_height()
-print("sprite size: " .. width .. "x" .. height)
-----
-
-[discrete]
-=== get_position()
-
-Returns the position of the sprite in pixels as a table with the `x` and the `y` fields.
-
-[source,lua]
-----
-local position = get_position()
-print("position x: " .. position.x .. " y: " .. position.y)
-----
-
-[discrete]
-=== get_x() / get_y()
-
-Returns the `x` or `y` component of the position of the sprite in pixels.
-
-[source,lua]
-----
-local x = get_x()
-local y = get_y()
-print("position x: " .. x .. " y: " .. y)
-----
-
-[discrete]
-=== get_rotation()
-
-Returns the rotation of the sprite in degrees.
-
-[source,lua]
-----
-local rotation = get_rotation()
-print("rotation: " .. rotation)
-----
-
-[discrete]
-=== get_scale()
-
-Returns the scale of the sprite as a table with the `x` and the `y` fields.
-
-[source,lua]
-----
-local scale = get_scale()
-print("scale x: " .. scale.x .. " y: " .. scale.y)
-----
-
-[discrete]
-=== get_scale_x() / get_scale_y()
-
-Returns the `x` or `y` component of the scale of the sprite.
-
-[source,lua]
-----
-local scale_x = get_scale_x()
-local scale_y = get_scale_y()
-print("scale x: " .. scale_x .. " y: " .. scale_y)
-----
-
-[discrete]
-=== get_anchor()
-
-Returns the anchor point of the sprite in pixels as a table with the `x` and the `y` fields.
-
-[source,lua]
-----
-local anchor = get_anchor()
-print("anchor x: " .. anchor.x .. " y: " .. anchor.y)
-----
-
-[discrete]
-=== get_anchor_x() / get_anchor_y()
-
-Returns the `x` or `y` component of the anchor point of the sprite.
-
-[source,lua]
-----
-local anchor_x = get_anchor_x()
-local anchor_y = get_anchor_y()
-print("anchor x: " .. anchor_x .. " y: " .. anchor_y)
-----
-
-[discrete]
-=== get_color()
-
-Returns the color of the sprite as a table with the `r`, `g`, `b` and `a` fields for the normalized values of the red, green, blue and alpha channels.
-
-[source,lua]
-----
-local color = get_color()
-print(string.format("color: #%X%X%X%X", math.floor(color.r * 255 + 0.5), math.floor(color.g * 255 + 0.5), math.floor(color.b * 255 + 0.5), math.floor(color.a * 255 + 0.5)))
-----
-
-[discrete]
-=== get_texrect()
-
-Returns the texture rectangle of the sprite as a table with the `x`, `y`, `w` and `h` fields for the position, the width, and the height of the rectangle.
-
-[source,lua]
-----
-local rect = get_texrect()
-print("texrect x: " .. rect.x .. " y: " .. rect.y .. " w: " .. rect.w .. " h: " .. rect.h)
-----
-
-[discrete]
-=== get_flipped_x() / get_flipped_y()
-
-Returns the value of the horizontal or vertical flipping flag of the sprite.
-
-[source,lua]
-----
-local is_hflipped = get_flipped_x()
-local is_vflipped = get_flipped_y()
-print("flipped h: " .. (is_hflipped and 'true' or 'false') .. " v: " .. (is_vflipped and 'true' or 'false'))
-----
-
-[discrete]
-=== get_rgb_blending() / get_alpha_blending()
-
-Returns the current blending preset value for the RGB or alpha channels of the sprite.
-It can be one of the members of the `blending_preset` table: `DISABLED`, `ALPHA`, `PREMULTIPLIED_ALPHA`, `ADDITIVE`, or `MULTIPLY`.
-
-* `DISABLED`: source factor is `GL_ONE`, destination factor is `GL_ZERO`.
-* `ALPHA`: source factor is `GL_SRC_ALPHA`, destination factor is `GL_ONE_MINUS_SRC_ALPHA`.
-* `PREMULTIPLIED_ALPHA`: source factor is `GL_ONE`, destination factor is `GL_ONE_MINUS_SRC_ALPHA`.
-* `ADDITIVE`: source factor is `GL_SRC_ALPHA`, destination factor is `GL_ONE`.
-* `MULTIPLY`: source factor is `GL_DST_COLOR`, destination factor is `GL_ZERO`.
-
-
-[source,lua]
-----
-local blending = get_rgb_blending()
-
-local blending_string = "UNKNOWN"
-if blending == blending_preset.DISABLED then
-	blending_string = "DISABLED"
-elseif blending == blending_preset.ALPHA then
-	blending_string = "ALPHA"
-elseif blending == blending_preset.PREMULTIPLIED_ALPHA then
-	blending_string = "PREMULTIPLIED_ALPHA"
-elseif blending == blending_preset.ADDITIVE then
-	blending_string = "ADDITIVE"
-elseif blending == blending_preset.MULTIPLY then
-	blending_string = "MULTIPLY"
-end
-
-print("blending: " .. blending_string)
-----
-
-[discrete]
-=== get_num_vertices()
-
-Returns the number of vertices of the sprite grid.
-
-[source,lua]
-----
-local num_vertices = get_num_vertices()
-print("number of vertices: " .. num_vertices)
-----
-
-[discrete]
-=== get_vertices()
-
-Returns all the vertices of the sprite grid as an array of tables with the `x`, `y`, `u`, and `v` fields for the positions and the texture coordinates.
-
-[source,lua]
-----
-local vertices = get_vertices()
--- Print the position and texture coordinates of the first four vertices
-for i = 1, 4 do
-	print(string.format("vertex #%d x: %f y: %f u: %f v: %f", i, vertices[i].x, vertices[i].y, vertices[i].u, vertices[i].v))
-end
-----
-
-[discrete]
-=== get_vertices_xy()
-
-Returns all the vertices of the sprite grid as an array of tables with the `x` and `y` fields for the positions.
-
-[source,lua]
-----
-local vertices_xy = get_vertices_xy()
--- Print the position of the first four vertices
-for i = 1, 4 do
-	print(string.format("vertex #%d x: %f y: %f", i, vertices_xy[i].x, vertices_xy[i].y))
-end
-----
-
-[discrete]
-=== get_vertices_uv()
-
-Returns all the vertices of the sprite grid as an array of tables with the `u` and `v` fields for the texture coordinates.
-
-[source,lua]
-----
-local vertices_uv = get_vertices_uv()
--- Print the texture coordinates of the first four vertices
-for i = 1, 4 do
-	print(string.format("vertex #%d u: %f v: %f", i, vertices_uv[i].u, vertices_uv[i].v))
-end
-----
-
-[discrete]
-=== get_vertices_x() / get_vertices_y() / get_vertices_u() / get_vertices_v()
-
-Returns all the vertices of the sprite grid as an array of `x`, `y`, `u`, or `v` components of the positions or texture coordinates.
-
-[source,lua]
-----
-local vertices_x = get_vertices_x()
-local vertices_y = get_vertices_y()
-local vertices_u = get_vertices_u()
-local vertices_v = get_vertices_v()
--- Print the texture coordinates of the first four vertices
-for i = 1, 4 do
-	print(string.format("vertex #%d x: %f y: %f u: %f v: %f", i, vertices_x[i], vertices_y[i], vertices_u[i], vertices_v[i]))
-end
-----
-
-[discrete]
-=== set_position()
-
-Sets the position of the sprite in pixels through a table with the `x` and the `y` fields.
-
-[source,lua]
-----
-new_position = { x = 0, y = 0 }
-set_position(new_position)
-----
-
-[discrete]
-=== set_x() / set_y()
-
-Sets the `x` or `y` component of the position of the sprite in pixels.
-
-[source,lua]
-----
-set_x(0)
-set_y(0)
-----
-
-[discrete]
-=== set_rotation()
-
-Sets the rotation of the sprite in degrees.
-
-[source,lua]
-----
-set_rotation(0)
-----
-
-[discrete]
-=== set_scale()
-
-Sets the scale of the sprite through a table with the `x` and the `y` fields.
-
-[source,lua]
-----
-new_scale = { x = 1, y = 1 }
-set_scale(new_scale)
-----
-
-[discrete]
-=== set_scale_x() / set_scale_y()
-
-Sets the `x` or `y` component of the scale of the sprite.
-
-[source,lua]
-----
-set_scale_x(1)
-set_scale_y(1)
-----
-
-[discrete]
-=== set_anchor()
-
-Sets the anchor point of the sprite in pixels with one rgument: as a table with the `x` and the `y` fields.
-
-[source,lua]
-----
-new_anchor = { x = 0, y = 0 }
-set_anchor(new_anchor)
-----
-
-[discrete]
-=== set_anchor_x() / set_anchor_y()
-
-Sets the `x` or `y` component of the anchor point of the sprite.
-
-[source,lua]
-----
-set_anchor_x(0)
-set_anchor_y(0)
-----
-
-[discrete]
-=== set_color()
-
-Sets the color of the sprite through a table with the `r`, `g`, `b` and `a` fields for the normalized values of the red, green, blue and alpha channels.
-
-[source,lua]
-----
-new_color = { r = 1.0, g = 1.0, b = 1.0, a = 1.0}
-set_color(new_color)
-----
-
-[discrete]
-=== set_texrect()
-
-Sets the texture rectangle of the sprite through a table with the `x`, `y`, `w` and `h` fields for the position, the width, and the height of the rectangle.
-
-[source,lua]
-----
-new_rect = { x = 0, y = 0, w = get_texture_width(), h = get_texture_height()}
-set_texrect(new_rect)
-----
-
-[discrete]
-=== set_flipped_x() / set_flipped_y()
-
-Sets the value of the horizontal or vertical flipping flag of the sprite.
-
-[source,lua]
-----
-set_flipped_x(false)
-set_flipped_y(false)
-----
-
-[discrete]
-=== set_rgb_blending() / set_alpha_blending()
-
-Sets the blending preset value for the RGB or alpha channels of the sprite.
-It can be one of the members of the `blending_preset` table: `DISABLED`, `ALPHA`, `PREMULTIPLIED_ALPHA`, `ADDITIVE`, or `MULTIPLY`.
-
-[source,lua]
-----
-set_rgb_blending(blending_preset.ALPHA)
-----
-
-[discrete]
-=== set_vertices()
-
-Sets all the vertices of the sprite grid with one argument: an array of tables with the `x`, `y`, `u`, and `v` fields for the positions and the texture coordinates.
-
-[source,lua]
-----
-local vertices = get_vertices()
-
--- Change the position and texture coordinate of the first vertex
-vertices[1].x = 0
-vertices[1].y = 0
-vertices[1].u = 0
-vertices[1].v = 0
-
-set_vertices(vertices)
-----
-
-[discrete]
-=== set_vertices_xy()
-
-Sets all the vertices of the sprite grid with one argument: an array of tables with the `x` and `y` fields for the positions.
-
-[source,lua]
-----
-local vertices_xy = get_vertices_xy()
-
--- Change the position of the first vertex
-vertices_xy[1].x = 0
-vertices_xy[1].y = 0
-
-set_vertices_xy(vertices_xy)
-----
-
-[discrete]
-=== set_vertices_uv()
-
-Sets all the vertices of the sprite grid with one argument: an array of tables with the `u` and `v` fields for the texture coordinates.
-
-[source,lua]
-----
-local vertices_uv = get_vertices_uv()
-
--- Change the texture coordinate of the first vertex
-vertices_uv[1].u = 0
-vertices_uv[1].v = 0
-
-set_vertices_uv(vertices_uv)
-----
-
-[discrete]
-=== set_vertices_x()
-
-Sets all the vertices of the sprite grid with one argument: an array of `x` components of the positions.
-
-[source,lua]
-----
-local vertices_x = get_vertices_x()
-
--- Change the horizontal position of the first vertex
-vertices_x[1] = 0
-
-set_vertices_x(vertices_x)
-----
-
-[discrete]
-=== set_vertices_y()
-
-Sets all the vertices of the sprite grid with one argument: an array of `y` components of the positions.
-
-[source,lua]
-----
-local vertices_y = get_vertices_y()
-
--- Change the vertical position of the first vertex
-vertices_y[1] = 0
-
-set_vertices_y(vertices_y)
-----
-
-[discrete]
-=== set_vertices_u()
-
-Sets all the vertices of the sprite grid with one argument: an array of `u` components of the texture coordinates.
-
-[source,lua]
-----
-local vertices_u = get_vertices_u()
-
--- Change the horizontal texture coordinate of the first vertex
-vertices_u[1] = 0
-
-set_vertices_u(vertices_u)
-----
-
-[discrete]
-=== set_vertices_v()
-
-Sets all the vertices of the sprite grid with one argument: an array of `v` components of the texture coordinates.
-
-[source,lua]
-----
-local vertices_v = get_vertices_v()
-
--- Change the vertical texture coordinate of the first vertex
-vertices_v[1] = 0
-
-set_vertices_v(vertices_v)
-----
-
-== Changelog
-
-[discrete]
-=== 17 October 2021
-* *[NEW]* Add an option to specify the frames layout inside a spritesheet
-* *[FIX]* Clear the spritesheet texture before rendering frames
-* *[FIX]* Stabilize tips window size by extending tips strings with new lines
-
-[discrete]
-=== 12 October 2021
-* *[NEW]* Add groups to organize sprites
-* *[NEW]* Add colors to sprites and groups to easily locate corresponding animations
-* *[NEW]* Assign a name to a newly created sprite, group, or animation
-* *[FIX]* Reverse list of sprites in combo boxes to match the rendering layer order
-* *[FIX]* Clone corresponding animations when cloning a sprite
-* *[FIX]* Unassign a sprite's parent if the latter is deleted
-
-[discrete]
-=== 07 October 2021
-* *[NEW]* Move sprites and animations with the up or down arrow key
-* *[NEW]* Navigate tips with the left or right arrow key
-* *[FIX]* Disable (without hiding) all the buttons from the textures, sprites, scripts and animations windows
-* *[FIX]* Disable (without hiding) the context menu items that cannot be selected
-* *[FIX]* Select the texture, sprite, script, or animation when opening its context menu
-* *[FIX]* In the animations window, replace the child index with a progressive number
-* *[FIX]* Show the texrect window even when there are no sprites
-* *[FIX]* Hide the root animation entry if the are no animations
-* *[FIX]* Show an horizontal separator even without a tree list below it
-* *[FIX]* Fix the selection after an animation drag and drop
-
-[discrete]
-=== 14 September 2021
-* *[NEW]* Edit sprites and animations name in the Sprites and Animations windows
-* *[NEW]* Load a different file for a texture without affecting sprites or animations
-* *[NEW]* Change the texture associated to a sprite without affecting its animations
-* *[NEW]* When cloning a sprite also clone its children and its animations
-* *[NEW]* Flash the window and system taskbar when a render is finished on a desktop platform
-* *[FIX]* Fix the sprite, property, and script assignment when cloning an animation
-* *[FIX]* Fix the move direction of the move up and down buttons in the sprites window
-* *[FIX]* Disable (without hiding) the move up and down buttons in the sprites window when they cannot be used
-* *[FIX]* Disable (without hiding) the move up and down buttons in the animations window when they cannot be used
-* *[FIX]* Disable (without hiding) the next and previous buttons in the tips window when they cannot be used
-
-[discrete]
-=== 16 July 2021
-* *[NEW]* Add a global speed multiplier for all animations
-* *[FIX]* Remove the `Savefile Size` configuration entry as it is not needed anymore
-
-[discrete]
-=== 01 June 2021
-* *[NEW]* Add an image preview tooltip for textures and sprites
-* *[NEW]* Add a `Quick Load` and `Quick Save` functionality
-* *[NEW]* Add a confirmation modal window when trying to quit the program
-* *[FIX]* Change the keyboard shortcut for reloading a script
-* *[FIX]* Fix the file lists in the bundled textures and scripts combo boxes
-
-[discrete]
-=== 30 May 2021
-* *[NEW]* Add direction and loop mode to parallel groups
-* *[FIX]* Fix sequential group playing when some contained animations are disabled
-* *[FIX]* Fix the override functionality of animation groups containing property animations
-* *[FIX]* Disable looping for animations inside a sequential group
-* *[FIX]* Set the correct parent of contained animations when cloning a group
-* *[FIX]* Reverse order in the sprites window to match rendering layer order
-
-[discrete]
-=== 21 May 2021
-* *[NEW]* Set separate blending presets for RGB and alpha channels (also through scripting)
-* *[NEW]* Add a button to override the sprite used by every animation inside a group
-* *[NEW]* Add a "Select Parent" item in the contextual menu of sprites and animations
-
-[discrete]
-=== 18 May 2021
-* *[FIX]* Fix UV coordinates of texture rectangles
-* *[FIX]* Replace backslashes with slashes in Windows file paths
-* *[FIX]* Change the code that updates the selected animation when removing one
-* *[FIX]* Update the selected sprite index when removing a texture
-* *[FIX]* Clamp texture coordinates wrapping to edges
-* *[FIX]* Snap anchor point position to the pixel
-* *[FIX]* Validate texture rectangle GUI values before applying them
-
-[discrete]
-=== 16 May 2021
-* *[NEW]* Add delay, loop delay and initial time values
-* *[FIX]* Reverse the direction of animations when the parent sequential group is going backward
-* *[FIX]* Correct the detection of textures and scripts that are not relocatable
-* *[FIX]* Disable animation locking when the parent group is playing
-
-[discrete]
-=== 10 May 2021
-* *[NEW]* Add context menus for textures, sprites, scritps, and animations
-* *[FIX]* Require pressing btn:[Alt] to drag a sprite on the canvas to prevent accidental movements
-
-[discrete]
-=== 09 May 2021
-* *[NEW]* Add a combo box to load bundled scripts
-* *[FIX]* Fix bundled projects loading when the configured textures path is not the default one
-* *[FIX]* Many fixes to the Emscripten and Android experimental versions
-
-[discrete]
-=== 06 May 2021
-* *[NEW]* Add the tips window: by default, it will show up when the program starts
-
-[discrete]
-=== 02 May 2021
-* *[FIX]* Reset the sprite grid when removing a grid or a script animation assigned to that sprite
-
-[discrete]
-=== 25 April 2021
-* *[NEW]* Add support for Lua script animations
-** Add a new script type animation and a script resource
-** Add a new scripts window to the user interface
-* *[FIX]* Fix a crash when changing the texture rectangle of a sprite with a grid animation
-
-[discrete]
-=== 06 April 2021
-* *[NEW]* Add a checkbox to enable or disable an animation
-
-[discrete]
-=== 02 April 2021
-* *[NEW]* Add clone buttons for sprites and animations
-* *[NEW]* Add move up and down buttons in the animations windows
-* *[FIX]* Create a new animation under the selected one
-* *[FIX]* Select the dropped animation when drag'n'dropping
-* *[FIX]* Automatically select a newly created animation
-
-[discrete]
-=== 01 April 2021
-* *[NEW]* Reactivate sequential animation groups
-* *[NEW]* Add direction and loop mode to sequential groups
-* *[NEW]* Add an option to lock or unlock the value of non-playing curve animations
-* *[FIX]* Fix animations order when deserializing animation groups
-* *[FIX]* Set the grid function when deserializing a grid animation
-* *[FIX]* Hide the grid function interface if there are no sprites to animate
-
-[discrete]
-=== 30 March 2021
-* *[NEW]* Add support for drag and drop in the animations window
-* *[NEW]* Show the animation manager root group in the animations window
-* *[FIX]* Assign the selected sprite to newly created property and grid animations
-
-[discrete]
-=== 28 February 2021
-* *[NEW]* Add support for drag and drop in the sprites window
-* *[FIX]* Put the move up and down sprite buttons on the same line as the add and remove ones
-* *[FIX]* Add support for the new fault-tolerant texture loader class of the nCine
-* *[FIX]* Avoid displaying the remove button if there are no textures or sprites
-* *[FIX]* Fix a crash when recursively removing an animation and its children
-
-[discrete]
-=== 24 May 2020
-Last paid version on Itch.io
+include::lua_animation_api.adoc[]
+include::changelog.adoc[]
