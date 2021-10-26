@@ -443,10 +443,13 @@ You can also press kbd:[Shift+Ctrl] together and use the mouse to set both the s
 === TexRect window
 image::texrect_window.png[TexRect window]
 
-The `TexRect` window is available when at least one sprite has been created.
-It shows you which part of the texture will be used by the sprite for rendering.
+The `TexRect` window shows you which part of the texture will be used by the sprite for rendering.
 
 You can use the mouse to select a rectangular region and fine-tune its size in the <<Sprites section>> of the interface.
+
+If you press kbd:[Alt] and click inside the rectangle, you can drag it around by moving the mouse.
+
+If you press kbd:[Shift] and click inside the rectangle, you can resize it by moving the mouse. If you are close to a corner you will be able to resize the rectangle by moving that corner. If you are close to a side, but not to a specific corner, you will be able to resize the rectangle by moving that side.
 
 === Status bar
 

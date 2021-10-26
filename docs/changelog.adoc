@@ -1,6 +1,12 @@
 == Changelog
 
 [discrete]
+=== 26 October 2021
+* *[NEW]* Move the texture rectangle of a sprite with the mouse while pressing the Alt key
+* *[NEW]* Resize the texture rectangle of a sprite with the mouse while pressing the Shift key
+* *[FIX]* Retain the texture rectangle of a sprite when changing texture
+
+[discrete]
 === 17 October 2021 (**r66** on Itch.io)
 * *[NEW]* Add an option to specify the frames layout inside a spritesheet
 * *[FIX]* Clear the spritesheet texture before rendering frames

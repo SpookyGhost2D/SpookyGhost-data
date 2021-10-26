@@ -1578,11 +1578,16 @@ Pressing the arrow keys while the cursor is on the Canvas window will move the s
 </div>
 </div>
 <div class="paragraph">
-<p>The <code>TexRect</code> window is available when at least one sprite has been created.
-It shows you which part of the texture will be used by the sprite for rendering.</p>
+<p>The <code>TexRect</code> window shows you which part of the texture will be used by the sprite for rendering.</p>
 </div>
 <div class="paragraph">
 <p>You can use the mouse to select a rectangular region and fine-tune its size in the <a href="#Sprites section">[Sprites section]</a> of the interface.</p>
+</div>
+<div class="paragraph">
+<p>If you press <kbd>Alt</kbd> and click inside the rectangle, you can drag it around by moving the mouse.</p>
+</div>
+<div class="paragraph">
+<p>If you press <kbd>Shift</kbd> and click inside the rectangle, you can resize it by moving the mouse. If you are close to a corner you will be able to resize the rectangle by moving that corner. If you are close to a side, but not to a specific corner, you will be able to resize the rectangle by moving that side.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2108,6 +2113,20 @@ It can be one of the members of the <code>blending_preset</code> table: <code>DI
 <div class="sect1">
 <h2 id="_changelog">Changelog</h2>
 <div class="sectionbody">
+<h3 id="_26_october_2021" class="discrete">26 October 2021</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>[NEW]</strong> Move the texture rectangle of a sprite with the mouse while pressing the Alt key</p>
+</li>
+<li>
+<p><strong>[NEW]</strong> Resize the texture rectangle of a sprite with the mouse while pressing the Shift key</p>
+</li>
+<li>
+<p><strong>[FIX]</strong> Retain the texture rectangle of a sprite when changing texture</p>
+</li>
+</ul>
+</div>
 <h3 id="_17_october_2021_r66_on_itch_io" class="discrete">17 October 2021 (<strong>r66</strong> on Itch.io)</h3>
 <div class="ulist">
 <ul>
