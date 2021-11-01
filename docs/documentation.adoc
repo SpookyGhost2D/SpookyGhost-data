@@ -493,5 +493,9 @@ The project uses two sequential animation groups to move a sprite along a path s
 ==== sequential_reverse.lua
 The project has a long sequential animation group that can perfectly loop by automatically change the direction of the property animations it contains.
 
+[discrete]
+==== cover.lua
+The project animates each letter of the SpookyGhost logo differently and it is used for the Itch.io GIF cover.
+
 include::lua_animation_api.adoc[]
 include::changelog.adoc[]
