@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.16">
+<meta name="generator" content="Asciidoctor 2.0.17">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <title>Documentation</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
@@ -194,7 +194,8 @@ body.toc2.toc-right{padding-left:0;padding-right:20em}}
 #content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
 details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
 details{margin-left:1.25rem}
-details>summary{cursor:pointer;display:block;position:relative;line-height:1.6;margin-bottom:.625rem;-webkit-tap-highlight-color:transparent}
+details>summary{cursor:pointer;display:block;position:relative;line-height:1.6;margin-bottom:.625rem;outline:none;-webkit-tap-highlight-color:transparent}
+details>summary::-webkit-details-marker{display:none}
 details>summary::before{content:"";border:solid transparent;border-left:solid;border-width:.3em 0 .3em .5em;position:absolute;top:.5em;left:-1.25rem;transform:translateX(15%)}
 details[open]>summary::before{border:solid transparent;border-top:solid;border-width:.5em .3em 0;transform:translateY(15%)}
 details>summary::after{content:"";width:1.25rem;height:1em;position:absolute;top:.3em;left:-1.25rem}
@@ -236,9 +237,8 @@ pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
 table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
 table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
 table.linenotable td.code{padding-left:.75em}
-table.linenotable td.linenos{border-right:1px solid;opacity:.35;padding-right:.5em}
-pre.pygments .lineno{border-right:1px solid;opacity:.35;display:inline-block;margin-right:.75em}
-pre.pygments .lineno::before{content:"";margin-right:-.125em}
+table.linenotable td.linenos,pre.pygments .linenos{border-right:1px solid;opacity:.35;padding-right:.5em;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+pre.pygments span.linenos{display:inline-block;margin-right:.75em}
 .quoteblock{margin:0 1em 1.25em 1.5em;display:table}
 .quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
 .quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
@@ -275,7 +275,7 @@ table.frame-none>colgroup+*>:first-child>*,table.frame-sides>colgroup+*>:first-c
 table.frame-none>:last-child>:last-child>*,table.frame-sides>:last-child>:last-child>*{border-bottom-width:0}
 table.frame-none>*>tr>:first-child,table.frame-ends>*>tr>:first-child{border-left-width:0}
 table.frame-none>*>tr>:last-child,table.frame-ends>*>tr>:last-child{border-right-width:0}
-table.stripes-all tr,table.stripes-odd tr:nth-of-type(odd),table.stripes-even tr:nth-of-type(even),table.stripes-hover tr:hover{background:#f8f8f7}
+table.stripes-all>*>tr,table.stripes-odd>*>tr:nth-of-type(odd),table.stripes-even>*>tr:nth-of-type(even),table.stripes-hover>*>tr:hover{background:#f8f8f7}
 th.halign-left,td.halign-left{text-align:left}
 th.halign-right,td.halign-right{text-align:right}
 th.halign-center,td.halign-center{text-align:center}
@@ -291,10 +291,11 @@ ol{margin-left:1.75em}
 ul li ol{margin-left:1.5em}
 dl dd{margin-left:1.125em}
 dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
-ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
 ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
 ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
 ul.unstyled,ol.unstyled{margin-left:0}
+li>p:empty:only-child::before{content:"";display:inline-block}
 ul.checklist>li>p:first-child{margin-left:-1em}
 ul.checklist>li>p:first-child>.fa-square-o:first-child,ul.checklist>li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
 ul.checklist>li>p:first-child>input[type=checkbox]:first-child{margin-right:.25em}
@@ -337,8 +338,6 @@ sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
 #footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
 #footnotes .footnote:last-of-type{margin-bottom:0}
 #content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
-.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
-.gist .file-data>table td.line-data{width:99%}
 div.unbreakable{page-break-inside:avoid}
 .big{font-size:larger}
 .small{font-size:smaller}
@@ -805,7 +804,7 @@ It can be a way to save multiple versions of your project while working on it.</
 <div class="sect2">
 <h3 id="_file_dialog">File dialog</h3>
 <div class="paragraph">
-<p>When you have to browse your filesystem to load or save files or choose directories, the program will present you with a <code>file dialog</code> window.</p>
+<p>When you have to browse your filesystem to load and save files or choose directories, the program will present you with a <code>file dialog</code> window.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -813,7 +812,7 @@ It can be a way to save multiple versions of your project while working on it.</
 </div>
 </div>
 <div class="paragraph">
-<p>The file dialog will show you all the entries inside a directory together with their types (file or directories), access permissions, sizes, and last modification dates. It will also color executables with a shade of green and filter files by extension if needed, for example when loading a project file or a texture.</p>
+<p>The file dialog will show you all the entries inside a directory together with their types (file or directory), access permissions, sizes, and last modification dates. It will also color executables with a shade of green and filter files by extension if needed, for example when loading a project file or a texture.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -832,7 +831,21 @@ It can be a way to save multiple versions of your project while working on it.</
 <p>When deciding the destination directory for rendered frames the file dialog will allow directories to be selected.</p>
 </div>
 <div class="paragraph">
-<p>All kinds of file dialogs have a set of checkboxes to show or hide file permissions, sizes, and dates plus a checkbox that when enabled will show hidden files or directories. As you can see in the last screenshot there is also a drop-down menu to select the entries sorting based on names, sizes, or dates.</p>
+<p>All kinds of file dialogs have a set of checkboxes to show or hide pinned directories, file permissions, sizes, and dates plus a checkbox that when enabled will show hidden files or directories. As you can see in the last screenshot there is also a drop-down menu to select the entries sorting based on names, sizes, or dates.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="file_dialog_pinned.png" alt="Pinned directories">
+</div>
+</div>
+<div class="paragraph">
+<p>When the checkbox for the pinned directories is enabled you will see a panel on the left that shows a list of directories that are currently pinned for a quicker access: just click on one of them to navigate there.
+You can reorder the list by drag and drop.</p>
+</div>
+<div class="paragraph">
+<p>To add a new directory to the list of pinned directories just browse to the desired directory and click the <b class="button">Pin</b> button.
+To remove an element from the list either browse to it and click <b class="button">Unpin</b>, or right-click it and select <b class="button">Unpin</b> from the context menu.
+The list of pinned directories is automatically saved to the configuration file when you quit the program.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2117,6 +2130,36 @@ It can be one of the members of the <code>blending_preset</code> table: <code>DI
 <div class="sect1">
 <h2 id="_changelog">Changelog</h2>
 <div class="sectionbody">
+<h3 id="_27_september_2022" class="discrete">27 September 2022</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>[NEW]</strong> Add support for dragging files from the system to the file dialog, Textures, Scripts, and Render windows</p>
+</li>
+</ul>
+</div>
+<h3 id="_23_september_2022" class="discrete">23 September 2022</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>[NEW]</strong> Add a list of pinned directories to the file dialog (part of the configuration)</p>
+</li>
+<li>
+<p><strong>[FIX]</strong> Close the file dialog modal popup before showing the quit confirmation one</p>
+</li>
+</ul>
+</div>
+<h3 id="_22_september_2022" class="discrete">22 September 2022</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>[FIX]</strong> Fix a crash when playing animations in a sequential group with disabled looping</p>
+</li>
+<li>
+<p><strong>[FIX]</strong> Fix compilation with the latest version of the nCine</p>
+</li>
+</ul>
+</div>
 <h3 id="_26_october_2021" class="discrete">26 October 2021</h3>
 <div class="ulist">
 <ul>

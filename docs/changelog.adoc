@@ -1,6 +1,16 @@
 == Changelog
 
 [discrete]
+=== 23 September 2022
+* *[NEW]* Add a list of pinned directories to the file dialog (part of the configuration)
+* *[FIX]* Close the file dialog modal popup before showing the quit confirmation one
+
+[discrete]
+=== 22 September 2022
+* *[FIX]* Fix a crash when playing animations in a sequential group with disabled looping
+* *[FIX]* Fix compilation with the latest version of the nCine
+
+[discrete]
 === 26 October 2021
 * *[NEW]* Move the texture rectangle of a sprite with the mouse while pressing the Alt key
 * *[NEW]* Resize the texture rectangle of a sprite with the mouse while pressing the Shift key

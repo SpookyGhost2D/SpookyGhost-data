@@ -72,11 +72,11 @@ Selecting menu:Help[About] will open the about window with information about the
 
 === File dialog
 
-When you have to browse your filesystem to load or save files or choose directories, the program will present you with a `file dialog` window.
+When you have to browse your filesystem to load and save files or choose directories, the program will present you with a `file dialog` window.
 
 image::file_dialog_open.png[Open a project file]
 
-The file dialog will show you all the entries inside a directory together with their types (file or directories), access permissions, sizes, and last modification dates. It will also color executables with a shade of green and filter files by extension if needed, for example when loading a project file or a texture.
+The file dialog will show you all the entries inside a directory together with their types (file or directory), access permissions, sizes, and last modification dates. It will also color executables with a shade of green and filter files by extension if needed, for example when loading a project file or a texture.
 
 image::file_dialog_save.png[Save a project file]
 
@@ -86,7 +86,16 @@ image::file_dialog_dir.png[Choose a destination directory]
 
 When deciding the destination directory for rendered frames the file dialog will allow directories to be selected.
 
-All kinds of file dialogs have a set of checkboxes to show or hide file permissions, sizes, and dates plus a checkbox that when enabled will show hidden files or directories. As you can see in the last screenshot there is also a drop-down menu to select the entries sorting based on names, sizes, or dates.
+All kinds of file dialogs have a set of checkboxes to show or hide pinned directories, file permissions, sizes, and dates plus a checkbox that when enabled will show hidden files or directories. As you can see in the last screenshot there is also a drop-down menu to select the entries sorting based on names, sizes, or dates.
+
+image::file_dialog_pinned.png[Pinned directories]
+
+When the checkbox for the pinned directories is enabled you will see a panel on the left that shows a list of directories that are currently pinned for a quicker access: just click on one of them to navigate there.
+You can reorder the list by drag and drop.
+
+To add a new directory to the list of pinned directories just browse to the desired directory and click the btn:[Pin] button.
+To remove an element from the list either browse to it and click btn:[Unpin], or right-click it and select btn:[Unpin] from the context menu.
+The list of pinned directories is automatically saved to the configuration file when you quit the program.
 
 === Tips window
 
