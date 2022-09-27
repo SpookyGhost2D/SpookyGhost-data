@@ -97,6 +97,13 @@ To add a new directory to the list of pinned directories just browse to the desi
 To remove an element from the list either browse to it and click btn:[Unpin], or right-click it and select btn:[Unpin] from the context menu.
 The list of pinned directories is automatically saved to the configuration file when you quit the program.
 
+[TIP]
+====
+You can pin directories also by drag and dropping files or directories to the list.
+
+You can drag and drop a file or a directory to the browser to navigate to that file or directory.
+====
+
 === Tips window
 
 image::tips_window.png[Tips window]
@@ -137,6 +144,11 @@ image::textures_window.png[Textures window]
 One of the tabs in the top left corner of the interface is the `Textures` window.
 
 Before being able to create any sprite you need to load at least one texture from here. Clicking the btn:[Load] button will open the <<File dialog>> window. The file dialog will only show files with the `png` extension.
+
+[TIP]
+====
+You can load textures also by drag and dropping files anywhere onto the `Textures` window.
+====
 
 You can delete the selected texture by clicking the btn:[Remove] button or pressing the kbd:[Delete] key while the cursor is over this window.
 
@@ -206,6 +218,11 @@ Next to the <<Sprites window>> tab, you will find the `Scripts` window.
 At the top, there is a combo box with a list of scripts that are distributed with the program: use it to easily load the default scripts.
 
 Below you will find some buttons that you can use to btn:[Load] and btn:[Remove] Lua scripts as well as btn:[Reload] them when they have changed on disk.
+
+[TIP]
+====
+You can load scripts also by drag and dropping files anywhere onto the `Scripts` window.
+====
 
 You can also delete the selected script by pressing the kbd:[Delete] key while the cursor is over this window.
 
@@ -403,6 +420,11 @@ image::render_window.png[Render window]
 When you are happy with the results of your animation it is time to export it.
 
 Clicking the button on top will open the <<File dialog>> window to choose a destination directory.
+
+[TIP]
+====
+You can change the destination directory also by drag and dropping a file or a directory anywhere onto the `Render` window.
+====
 
 You can then choose a prefix for the files that are going to be created. Just specify a filename without the extension.
 

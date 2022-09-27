@@ -1,9 +1,14 @@
 == Changelog
 
 [discrete]
+=== 27 September 2022 (**r74** on Itch.io)
+* *[NEW]* Add support for dragging files from the system to the file dialog, Textures, Scripts, and Render windows
+
+[discrete]
 === 23 September 2022
 * *[NEW]* Add a list of pinned directories to the file dialog (part of the configuration)
 * *[FIX]* Close the file dialog modal popup before showing the quit confirmation one
+* *[FIX]* Show the quit confirmation modal window on Android
 
 [discrete]
 === 22 September 2022
