@@ -121,13 +121,15 @@ image::configuration_window.png[Configuration window]
 
 The `Configuration` window contains some customizable properties that will be used every time the program starts.
 
-The top section allows you to change the window size or to choose a fullscreen mode.
+The top section allows you to center the window on screen or change its size, or to go full screen with the desired video mode.
 You can make the window btn:[Resizable] or not as well as btn:[Apply] your changes immediately or go back to btn:[Current] window settings.
 
 Next, you can enable or disable btn:[Vertical Sync]. If you disable it you can specify a `Frame Limit` to control the number of frames rendered per second or select `0` to switch it off.
 To apply the changes in this section you need to save the configuration and restart the program.
 
 You can choose the initial canvas size that will be used when the program starts for the first time.
+
+You can explicitly scale the interface to make it bigger or smaller, or let it automatically scale based on the scaling factor of your monitor.
 
 After that, you can choose the name of a project file that will be loaded the first time you start the program and optionally play it right away.
 
@@ -136,6 +138,13 @@ The three text input widgets will let you choose a path for textures, sprites, a
 With the last checkbox you can enable or disable the automatic showing of the <<Tips window>> when the program starts up.
 
 Upon closing the window the configuration will be saved in the `config.lua` file in the same directory as the program executable.
+
+[TIP]
+====
+image::video_mode_popup.png[Video Mode Popup]
+If you go full screen on a video mode that is not the current one, a confirmation popup will appear.
+Press the btn:[Cancel] button, the kbd:[Escape] key, or wait 15 seconds to revert the change.
+====
 
 === Textures window
 

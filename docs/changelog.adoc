@@ -1,6 +1,12 @@
 == Changelog
 
 [discrete]
+=== 06 December 2022
+* *[NEW]* Add support for multiple monitors and automatic window scaling
+* *[NEW]* Save video mode refresh rate and window position in the configuration
+* *[FIX]* Fix the interface layout of the file dialog with GUI scaling
+
+[discrete]
 === 27 September 2022 (**r74** on Itch.io)
 * *[NEW]* Add support for dragging files from the system to the file dialog, Textures, Scripts, and Render windows
 

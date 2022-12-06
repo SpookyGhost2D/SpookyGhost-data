@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.17">
+<meta name="generator" content="Asciidoctor 2.0.18">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <title>Documentation</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
@@ -85,10 +85,10 @@ code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;
 ul,ol,dl{line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
 ul,ol{margin-left:1.5em}
 ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0}
-ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
-ul.square{list-style-type:square}
 ul.circle{list-style-type:circle}
 ul.disc{list-style-type:disc}
+ul.square{list-style-type:square}
+ul.circle ul:not([class]),ul.disc ul:not([class]),ul.square ul:not([class]){list-style:inherit}
 ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
 dl dt{margin-bottom:.3125em;font-weight:bold}
 dl dd{margin-bottom:1.25em}
@@ -894,7 +894,7 @@ The same checkbox is also present in the <a href="#_configuration_window">Config
 <p>The <code>Configuration</code> window contains some customizable properties that will be used every time the program starts.</p>
 </div>
 <div class="paragraph">
-<p>The top section allows you to change the window size or to choose a fullscreen mode.
+<p>The top section allows you to center the window on screen or change its size, or to go full screen with the desired video mode.
 You can make the window <b class="button">Resizable</b> or not as well as <b class="button">Apply</b> your changes immediately or go back to <b class="button">Current</b> window settings.</p>
 </div>
 <div class="paragraph">
@@ -903,6 +903,9 @@ To apply the changes in this section you need to save the configuration and rest
 </div>
 <div class="paragraph">
 <p>You can choose the initial canvas size that will be used when the program starts for the first time.</p>
+</div>
+<div class="paragraph">
+<p>You can explicitly scale the interface to make it bigger or smaller, or let it automatically scale based on the scaling factor of your monitor.</p>
 </div>
 <div class="paragraph">
 <p>After that, you can choose the name of a project file that will be loaded the first time you start the program and optionally play it right away.</p>
@@ -915,6 +918,26 @@ To apply the changes in this section you need to save the configuration and rest
 </div>
 <div class="paragraph">
 <p>Upon closing the window the configuration will be saved in the <code>config.lua</code> file in the same directory as the program executable.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="imageblock">
+<div class="content">
+<img src="video_mode_popup.png" alt="Video Mode Popup">
+</div>
+</div>
+<div class="paragraph">
+<p>If you go full screen on a video mode that is not the current one, a confirmation popup will appear.
+Press the <b class="button">Cancel</b> button, the <kbd>Escape</kbd> key, or wait 15 seconds to revert the change.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -2189,6 +2212,20 @@ It can be one of the members of the <code>blending_preset</code> table: <code>DI
 <div class="sect1">
 <h2 id="_changelog">Changelog</h2>
 <div class="sectionbody">
+<h3 id="_06_december_2022" class="discrete">06 December 2022</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>[NEW]</strong> Add support for multiple monitors and automatic window scaling</p>
+</li>
+<li>
+<p><strong>[NEW]</strong> Save video mode refresh rate and window position in the configuration</p>
+</li>
+<li>
+<p><strong>[FIX]</strong> Fix the interface layout of the file dialog with GUI scaling</p>
+</li>
+</ul>
+</div>
 <h3 id="_27_september_2022_r74_on_itch_io" class="discrete">27 September 2022 (<strong>r74</strong> on Itch.io)</h3>
 <div class="ulist">
 <ul>
