@@ -1,6 +1,10 @@
 == Changelog
 
 [discrete]
+=== 29 April 2024
+* *[FIX]* Fix a crash when saving a spritesheet with fractional canvas resize (#7)
+
+[discrete]
 === 06 December 2022
 * *[NEW]* Add support for multiple monitors and automatic window scaling
 * *[NEW]* Save video mode refresh rate and window position in the configuration
