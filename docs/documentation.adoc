@@ -88,6 +88,13 @@ When deciding the destination directory for rendered frames the file dialog will
 
 All kinds of file dialogs have a set of checkboxes to show or hide pinned directories, file permissions, sizes, and dates plus a checkbox that when enabled will show hidden files or directories. As you can see in the last screenshot there is also a drop-down menu to select the entries sorting based on names, sizes, or dates.
 
+[TIP]
+====
+You can drag and drop a file or a directory to the browser to navigate to that file or directory.
+====
+
+==== Pinned directories
+
 image::file_dialog_pinned.png[Pinned directories]
 
 When the checkbox for the pinned directories is enabled you will see a panel on the left that shows a list of directories that are currently pinned for a quicker access: just click on one of them to navigate there.
@@ -100,8 +107,19 @@ The list of pinned directories is automatically saved to the configuration file 
 [TIP]
 ====
 You can pin directories also by drag and dropping files or directories to the list.
+====
 
-You can drag and drop a file or a directory to the browser to navigate to that file or directory.
+==== Navigation arrows
+
+On the top left side of the file browser you will see a group of arrows buttons. The btn:[<-] arrow button is used to navigate to the previous directory in the history, while the btn:[->] arrow button is used to navigate to the next directory.
+
+If you are at the first or the last item in your navigation history, the corresponding button will be disabled.
+
+The btn:[^] arrow button is used to navigate to the parent of the current directory.
+
+[TIP]
+====
+You can use the extra mouse buttons to navigate to the previous or next directory in the history, just press respectively the fourth or the fifth mouse button.
 ====
 
 === Tips window

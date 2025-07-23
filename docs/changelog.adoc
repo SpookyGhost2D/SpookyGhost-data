@@ -1,7 +1,14 @@
 == Changelog
 
 [discrete]
-=== 29 April 2024
+=== 22 July 2025 (**r84** on Itch.io)
+* *[NEW]* Add directory history navigation to the file dialog
+* *[FIX]* Disable the Stop/Pause/Play buttons when incompatible with current animation state
+* *[FIX]* Avoid some ImGui fatal asserts related to drag and drop
+* *[FIX]* Update some FontAwesome icons to better represent interface concepts
+
+[discrete]
+=== 29 April 2024 (**r81** on Itch.io)
 * *[FIX]* Fix a crash when saving a spritesheet with fractional canvas resize (#7)
 
 [discrete]
